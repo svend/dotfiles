@@ -1,0 +1,9 @@
+[color]
+	ui = auto
+[user]
+	name = Svend Sorensen
+	email = svend@ciffer.net
+[diff "gpg"]
+        textconv = gpg --decrypt --batch --quiet
+[diff "word"]
+        textconv = strings
