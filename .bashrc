@@ -45,6 +45,7 @@ fi
 # Debian sets the prompt in system bashrc, so we have to set it here, too
 # Set prompt
 PS1='\h:\W '
+# Add git to the prompt
 if type -t __git_ps1 >/dev/null; then
 	PS1="$PS1"'$(__git_ps1 "(%s) ")'
 fi
