@@ -7,3 +7,8 @@
         textconv = gpg --decrypt --batch --quiet
 [diff "word"]
         textconv = strings
+[alias]
+	# Restore all files missing from the work-tree
+	restore-deleted = ! git ls-files -z -d | xargs -0 git checkout --
+	# Switch branch but don't touch the work-tree
+	switch-branch = ! sh -c 'git symbolic-ref HEAD refs/heads/$1 && git reset HEAD' -
