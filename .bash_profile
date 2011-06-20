@@ -8,7 +8,7 @@
 ################################################################################
 
 # Source .profile
-. $HOME/.profile
+. ~/.profile
 
 # Big history file
 export HISTFILESIZE=200000
