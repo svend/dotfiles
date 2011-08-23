@@ -51,3 +51,7 @@ if type -t __git_ps1 >/dev/null; then
 fi
 PS1="$PS1"'\$ '
 export PS1
+
+# gpg-agent
+GPG_TTY=$(tty)
+export GPG_TTY
