@@ -18,8 +18,6 @@ shopt -s histappend
 ################################################################################
 
 alias basedir='basename "$(pwd)"'
-alias ga='eval $(gpg-agent --daemon)'
-alias sa='eval $(ssh-agent -t 28800)'
 alias ymd='date +%Y%m%d'
 alias ymd2='date +%Y-%m-%d'
 
