@@ -58,4 +58,8 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
 	export GPG_AGENT_INFO
 	export SSH_AUTH_SOCK
 	export SSH_AGENT_PID
+	# Tell gpg-agent what tty we are on
+	if [ -x "$(which gpg-connect-agent)" ]; then
+		echo UPDATESTARTUPTTY | gpg-connect-agent >/dev/null 2>&1
+	fi
 fi
