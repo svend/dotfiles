@@ -45,6 +45,8 @@ fi
 PS1='\h:\W '
 # Add git to the prompt
 if type -t __git_ps1 >/dev/null; then
+	# Show difference from upstream
+	GIT_PS1_SHOWUPSTREAM=auto
 	PS1="$PS1"'$(__git_ps1 "(%s) ")'
 fi
 PS1="$PS1"'\$ '
