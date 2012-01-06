@@ -7,9 +7,9 @@ export PATH
 
 # Set the editor to vim or vi
 if [ -x "$(which vim)" ]; then
-      EDITOR=vim
+	EDITOR=vim
 else
-      EDITOR=vi
+	EDITOR=vi
 fi
 VISUAL=$EDITOR
 export EDITOR
