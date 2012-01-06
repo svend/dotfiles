@@ -28,6 +28,11 @@ export MAIL=$HOME/Maildir
 # Set timezone
 export TZ=US/Pacific
 
-export KRB5_CONFIG=$HOME/.krb5.conf
-export PERL5LIB=$HOME/local/lib/perl5
-export PYTHONPATH=$HOME/local/lib/python2.4/site-packages
+if [ -d $HOME/profile.d ]; then
+  for i in $HOME/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi

@@ -40,28 +40,13 @@ if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-# Debian sets the prompt in system bashrc, so we have to set it here, too
-# Set prompt
-PS1='\h:\W '
-# Add git to the prompt
-if type -t __git_ps1 >/dev/null; then
-	# Show difference from upstream
-	GIT_PS1_SHOWUPSTREAM=auto
-	PS1="$PS1"'$(__git_ps1 "(%s) ")'
+BASH_RC_USER_DIR=$HOME/.bashrc.d
+if [[ -d $BASH_RC_USER_DIR && -r $BASH_RC_USER_DIR && \
+    -x $BASH_RC_USER_DIR ]]; then
+    for i in $(LC_ALL=C command ls "$BASH_RC_USER_DIR"); do
+        i=$BASH_RC_USER_DIR/$i
+        [[ ${i##*/} != @(*~|*.bak|*.swp|\#*\#|*.dpkg*|*.rpm@(orig|new|save)) \
+            && ( -f $i || -h $i ) && -r $i ]] && . "$i"
+    done
 fi
-PS1="$PS1"'\$ '
-export PS1
-
-# gpg-agent
-GPG_TTY=$(tty)
-export GPG_TTY
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-	. "${HOME}/.gpg-agent-info"
-	export GPG_AGENT_INFO
-	export SSH_AUTH_SOCK
-	export SSH_AGENT_PID
-	# Tell gpg-agent what tty we are on
-	if [ -x "$(which gpg-connect-agent)" ]; then
-		echo UPDATESTARTUPTTY | gpg-connect-agent >/dev/null 2>&1
-	fi
-fi
+unset i BASH_RC_USER_DIR
