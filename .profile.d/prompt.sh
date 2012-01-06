@@ -4,6 +4,7 @@ PS1='\h:\W '
 if type -t __git_ps1 >/dev/null; then
 	# Show difference from upstream
 	GIT_PS1_SHOWUPSTREAM=auto
+	export GIT_PS1_SHOWUPSTREAM
 	PS1="$PS1"'$(__git_ps1 "(%s) ")'
 fi
 PS1="$PS1"'\$ '
