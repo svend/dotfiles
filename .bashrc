@@ -6,17 +6,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# Options
-
-# Don't overwrite history file.
-shopt -s histappend
-
-# Miscellaneous
-
-# Disables START/STOP output control. (Disable C-s and C-q. C-s is used by
-# readline for forward-search-history.)
-stty -ixon
-
 BASH_RC_USER_DIR=$HOME/.bashrc.d
 if [[ -d $BASH_RC_USER_DIR && -r $BASH_RC_USER_DIR && \
     -x $BASH_RC_USER_DIR ]]; then
