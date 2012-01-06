@@ -33,13 +33,6 @@ alias ymd2='date +%Y-%m-%d'
 # readline for forward-search-history.)
 stty -ixon
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
-fi
-
 BASH_RC_USER_DIR=$HOME/.bashrc.d
 if [[ -d $BASH_RC_USER_DIR && -r $BASH_RC_USER_DIR && \
     -x $BASH_RC_USER_DIR ]]; then
