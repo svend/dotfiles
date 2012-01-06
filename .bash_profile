@@ -3,19 +3,10 @@
 # The personal initialization file, executed for login shells.  Set environment
 # variables, terminal settings, and startup programs here.
 
-################################################################################
-# Bash environmental variables
-################################################################################
-
 # Source .profile
 . ~/.profile
 
-# Big history file
-export HISTFILESIZE=200000
-
-# Never truncate history file (This isn't working.)
-#unset HISTFILESIZE
-
+# Source individual snippets
 if [ -d $HOME/.bash_profile.d ]; then
 	for i in $HOME/.bash_profile.d/*.sh; do
 		if [ -r $i ]; then
