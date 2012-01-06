@@ -1,0 +1,2 @@
+# Don't overwrite history file.
+shopt -s histappend
