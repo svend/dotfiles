@@ -16,14 +16,14 @@ export HISTFILESIZE=200000
 # Never truncate history file (This isn't working.)
 #unset HISTFILESIZE
 
-# Set prompt
-# PS1 is set in .bashrc, due to Debian's /etc/bashrc override
-
-################################################################################
-# Startup programs
-################################################################################
-
-# none
+if [ -d $HOME/.bash_profile.d ]; then
+	for i in $HOME/.bash_profile.d/*.sh; do
+		if [ -r $i ]; then
+			. $i
+		fi
+		done
+	unset i
+fi
 
 # Include .bashrc, if it exists, for the login shell
 if [ -f ~/.bashrc ]; then
