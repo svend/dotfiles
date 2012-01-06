@@ -1,0 +1,5 @@
+# Bash aliases
+
+alias basedir='basename "$(pwd)"'
+alias ymd='date +%Y%m%d'
+alias ymd2='date +%Y-%m-%d'
