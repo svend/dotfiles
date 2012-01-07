@@ -2,11 +2,14 @@
 #
 # POSIX sh profile file
 
-if [ -d $HOME/.profile.d ]; then
-	for i in $HOME/.profile.d/*.sh; do
+# Source individual snippets
+USER_CONFIG_DIR=$HOME/.profile.d
+if [ -d $USER_CONFIG_DIR ]; then
+	for i in $USER_CONFIG_DIR/*; do
 		if [ -r $i ]; then
 			. $i
 		fi
-		done
+	done
 	unset i
 fi
+unset USER_CONFIG_DIR
