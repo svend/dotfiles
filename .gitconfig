@@ -7,3 +7,5 @@
         textconv = gpg --decrypt --batch --quiet
 [diff "word"]
         textconv = strings
+[url "ssh://git@git.ciffer.net/"]
+	insteadOf = https://git.ciffer.net/
