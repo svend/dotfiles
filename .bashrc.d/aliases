@@ -1,5 +1,6 @@
 # Bash aliases
 
 alias basedir='basename "$(pwd)"'
+alias emacs='emacs --no-window-system --reverse-video'
 alias ymd='date +%Y%m%d'
 alias ymd2='date +%Y-%m-%d'
