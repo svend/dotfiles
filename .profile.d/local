@@ -5,8 +5,10 @@ export HISTSIZE=2000
 PATH=$HOME/bin:$HOME/local/bin:$PATH
 export PATH
 
-# Set the editor to vim or vi
-if [ -x "$(which vim)" ]; then
+# Set the editor to emacsclient, vim, or vi
+if [ -x "$(which emacsclient)" ]; then
+	EDITOR=emacsclient
+elif [ -x "$(which vim)" ]; then
 	EDITOR=vim
 else
 	EDITOR=vi
