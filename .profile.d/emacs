@@ -1,0 +1,2 @@
+# Start emacs daemon and connect when running emacsclient
+export ALTERNATE_EDITOR=''
