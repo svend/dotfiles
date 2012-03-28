@@ -1,6 +1,1 @@
-# Debian bashrc overrides PS1 in /etc/bash.bashrc, so make a backup of the var
-# and restore it in ~/.bashrc
-if [ -n "$PS1_BAK" ]; then
-	PS1=$PS1_BAK
-	export PS1
-fi
+../.bash_profile.d/prompt
