@@ -1,0 +1,10 @@
+if [ "$TERM" = "eterm-color" -a -n "$SSH_CONNECTION" ]; then
+	function set-eterm-dir {
+		echo -e "\033AnSiTu" "$LOGNAME"
+		echo -e "\033AnSiTc" "$(pwd)"
+		echo -e "\033AnSiTh" "$(hostname -f)"
+		history -a
+	}
+
+	PROMPT_COMMAND=set-eterm-dir
+fi
