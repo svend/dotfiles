@@ -1,8 +1,14 @@
 if [ "$TERM" = "eterm-color" -a -n "$SSH_CONNECTION" ]; then
 	function set-eterm-dir {
+		if [ -f "$HOME/.hostname" ]; then
+			local hostname=$(cat "$HOME/.hostname")
+		else
+			local hostname=$(hostname -f)
+		fi
+
 		echo -e "\033AnSiTu" "$LOGNAME"
 		echo -e "\033AnSiTc" "$(pwd)"
-		echo -e "\033AnSiTh" "$(hostname -f)"
+		echo -e "\033AnSiTh" "$hostname"
 		history -a
 	}
 
