@@ -1,10 +1,24 @@
 [core]
+	# These are the defaults as of git v1.7.11
+
+	attributesfile = ~/.config/git/attributes
 	excludesfile = ~/.config/git/ignore
+
+	# The default for push changed from "matching" to "simple",
+	# which is a cross between "current" and "upstream", in git
+	# v1.7.11.
+	#
+	# https://raw.github.com/git/git/master/Documentation/RelNotes/1.7.11.txt
+
+	push = upstream
+
 [color]
 	ui = auto
 [user]
 	name = Svend Sorensen
 	email = svend@ciffer.net
+[merge]
+	tool = emerge
 [diff "gpg"]
         textconv = gpg --decrypt --batch --quiet
 [diff "word"]
@@ -13,3 +27,5 @@
 	insteadOf = https://git.ciffer.net/
 [url "git@github.com:svend/"]
 	insteadOf = https://github.com/svend/
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
