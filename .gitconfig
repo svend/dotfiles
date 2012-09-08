@@ -10,7 +10,8 @@
 	#
 	# https://raw.github.com/git/git/master/Documentation/RelNotes/1.7.11.txt
 
-	push = upstream
+[push]
+	default = upstream
 
 [color]
 	ui = auto
