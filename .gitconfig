@@ -1,16 +1,14 @@
 [core]
 	# These are the defaults as of git v1.7.11
-
 	attributesfile = ~/.config/git/attributes
 	excludesfile = ~/.config/git/ignore
 
+[push]
 	# The default for push changed from "matching" to "simple",
 	# which is a cross between "current" and "upstream", in git
 	# v1.7.11.
 	#
 	# https://raw.github.com/git/git/master/Documentation/RelNotes/1.7.11.txt
-
-[push]
 	default = upstream
 
 [color]
