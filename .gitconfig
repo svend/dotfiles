@@ -24,7 +24,5 @@
         textconv = strings
 [url "ssh://git@git.ciffer.net/"]
 	insteadOf = https://git.ciffer.net/
-[url "git@github.com:svend/"]
-	insteadOf = https://github.com/svend/
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
