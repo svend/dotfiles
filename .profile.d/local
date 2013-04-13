@@ -4,8 +4,3 @@ export HISTSIZE=2000
 # Set PATH
 PATH=$HOME/bin:$HOME/local/bin:$PATH
 export PATH
-
-export MAIL=$HOME/Maildir
-
-# Set timezone
-export TZ=US/Pacific
