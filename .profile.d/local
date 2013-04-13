@@ -5,24 +5,6 @@ export HISTSIZE=2000
 PATH=$HOME/bin:$HOME/local/bin:$PATH
 export PATH
 
-# Set the editor to emacsclient, vim, or vi
-
-if [ -x "$(which vim)" ]; then
-	EDITOR=vim
-else
-	EDITOR=vi
-fi
-
-if [ -x "$(which emacsclient)" ]; then
-	# Fall back to vim or vi if emacs isn't running
-	export ALTERNATE_EDITOR=$EDITOR
-	EDITOR=emacsclient
-fi
-
-VISUAL=$EDITOR
-export EDITOR
-export VISUAL
-
 export MAIL=$HOME/Maildir
 
 # Set timezone
