@@ -1,6 +1,2 @@
 # Big history (dash supports HISTSIZE)
 export HISTSIZE=2000
-
-# Set PATH
-PATH=$HOME/bin:$HOME/local/bin:$PATH
-export PATH
