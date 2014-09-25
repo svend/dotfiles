@@ -1,15 +1,15 @@
 # Set the editor to emacsclient, vim, or vi
 
 if [ -x "$(which vim)" ]; then
-	EDITOR=vim
+  EDITOR=vim
 else
-	EDITOR=vi
+  EDITOR=vi
 fi
 
 if [ -x "$(which emacsclient)" ]; then
-	# Fall back to vim or vi if emacs isn't running
-	export ALTERNATE_EDITOR=$EDITOR
-	EDITOR=emacsclient
+  # Fall back to vim or vi if emacs isn't running
+  export ALTERNATE_EDITOR=$EDITOR
+  EDITOR=emacsclient
 fi
 
 VISUAL=$EDITOR
