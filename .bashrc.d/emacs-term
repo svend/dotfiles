@@ -1,4 +1,4 @@
-if [ "$TERM" = "eterm-color" -a -n "$SSH_CONNECTION" ]; then
+if [ "$TERM" = "eterm-color" ]; then
   function set-eterm-dir {
     if [ -f "$HOME/.hostname" ]; then
       local hostname=$(cat "$HOME/.hostname")
@@ -12,5 +12,12 @@ if [ "$TERM" = "eterm-color" -a -n "$SSH_CONNECTION" ]; then
     history -a
   }
 
-  PROMPT_COMMAND=set-eterm-dir
+  # Temporarily disable
+  # PROMPT_COMMAND=set-eterm-dir
 fi
+
+if [ "$TERM" = "dumb" ]; then
+  export PAGER=cat
+        alias ls='ls -1'
+fi
+   

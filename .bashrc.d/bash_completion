@@ -1,12 +1,21 @@
 # Check for interactive bash and that we haven't already been sourced.
 [ -z "$BASH_VERSION" -o -z "$PS1" -o -n "$BASH_COMPLETION" ] && return
-
-# Check for recent enough version of bash.
-bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
-if [ $bmajor -gt 3 ] || [ $bmajor -eq 3 -a $bminor -ge 2 ]; then
-    if [ -r /etc/bash_completion ]; then
-        # Source completion code.
-        . /etc/bash_completion
-    fi
+if ! shopt -oq posix; then
+  if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
-unset bash bmajor bminor
+
+BASH_COMPLETION_USER_DIR=$HOME/.bash_completion.d
+
+if [[ -d $BASH_COMPLETION_USER_DIR && -r $BASH_COMPLETION_USER_DIR && \
+    -x $BASH_COMPLETION_USER_DIR ]]; then
+    for i in $(LC_ALL=C command ls "$BASH_COMPLETION_USER_DIR"); do
+        i=$BASH_COMPLETION_USER_DIR/$i
+        [[ ${i##*/} != @(*~|*.bak|*.swp|\#*\#|*.dpkg*|*.rpm@(orig|new|save)) \
+            && ( -f $i || -h $i ) && -r $i ]] && . "$i"
+    done
+fi
+unset i BASH_COMPLETION_USER_DIR
