@@ -1,0 +1,3 @@
+[ -x $(which keychain) ] || return
+
+eval $(keychain --eval --quiet)

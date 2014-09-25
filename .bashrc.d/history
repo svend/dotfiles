@@ -1,0 +1,3 @@
+# HISTSIZE is set elsewhere
+export HISTFILESIZE=10000
+shopt -s histappend

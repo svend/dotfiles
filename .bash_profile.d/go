@@ -1,0 +1,6 @@
+[ -x $(which go) ] || return
+
+GOPATH=$HOME/gocode
+export GOPATH
+PATH=$PATH:$GOPATH/bin
+export PATH
