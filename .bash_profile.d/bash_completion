@@ -1,5 +1,5 @@
 # Check for interactive bash and that we haven't already been sourced.
-[ -z "$BASH_VERSION" -o -z "$PS1" -o -n "$BASH_COMPLETION" ] && return
+[ -z "$BASH_VERSION" -o -z "$PS1" -o -n "$MY_BASH_COMPLETION_LOADED" ] && return
 
 if ! shopt -oq posix; then
   if [ -f /usr/local/etc/bash_completion ]; then
@@ -20,3 +20,4 @@ if [[ -d $BASH_COMPLETION_USER_DIR && -r $BASH_COMPLETION_USER_DIR && \
     done
 fi
 unset i BASH_COMPLETION_USER_DIR
+export MY_BASH_COMPLETION_LOADED=yes
