@@ -15,9 +15,3 @@ if [ "$TERM" = "eterm-color" ]; then
   # Temporarily disable
   # PROMPT_COMMAND=set-eterm-dir
 fi
-
-if [ "$TERM" = "dumb" ]; then
-  export PAGER=cat
-        alias ls='ls -1'
-fi
-   
