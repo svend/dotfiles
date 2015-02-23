@@ -1,6 +1,13 @@
+# -*- mode: sh; -*-
 command -v go >/dev/null 2>&1 || return
 
 GOPATH=$HOME/go
 export GOPATH
+
 PATH=$PATH:$GOPATH/bin
 export PATH
+
+for d in $GOPATH/src/*/*; do
+  CDPATH=$CDPATH:$d
+done
+export CDPATH
