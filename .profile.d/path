@@ -1,3 +1,6 @@
 # Set PATH
 PATH=$HOME/bin:$HOME/local/bin:$PATH
 export PATH
+
+CDPATH=$CDPATH:$HOME/src
+export CDPATH
