@@ -1,2 +1,82 @@
-# Ignore emacs lockfiles
-.#*
+# -*- mode: gitignore; -*-
+
+## Local ignores
+
+# Emacs flycheck (see flycheck-temp-prefix)
+flycheck_*
+# Emacs projectile
+.projectile
+
+## Emacs
+## https://github.com/github/gitignore/blob/master/Global/Emacs.gitignore
+
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+
+## Vim
+## https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+## OS X
+## https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+
+# OS X Desktop Services Store files
+.DS_Store
+
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
