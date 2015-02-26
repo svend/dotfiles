@@ -1,28 +1,55 @@
+# Git config file
+
+# This can be located in ~/.config/git/config as of v1.7.12.
+#
+# https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.12.txt#L18
+
+[color]
+	# color.ui "auto" is  the default since Git 1.8.4.
+	#
+	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.8.4.txt#L178
+	ui = auto
+
 [core]
-	# These are the defaults as of git v1.7.11
+	# These are the defaults as of git v1.7.12.
+	#
+	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.12.txt#L21
 	attributesfile = ~/.config/git/attributes
 	excludesfile = ~/.config/git/ignore
 
-[push]
-	# The default for push changed from "matching" to "simple",
-	# which is a cross between "current" and "upstream", in git
-	# v1.7.11.
-	#
-	# https://raw.github.com/git/git/master/Documentation/RelNotes/1.7.11.txt
-	default = upstream
+[hub]
+	protocol = https
 
-[color]
-	ui = auto
+[merge]
+	tool = ediff
+
+[mergetool "ediff"]
+	cmd = emacsclient -c -a \"\" --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+
+[pull]
+	ff = only
+
+[push]
+	# Push mode "simple" was introduced and made the default in
+	# v1.7.11 and made the default in v2.2.2.
+	#
+	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.11.txt#L9
+	# https://github.com/git/git/blob/master/Documentation/RelNotes/2.2.2.txt#L25
+	default = simple
+
+[tag]
+	sort = version:refname
+
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+
+[url "ssh://git@git.zx2c4.com/"]
+	pushInsteadOf = http://git.zx2c4.com/
+
 [user]
 	name = Svend Sorensen
 	email = svend@ciffer.net
-[merge]
-	tool = emerge
-[diff "gpg"]
-        textconv = gpg --decrypt --batch --quiet
-[diff "word"]
-        textconv = strings
-[url "ssh://git@git.ciffer.net/"]
-	insteadOf = https://git.ciffer.net/
-[url "git@github.com:"]
-	pushInsteadOf = https://github.com/
+
+# This include must come last
+[include]
+	path = ~/.gitconfig.local
