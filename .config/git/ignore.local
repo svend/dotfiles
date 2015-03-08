@@ -6,3 +6,6 @@
 flycheck_*
 # Emacs projectile
 .projectile
+# Ensime
+.ensime
+.ensime_cache
