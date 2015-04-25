@@ -1,3 +1,4 @@
+# -*- mode: sh; -*-
 # Set PATH
 PATH=$HOME/bin:$HOME/local/bin:$PATH
 # Add git-annex to end of path. git-annex includes a git executable,

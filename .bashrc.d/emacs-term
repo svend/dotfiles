@@ -1,3 +1,4 @@
+# -*- mode: sh; -*-
 if [ "$TERM" = "eterm-color" ]; then
   function set-eterm-dir {
     if [ -f "$HOME/.hostname" ]; then

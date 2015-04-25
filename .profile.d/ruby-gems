@@ -1,3 +1,4 @@
+# -*- mode: sh; -*-
 command -v ruby >/dev/null 2>&1 || return
 command -v gem >/dev/null 2>&1 || return
 

@@ -1,3 +1,4 @@
+# -*- mode: sh; -*-
 # Set prompt
 PS1='\h:\W '
 # Add git to the prompt
