@@ -1,2 +1,6 @@
 # -*- mode: sh; -*-
-export PYTHONPATH=$HOME/local/lib/python2.4/site-packages
+command -v python >/dev/null 2>&1 || return
+
+# Add user python dir to path
+PATH=$PATH:$(python -m site --user-base)/bin
+export PATHo
