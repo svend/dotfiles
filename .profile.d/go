@@ -1,11 +1,11 @@
 # -*- mode: sh; -*-
 command -v go >/dev/null 2>&1 || return
 
-GOPATH=$HOME/go
-export GOPATH
+export GOPATH=$HOME/go
 
-PATH=$PATH:$GOPATH/bin
-export PATH
+export GO15VENDOREXPERIMENT=1
+
+export PATH=$PATH:$GOPATH/bin
 
 for d in $GOPATH/src/*/*; do
   CDPATH=$CDPATH:$d
