@@ -9,6 +9,8 @@ flycheck_*
 # Ensime
 .ensime
 .ensime_cache
+# FreeCAD
+\#*.dxf
 # -*- mode: gitignore; -*-
 *~
 \#*\#
