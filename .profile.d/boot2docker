@@ -1,4 +1,0 @@
-# -*- mode: sh; -*-
-command -v boot2docker >/dev/null 2>&1 || return
-
-eval $(boot2docker shellinit 2>/dev/null)
