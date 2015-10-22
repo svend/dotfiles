@@ -1,0 +1,13 @@
+# -*- mode: gitignore; -*-
+
+## Local ignores
+
+# Emacs flycheck (see flycheck-temp-prefix)
+flycheck_*
+# Emacs projectile
+.projectile
+# Ensime
+.ensime
+.ensime_cache
+# FreeCAD
+\#*.dxf
