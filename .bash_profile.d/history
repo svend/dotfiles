@@ -1,0 +1,7 @@
+# -*- mode: sh; -*-
+# HISTSIZE is set in .profile.d/history
+export HISTFILESIZE=10000
+export HISTCONTROL=ignorespace
+
+# Never truncate history file (This isn't working.)
+#unset HISTFILESIZE

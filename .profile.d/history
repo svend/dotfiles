@@ -1,0 +1,3 @@
+# -*- mode: sh; -*-
+# Big history (dash supports HISTSIZE)
+export HISTSIZE=10000

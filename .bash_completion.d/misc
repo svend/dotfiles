@@ -1,0 +1,6 @@
+complete -F _command $filenames screen
+complete -F _command $filenames watch
+complete -F _command $filenames tsplit
+complete -F _command $filenames twin
+complete -F _known_hosts nmap
+complete -F _known_hosts rdesktop

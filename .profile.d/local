@@ -1,0 +1,15 @@
+# -*- mode: sh; -*-
+# Set PATH
+PATH=$HOME/bin:$HOME/local/bin:$PATH
+# Add git-annex to end of path. git-annex includes a git executable,
+# which we don't want to be the default.
+[ -d $HOME/Applications/git-annex.app/Contents/MacOS ] &&
+PATH=$PATH:$HOME/Applications/git-annex.app/Contents/MacOS
+export PATH
+
+# Set INFOPATH
+
+export INFOPATH=/usr/local/share/info:/usr/share/info
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
