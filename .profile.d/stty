@@ -1,4 +1,4 @@
 # -*- mode: sh; -*-
 # Disables START/STOP output control. (Disable C-s and C-q. C-s is used by
 # readline for forward-search-history.)
-stty -ixon
+stty -ixon 2>/dev/null
