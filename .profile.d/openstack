@@ -1,2 +1,2 @@
 # -*- mode: sh; -*-
-export OS_CACERT=/System/Library/OpenSSL/certs/whitepagesca
+export OS_CACERT=$HOME/.certs/whitepagesca
