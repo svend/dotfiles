@@ -1,0 +1,5 @@
+# -*- mode: sh; -*-
+[ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] || return
+
+. "$HOME/.nix-profile/etc/profile.d/nix.sh"
+[ -e "$HOME/.certs/ca-bundle.crt" ] && export SSL_CERT_FILE="$HOME/.certs/ca-bundle.crt"
