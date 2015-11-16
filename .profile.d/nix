@@ -1,7 +1,5 @@
 # -*- mode: sh; -*-
 [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] || return
-# Avoid sourcing multiple times
-[ -z "$NIX_PATH" ] || return
 
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 [ -e "$HOME/.certs/ca-bundle.crt" ] && export SSL_CERT_FILE="$HOME/.certs/ca-bundle.crt"
