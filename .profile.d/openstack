@@ -1,2 +1,2 @@
 # -*- mode: sh; -*-
-export OS_CACERT=$HOME/.certs/whitepagesca
+export OS_CACERT=$HOME/.certs/ca-bundle.crt
