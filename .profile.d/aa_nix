@@ -6,10 +6,10 @@ if [ -e "$HOME/.certs/ca-bundle.crt" ]; then
   export SSL_CERT_FILE="$HOME/.certs/ca-bundle.crt"
 fi
 
-if [ -d "$HOME/.nix-profile/Applications/Emacs.app/Contents/MacOS/bin" ]; then
-  export PATH="$HOME/.nix-profile/Applications/Emacs.app/Contents/MacOS/bin":$PATH
-fi
+# if [ -d "$HOME/.nix-profile/Applications/Emacs.app/Contents/MacOS/bin" ]; then
+#   export PATH="$HOME/.nix-profile/Applications/Emacs.app/Contents/MacOS/bin":$PATH
+# fi
 
 if [ -d "$HOME/.nix-profile/lib/python2.7/site-packages" ]; then
-  export PYTHONPATH="$HOME/.nix-profile/lib/python2.7/site-packages":$PATH
+  export PYTHONPATH="$HOME/.nix-profile/lib/python2.7/site-packages":$PYTHONPATH
 fi
