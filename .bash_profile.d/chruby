@@ -1,0 +1,8 @@
+# -*- mode: sh; -*-
+[ -f "$HOME/.nix-profile/share/chruby/chruby.sh" ] || return
+
+. "$HOME/.nix-profile/share/chruby/chruby.sh"
+. "$HOME/.nix-profile/share/chruby/auto.sh"
+
+# Load rbenv rubies
+RUBIES+=(~/.rbenv/versions/*)
