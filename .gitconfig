@@ -35,8 +35,8 @@
 	ff = only
 
 [push]
-	# Push mode "simple" was introduced and made the default in
-	# v1.7.11 and made the default in v2.2.2.
+	# Push mode "simple" was introduced in v1.7.11 and made the default in
+	# v2.2.2.
 	#
 	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.11.txt#L9
 	# https://github.com/git/git/blob/master/Documentation/RelNotes/2.2.2.txt#L25
