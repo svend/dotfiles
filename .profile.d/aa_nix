@@ -2,8 +2,8 @@
 [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] || return
 
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-if [ -e "$HOME/.certs/ca-bundle.crt" ]; then
-  export SSL_CERT_FILE="$HOME/.certs/ca-bundle.crt"
+if [ -e "$HOME/.certs/ca-certificates.crt" ]; then
+  export SSL_CERT_FILE="$HOME/.certs/ca-certificates.crt"
 fi
 
 if [ -d "$HOME/.nix-profile/Applications/Emacs.app/Contents/MacOS/bin" ]; then
