@@ -1,4 +1,4 @@
 # -*- mode: sh; -*-
 command -v docker-machine >/dev/null 2>&1 || return
 
-eval $(docker-machine env docker 2>/dev/null)
+eval $(docker-machine env 2>/dev/null)
