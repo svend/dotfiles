@@ -1,2 +1,2 @@
 # -*- mode: sh; -*-
-export OS_CACERT=$HOME/.certs/ca-bundle.crt
+export OS_CACERT=$SSL_CERT_FILE
