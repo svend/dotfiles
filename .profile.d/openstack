@@ -1,2 +1,0 @@
-# -*- mode: sh; -*-
-export OS_CACERT=$SSL_CERT_FILE
