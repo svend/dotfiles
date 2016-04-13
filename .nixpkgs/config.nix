@@ -18,7 +18,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       imagemagick = null;
       acl = null;
       gpm = null;
-      inherit (darwin.apple_sdk.frameworks) AppKit;
+      inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
     };
 
     userEnv = pkgs.buildEnv {
@@ -45,6 +45,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         # emacsPackagesNg.melpaPackages.pdf-tools # unstable version (doesn't build epdfinfo binary)
         file
         findutils
+        fping
         gitMinimal
         gnugrep
         gnupg21
