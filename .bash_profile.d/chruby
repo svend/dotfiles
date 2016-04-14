@@ -6,4 +6,5 @@
 # # Load rbenv rubies
 # RUBIES+=(~/.rbenv/versions/*)
 
-. "$HOME/.nix-profile/share/chruby/auto.sh"
+# . "$HOME/.nix-profile/share/chruby/auto.sh"
+chruby ruby-2.3.0
