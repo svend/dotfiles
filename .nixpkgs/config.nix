@@ -33,7 +33,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         aspell
         aspellDicts.en
         bashInteractive
-        bind
         # binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
         cacert
         coreutils
@@ -90,15 +89,16 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
 
     # Linux-specific packages
     linuxEnv = pkgs.buildEnv {
-        name = "linuxEnv";
-        paths = [
-            chromium
-            firefox
-            gitAndTools.gitAnnex
-            librecad
-            xcape
-            xlibs.xmodmap
-        ];
+      name = "linuxEnv";
+      paths = [
+        bind # failing on darwin
+        chromium
+        firefox
+        gitAndTools.gitAnnex
+        librecad
+        xcape
+        xlibs.xmodmap
+      ];
     };
 
     # Mac-specific packages
