@@ -40,7 +40,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         chruby
         dtach
         emacs-head
-        emacs24PackagesNg.pdf-tools
+        # emacs24PackagesNg.pdf-tools
         # emacsPackagesNg.melpaPackages.pdf-tools # unstable version (doesn't build epdfinfo binary)
         file
         findutils
@@ -54,7 +54,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         gzip
         jq
         keychain
-        # ledger # boost is failing to build on darwin
         less
         netcat
         nim
@@ -95,6 +94,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         chromium
         firefox
         gitAndTools.gitAnnex
+        ledger # boost is failing to build on darwin
         librecad
         xcape
         xlibs.xmodmap
