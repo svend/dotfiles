@@ -8,8 +8,16 @@
 #       ];
 
 packageOverrides = super: let self = super.pkgs; in with self; rec {
-    # This is copied from nixpkgs/pkgs/top-level/all-packages.nix
-    emacs-head = super.callPackage ~/src/nixpkgs.emacs-head/pkgs/applications/editors/emacs-head/default.nix {
+    # cairo = super.cairo.overrideDerivation (oldAttrs : {
+    #   propagatedBuildInputs =
+    #     with xorg; [ libXext fontconfig expat freetype pixman zlib libpng libXrender ]
+    #     ++ stdenv.lib.optional stdenv.lib.optionals xcbSupport [ libxcb xcbutil ]
+    #     ++ stdenv.lib.optional gobjectSupport glib
+    #     ++ stdenv.lib.optional glSupport mesa_noglu
+    #     ; # TODO: maybe liblzo but what would it be for here?
+    # });
+
+    emacs = super.callPackage ~/src/nixpkgs.emacs-head/pkgs/applications/editors/emacs-head/default.nix {
       # use override to enable additional features
       libXaw = xorg.libXaw;
       Xaw3d = null;
@@ -20,6 +28,15 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       gpm = null;
       inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
     };
+
+    emacs24PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs24PackagesNg.pdf-tools (oldAttrs : {
+      src = fetchFromGitHub {
+        owner = "politza";
+        repo = "pdf-tools";
+        rev = "786fad7f95db74c06a7a569aad33acba978aad7b";
+        sha256 = "00h35j1rhqqnfj7y6z3fblcq2kijnhl51h44424x0xjhydkk3kxv";
+      };
+    });
 
     userEnv = pkgs.buildEnv {
       name = "userEnv";
@@ -39,8 +56,8 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         curl
         chruby
         dtach
-        emacs-head
-        # emacs24PackagesNg.pdf-tools
+        emacs
+        emacs24PackagesNg-pdf-toolsHead
         # emacsPackagesNg.melpaPackages.pdf-tools # unstable version (doesn't build epdfinfo binary)
         file
         findutils
@@ -81,8 +98,9 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       paths = [
         python27Full
         python27Packages.pip
-        python27Packages.flake8
         python27Packages.virtualenv
+        python35
+        python35Packages.flake8
       ];
     };
 
