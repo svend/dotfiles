@@ -1,6 +1,0 @@
-# -*- mode: sh; -*-
-command -v python3 >/dev/null 2>&1 || return
-
-# Add user python dir to path
-PATH=$(python3 -E -m site --user-base)/bin:$PATH
-export PATH
