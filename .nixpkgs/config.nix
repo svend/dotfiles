@@ -104,6 +104,21 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       ];
     };
 
+    rubyEnv = pkgs.buildEnv {
+     name = "rubyEnv";
+      paths = [
+        ruby
+      ];
+    };
+
+    rustEnv = pkgs.buildEnv {
+     name = "rustEnv";
+      paths = [
+        cargo
+        rustc
+      ];
+    };
+
     # Linux-specific packages
     linuxEnv = pkgs.buildEnv {
       name = "linuxEnv";
