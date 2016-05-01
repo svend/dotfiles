@@ -4,7 +4,6 @@
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 if [ -e "$HOME/.certs/ca-certificates.crt" ]; then
   export SSL_CERT_FILE="$HOME/.certs/ca-certificates.crt"
-  export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 fi
 
 if [ -d "$HOME/.nix-profile/Applications/Emacs.app/Contents/MacOS/bin" ]; then
