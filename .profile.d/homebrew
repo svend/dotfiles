@@ -1,0 +1,6 @@
+# -*- mode: sh; -*-
+[ -d /usr/local/opt/openssl ] || return
+
+# Fix cargo compilation on OS X
+export OPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include
+export OPENSSL_LIB_DIR=/usr/local/opt/openssl/lib
