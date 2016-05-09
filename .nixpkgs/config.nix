@@ -72,6 +72,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         jq
         keychain
         less
+        mr
         netcat
         nim
         nix-prefetch-scripts
