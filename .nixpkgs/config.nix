@@ -114,7 +114,11 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
 
     rustEnv = pkgs.buildEnv {
      name = "rustEnv";
-       paths = [];
+       paths = [
+         cargo
+         openssl
+         rustc
+       ];
        buildInputs = [
          cargo
          openssl
