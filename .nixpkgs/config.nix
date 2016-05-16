@@ -69,6 +69,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         gnutar
         graphviz
         gzip
+        htop
         jq
         keychain
         less
