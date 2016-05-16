@@ -50,6 +50,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         aspell
         aspellDicts.en
         bashInteractive
+        # bind # https://github.com/NixOS/nixpkgs/issues/15279
         # binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
         cacert
         coreutils
@@ -58,7 +59,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         dtach
         emacs
         emacs24PackagesNg-pdf-toolsHead
-        # emacsPackagesNg.melpaPackages.pdf-tools # unstable version (doesn't build epdfinfo binary)
         file
         findutils
         fping
