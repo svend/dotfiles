@@ -44,9 +44,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         # gitAndTools.hub
         # gitAndTools.gitAnnex
 
-        # # go fails with dyld: Library not loaded: /usr/lib/libenergytrace.dylib
-        # go
-
         aspell
         aspellDicts.en
         bashInteractive
@@ -62,14 +59,17 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         file
         findutils
         fping
+        git-crypt
         gitMinimal
         gnugrep
         gnupg21
         gnused
         gnutar
+        go
         graphviz
         gzip
         htop
+        imagemagick
         jq
         keychain
         less
@@ -81,6 +81,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         pandoc # This build is expensive (haskell)
         parallel
         pass
+        postgresql
         pwgen
         redis
         rsync
