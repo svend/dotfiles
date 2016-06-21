@@ -41,16 +41,16 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     userEnv = pkgs.buildEnv {
       name = "userEnv";
       paths = [
-        # gitAndTools.hub
         # gitAndTools.gitAnnex
 
         aspell
         aspellDicts.en
         bashInteractive
-        # bind # https://github.com/NixOS/nixpkgs/issues/15279
+        bind # https://github.com/NixOS/nixpkgs/issues/15279
         # binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
         cacert
         coreutils
+        gitAndTools.hub
         curl
         chruby
         dtach
