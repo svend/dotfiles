@@ -66,7 +66,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         gnused
         gnutar
         go
-        graphviz
+        # graphviz # builder for ‘/nix/store/h4bpl7ywz68azrzwyhymbnnm6s4g7rnw-gd-2.2.1.drv’ failed with exit code 2
         gzip
         htop
         imagemagick
@@ -76,7 +76,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         mr
         netcat
         nim
-        nix-prefetch-scripts
+        # nix-prefetch-scripts # builder for ‘/nix/store/5b0k2sj68rnijg608vjx06hyimi6f3m5-python2.7-dulwich-0.12.0.drv’ failed with exit code 1
         openssh
         pandoc # This build is expensive (haskell)
         parallel
