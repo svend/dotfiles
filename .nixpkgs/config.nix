@@ -46,7 +46,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         aspell
         aspellDicts.en
         bashInteractive
-        bind # https://github.com/NixOS/nixpkgs/issues/15279
+        bind
         # binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
         cacert
         coreutils
@@ -132,7 +132,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     linuxEnv = pkgs.buildEnv {
       name = "linuxEnv";
       paths = [
-        bind # failing on darwin
         chromium
         firefox
         gitAndTools.gitAnnex
