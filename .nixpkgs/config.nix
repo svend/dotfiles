@@ -66,7 +66,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         gnused
         gnutar
         go
-        # graphviz # builder for ‘/nix/store/h4bpl7ywz68azrzwyhymbnnm6s4g7rnw-gd-2.2.1.drv’ failed with exit code 2
+        # graphviz # https://github.com/NixOS/nixpkgs/pull/16119
         gzip
         htop
         imagemagick
