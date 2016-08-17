@@ -1,0 +1,5 @@
+# -*- mode: sh; -*-
+
+# This file exists to disable OS X session save/restore mechanism.
+#
+# See /etc/bashrc_Apple_Terminal
