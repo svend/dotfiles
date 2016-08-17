@@ -1,5 +1,0 @@
-# -*- mode: sh; -*-
-if [ -f "$HOME/.gpg-agent-info" ]; then
-  . "$HOME/.gpg-agent-info"
-  export SSH_AUTH_SOCK SSH_AGENT_PID
-fi
