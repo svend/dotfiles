@@ -66,17 +66,18 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         gnused
         gnutar
         go
-        graphviz # https://github.com/NixOS/nixpkgs/pull/16119
+        graphviz
         gzip
         htop
         imagemagick
         jq
         keychain
+        # ledger # Fails on boost: https://github.com/NixOS/nixpkgs/issues/17759
         less
         mr
         netcat
         nim
-        # nix-prefetch-scripts # builder for ‘/nix/store/7ab97a0vc332msl3kavhpcss245f0fv9-nano-2.6.3.drv’ failed with exit code 2
+        nix-prefetch-scripts
         openssh
         pandoc # This build is expensive (haskell)
         parallel
@@ -135,7 +136,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         chromium
         firefox
         gitAndTools.gitAnnex
-        ledger # boost is failing to build on darwin
+        ledger # https://github.com/NixOS/nixpkgs/issues/17759
         librecad
         xcape
         xlibs.xmodmap
