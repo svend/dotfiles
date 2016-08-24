@@ -3,9 +3,6 @@
 # The personal initialization file, executed for login shells.  Set environment
 # variables, terminal settings, and startup programs here.
 
-# Source .profile
-. ~/.profile
-
 # Source individual snippets
 USER_CONFIG_DIR=$HOME/.bash_profile.d
 if [ -d $USER_CONFIG_DIR ]; then
