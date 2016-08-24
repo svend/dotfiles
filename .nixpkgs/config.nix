@@ -74,6 +74,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         keychain
         # ledger # Fails on boost: https://github.com/NixOS/nixpkgs/issues/17759
         less
+        libvirt
         mr
         netcat
         nim
