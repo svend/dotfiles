@@ -2,4 +2,7 @@
 [ -d "$HOME/.cargo/bin" ] || return
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Waiting on rust-src support in rustup
+# https://github.com/rust-lang-nursery/rustup.rs/issues/37
 export RUST_SRC_PATH="$HOME/src/rust/src"
