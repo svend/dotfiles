@@ -41,8 +41,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     userEnv = pkgs.buildEnv {
       name = "userEnv";
       paths = [
-        # gitAndTools.gitAnnex
-
         aspell
         aspellDicts.en
         bashInteractive
@@ -50,7 +48,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         # binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
         cacert
         coreutils
-        gitAndTools.hub
         curl
         chruby
         dtach
@@ -65,7 +62,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         gnupg21
         gnused
         gnutar
-        go
         graphviz
         gzip
         htop
@@ -105,6 +101,8 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         python27Packages.pip
         python27Packages.virtualenv
         python35
+        # flycheck requires flake8 > 3.x, nixpkgs contains 2.5.4
+        # install flake8 via pip
         python35Packages.flake8
       ];
     };
