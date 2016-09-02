@@ -110,6 +110,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     rubyEnv = pkgs.buildEnv {
      name = "rubyEnv";
       paths = [
+        bundler
         ruby
       ];
     };
