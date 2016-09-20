@@ -29,7 +29,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
     };
 
-    emacs24PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs24PackagesNg.pdf-tools (oldAttrs : {
+    emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (oldAttrs : {
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
@@ -52,7 +52,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         chruby
         dtach
         emacs
-        emacs24PackagesNg-pdf-toolsHead
+        emacs25PackagesNg-pdf-toolsHead
         file
         findutils
         fping
