@@ -66,6 +66,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         gzip
         htop
         imagemagick
+        ipcalc
         jq
         keychain
         # ledger # Fails on boost: https://github.com/NixOS/nixpkgs/issues/17759
