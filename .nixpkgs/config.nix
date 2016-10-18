@@ -69,7 +69,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         ipcalc
         jq
         keychain
-        # ledger # Fails on boost: https://github.com/NixOS/nixpkgs/issues/17759
+        ledger
         less
         libvirt
         mr
@@ -137,7 +137,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         chromium
         firefox
         gitAndTools.gitAnnex
-        ledger # https://github.com/NixOS/nixpkgs/issues/17759
         librecad
         xcape
         xlibs.xmodmap
