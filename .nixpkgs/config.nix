@@ -33,8 +33,8 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
-        rev = "87690b7b568ae6145dfa4ffc9fc085b80ed039fa";
-        sha256 = "14h8vybd0lns92mxv045mfcllhq8fj509bvf7i9vr190mxgnxv3s";
+        rev = "249cece6cf0746924715990283cefe1d9b1ae093";
+        sha256 = "0l0p9s88b2bi3hdm7w5h3jbgrv8170yijq0d4h9lhijsymjzmg98";
       };
     });
 
