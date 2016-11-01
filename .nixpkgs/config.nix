@@ -83,6 +83,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         postgresql
         pwgen
         redis
+        ripgrep
         rsync
         stow
         time
