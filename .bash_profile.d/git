@@ -1,0 +1,6 @@
+# -*- mode: sh; -*-
+
+# Do not prompt for commit message for merges (required as git 1.7.10)
+# https://github.com/git/git/blob/be5a750939c212bc0781ffa04fabcfd2b2bd744e/Documentation/RelNotes/1.7.10.txt#L15
+export GIT_MERGE_AUTOEDIT
+GIT_MERGE_AUTOEDIT=no
