@@ -57,6 +57,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         findutils
         fping
         git-crypt
+        gitAndTools.hub
         gitMinimal
         gnugrep
         gnupg21
