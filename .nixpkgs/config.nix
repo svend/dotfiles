@@ -101,12 +101,10 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       name = "pythonEnv";
       paths = [
         python27Full
-        python27Packages.pip
+        # python27Packages.pip # conflicts with python3 pip
         python27Packages.virtualenv
         python35
-        # flycheck requires flake8 > 3.x, nixpkgs contains 2.5.4
-        # install flake8 via pip
-        python35Packages.flake8
+        python35Packages.flake8_3
       ];
     };
 
