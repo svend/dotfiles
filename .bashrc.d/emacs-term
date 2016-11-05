@@ -1,0 +1,4 @@
+# -*- mode: sh; -*-
+if [ "$TERM" = "dumb" ]; then
+  export PAGER=cat
+fi
