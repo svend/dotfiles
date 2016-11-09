@@ -74,7 +74,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         less
         libvirt
         mr
-        netcat
+        # netcat # builder for ‘/nix/store/ph3kjq0wf2jj8k8r6zz9xcc6fq1b3cg7-libbsd-0.8.2.drv’ failed with exit code 2
         nim
         nix-prefetch-scripts
         openssh
@@ -100,7 +100,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     pythonEnv = pkgs.buildEnv {
       name = "pythonEnv";
       paths = [
-        python27Full
+        python2Full
         # python27Packages.pip # conflicts with python3 pip
         python27Packages.flake8_3
         python27Packages.virtualenv
