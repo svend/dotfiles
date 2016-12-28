@@ -4,7 +4,3 @@
 export PATH="$HOME/.cargo/bin:$PATH"
 
 command -v rustc >/dev/null 2>&1 || return
-# Waiting on rust-src support in racer
-# https://github.com/phildawes/racer/issues/595
-RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-export RUST_SRC_PATH
