@@ -57,6 +57,9 @@
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
 
+[url "git@gist.github.com:"]
+	pushInsteadOf = https://gist.github.com/
+
 [url "ssh://git@git.zx2c4.com/"]
 	pushInsteadOf = http://git.zx2c4.com/
 
