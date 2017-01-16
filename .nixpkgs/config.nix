@@ -76,6 +76,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         libvirt
         mr
         # netcat # builder for ‘/nix/store/ph3kjq0wf2jj8k8r6zz9xcc6fq1b3cg7-libbsd-0.8.2.drv’ failed with exit code 2
+        netcat-gnu
         nim
         nix-prefetch-scripts
         openssh
