@@ -99,6 +99,18 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       ];
     };
 
+    goEnv = pkgs.buildEnv {
+      name = "goEnv";
+      paths = [
+        go
+        gocode
+        godef
+        # godoc
+        goimports
+        golint
+      ];
+    };
+
     pythonEnv = pkgs.buildEnv {
       name = "pythonEnv";
       paths = [
