@@ -115,10 +115,10 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       name = "pythonEnv";
       paths = [
         python2Full
-        # python27Packages.pip # conflicts with python3 pip
+        python27Packages.pip
         python27Packages.flake8
         python27Packages.virtualenv
-        python35
+        python36
       ];
     };
 
