@@ -45,6 +45,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         aspell
         aspellDicts.en
         bashInteractive
+        bash-completion
         bind
         # binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
         cacert
@@ -102,6 +103,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     goEnv = pkgs.buildEnv {
       name = "goEnv";
       paths = [
+        glide
         go
         gocode
         godef
@@ -119,6 +121,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         python27Packages.flake8
         python27Packages.virtualenv
         python36
+        python36Packages.pip
       ];
     };
 
