@@ -1,6 +1,10 @@
 # -*- mode: sh; -*-
 # Set prompt
 PS1='\h:\W '
+# Add kubernetes context to prompt
+if type -t kubectl; then
+  PS1="$PS1"'(k8s:$(kubectl config current-context)) '
+fi
 # Add git to the prompt
 if type -t __git_ps1 >/dev/null; then
   # These settings can be slow for large repositories
