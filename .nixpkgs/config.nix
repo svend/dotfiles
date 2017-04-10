@@ -107,7 +107,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         go
         gocode
         godef
-        # godoc
         goimports
         golint
       ];
