@@ -47,7 +47,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         bashInteractive
         bash-completion
         bind
-        # binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
+        binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
         cacert
         coreutils
         curl

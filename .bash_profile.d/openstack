@@ -1,5 +1,5 @@
 # -*- mode: sh; -*-
-[ -n "$SSL_CERT_FILE" ] || return
+[ -n "$NIX_SSL_CERT_FILE" ] || return
 
-OS_CACERT=$SSL_CERT_FILE
+OS_CACERT=$NIX_SSL_CERT_FILE
 export OS_CACERT
