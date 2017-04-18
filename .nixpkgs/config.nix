@@ -17,7 +17,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     #     ; # TODO: maybe liblzo but what would it be for here?
     # });
 
-    emacs = super.callPackage ~/src/nixpkgs.emacs-head/pkgs/applications/editors/emacs/head.nix {
+    emacsHead = super.callPackage ~/src/nixpkgs.emacs-head/pkgs/applications/editors/emacs/head.nix {
       # use override to enable additional features
       libXaw = xorg.libXaw;
       Xaw3d = null;
@@ -81,7 +81,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         nim
         nix-prefetch-scripts
         openssh
-        pandoc # This build is expensive (haskell)
+        pandoc
         parallel
         pass
         postgresql
@@ -89,6 +89,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         redis
         ripgrep
         rsync
+        sshuttle
         stow
         time
         tree
@@ -121,6 +122,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         python27Packages.virtualenv
         python36
         python36Packages.pip
+        python36Packages.pyyaml
       ];
     };
 
@@ -144,6 +146,14 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
          openssl
          rustc
        ];
+    };
+
+    kubernetesEnv = pkgs.buildEnv {
+        name = "kubernetesEnv";
+        paths = [
+          helm
+          kubernetes
+        ];
     };
 
     # Linux-specific packages
