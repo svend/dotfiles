@@ -16,7 +16,7 @@
 	# color.ui "auto" is  the default since Git 1.8.4.
 	#
 	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.8.4.txt#L178
-	ui = auto
+	ui = always
 
 [core]
 	# These are the defaults as of git v1.7.12.
