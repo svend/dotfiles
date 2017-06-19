@@ -75,6 +75,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         ledger
         less
         # libvirt # 2017-04-03 builder for ‘/nix/store/s844y53v7c4p3086yzfwjlmf4h01ms28-attr-2.4.47.drv’ failed with exit code 2
+        mercurial
         mr
         # netcat # builder for ‘/nix/store/ph3kjq0wf2jj8k8r6zz9xcc6fq1b3cg7-libbsd-0.8.2.drv’ failed with exit code 2
         netcat-gnu

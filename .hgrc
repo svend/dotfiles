@@ -1,0 +1,2 @@
+[web]
+cacerts = $NIX_SSL_CERT_FILE
