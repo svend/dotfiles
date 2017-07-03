@@ -88,6 +88,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         postgresql
         pwgen
         redis
+        restic
         ripgrep
         rsync
         sshuttle
