@@ -1,0 +1,6 @@
+# -*- mode: sh; -*-
+# ~/.bash_completion: This file is sourced by bash_completion
+
+for m in "$HOME/.bash_completion.d/"*; do
+  . "$m"
+done

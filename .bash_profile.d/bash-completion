@@ -1,7 +1,0 @@
-# -*- mode: sh; -*-
-# Load local bash_completion files
-if [ -n "$BASH_COMPLETION_COMPAT_DIR"  ]; then
-  for m in "$HOME/.bash_completion.d/"*; do
-    . "$m"
-  done
-fi
