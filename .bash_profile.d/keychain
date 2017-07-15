@@ -1,4 +1,4 @@
 # -*- mode: sh; -*-
 command -v keychain >/dev/null 2>&1 || return
 
-eval $(keychain --eval --agents ssh --quiet)
+eval $(keychain --eval --agents ssh --inherit any-once --quiet)
