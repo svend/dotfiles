@@ -8,11 +8,3 @@
 if [ -e "$HOME/.certs/ca-certificates.crt" ]; then
   export NIX_SSL_CERT_FILE="$HOME/.certs/ca-certificates.crt"
 fi
-
-# Enable bash-completion
-if [ -f "$HOME/.nix-profile/etc/profile.d/bash_completion.sh" ]; then
-  . "$HOME/.nix-profile/etc/profile.d/bash_completion.sh"
-  for m in "$HOME/.nix-profile/etc/bash_completion.d/"*; do
-    . "$m"
-  done
-fi
