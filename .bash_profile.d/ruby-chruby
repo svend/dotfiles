@@ -1,4 +1,0 @@
-# -*- mode: sh; -*-
-[ -f "$HOME/.nix-profile/share/chruby/chruby.sh" ] || return
-
-. "$HOME/.nix-profile/share/chruby/chruby.sh"
