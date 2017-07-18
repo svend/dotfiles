@@ -6,4 +6,4 @@ if [ "$(gpgconf --list-options gpg-agent | grep '^enable-ssh-support:' | cut -d 
   return
 fi
 
-eval $(keychain --eval --agents ssh --inherit any-once --quiet)
+eval $(keychain --eval --agents ssh --quiet)
