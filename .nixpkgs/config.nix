@@ -53,7 +53,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
         curl
         chruby
         dtach
-        emacs
+        emacsHead
         emacs25PackagesNg-pdf-toolsHead
         file
         findutils
