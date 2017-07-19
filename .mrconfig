@@ -6,7 +6,5 @@ checkout = git clone https://github.com/svend/dotfiles.git
 post_update = cd .. && stow -R dotfiles
 
 [src/nixpkgs]
-checkout = git clone https://github.com/nixpkgs/nixpkgs.git
+checkout = git clone -b nixpkgs.emacs-head https://github.com/svend/nixpkgs.git nixpkgs-unstable-wip
 
-[src/nixpkgs.emacs-head]
-checkout = git clone -b emacs-head https://github.com/svend/nixpkgs.git nixpkgs.emacs-head
