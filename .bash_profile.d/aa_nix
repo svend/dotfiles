@@ -5,6 +5,6 @@
 
 # Copy of $HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt with additional local
 # certs added
-if [ -e "$HOME/.certs/ca-certificates.crt" ]; then
-  export NIX_SSL_CERT_FILE="$HOME/.certs/ca-certificates.crt"
+if [ -e "$HOME/.certs/ca-bundle.crt" ]; then
+  export NIX_SSL_CERT_FILE="$HOME/.certs/ca-bundle.crt"
 fi
