@@ -1,4 +1,4 @@
-{ pkgs }: {
+{
 
 # system.replaceRuntimeDependencies = with pkgs.lib;
 #       [{original = pkgs.glibc; replacement = pkgs.stdenv.lib.overrideDerivation pkgs.glibc (oldAttr: { patches = oldAttr.patches ++
@@ -7,7 +7,7 @@
 #        });}
 #       ];
 
-packageOverrides = super: let self = super.pkgs; in with self; rec {
+  packageOverrides = super: let self = super.pkgs; in with self; rec {
     # cairo = super.cairo.overrideDerivation (oldAttrs : {
     #   propagatedBuildInputs =
     #     with xorg; [ libXext fontconfig expat freetype pixman zlib libpng libXrender ]
@@ -17,7 +17,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     #     ; # TODO: maybe liblzo but what would it be for here?
     # });
 
-    emacsHead = super.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
+    emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
       # use override to enable additional features
       libXaw = xorg.libXaw;
       Xaw3d = null;
@@ -27,9 +27,10 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       acl = null;
       gpm = null;
       inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
+      srcRepo = true;
     };
 
-    emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (oldAttrs : {
+    emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (attrs : {
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
