@@ -17,7 +17,7 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
     #     ; # TODO: maybe liblzo but what would it be for here?
     # });
 
-    emacsHead = super.callPackage ~/src/nixpkgs.emacs-head/pkgs/applications/editors/emacs/head.nix {
+    emacsHead = super.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
       # use override to enable additional features
       libXaw = xorg.libXaw;
       Xaw3d = null;
@@ -27,7 +27,6 @@ packageOverrides = super: let self = super.pkgs; in with self; rec {
       acl = null;
       gpm = null;
       inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
-      srcRepo = true;
     };
 
     emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (oldAttrs : {
