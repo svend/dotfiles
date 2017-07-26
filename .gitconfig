@@ -61,7 +61,7 @@
 	pushInsteadOf = https://gist.github.com/
 
 [url "ssh://git@git.zx2c4.com/"]
-	pushInsteadOf = http://git.zx2c4.com/
+	pushInsteadOf = https://git.zx2c4.com/
 
 [user]
 	name = Svend Sorensen
