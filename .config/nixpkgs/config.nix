@@ -109,6 +109,7 @@
         glide
         go
         gocode
+        godep
         godef
         goimports
         golint

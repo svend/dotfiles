@@ -59,6 +59,7 @@
             "simple_modifications": {
                 "left_command": "left_option",
                 "left_option": "left_command",
+                "print_screen": "right_command",
                 "right_command": "right_option",
                 "right_option": "right_command"
             },
