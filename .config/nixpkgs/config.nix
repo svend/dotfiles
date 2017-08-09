@@ -91,7 +91,7 @@
         restic
         ripgrep
         rsync
-        sshuttle
+        # sshuttle
         stow
         time
         tree
