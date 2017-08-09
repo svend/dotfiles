@@ -91,7 +91,7 @@
         restic
         ripgrep
         rsync
-        # sshuttle
+        # sshuttle # https://github.com/NixOS/nixpkgs/issues/27643
         stow
         time
         tree
