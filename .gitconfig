@@ -12,19 +12,6 @@
 [alias]
 	branches-by-date = for-each-ref --format='%(committerdate:short) %(refname:short) %(authorname)' --sort=-committerdate
 
-[color]
-	# color.ui "auto" is  the default since Git 1.8.4.
-	#
-	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.8.4.txt#L178
-	ui = auto
-
-[core]
-	# These are the defaults as of git v1.7.12.
-	#
-	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.12.txt#L21
-	attributesfile = ~/.config/git/attributes
-	excludesfile = ~/.config/git/ignore
-
 [github]
 	user = svend
 
