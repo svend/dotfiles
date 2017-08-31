@@ -82,7 +82,7 @@
         nim
         nix-prefetch-scripts
         openssh
-        pandoc
+        # pandoc
         parallel
         pass
         postgresql
