@@ -15,7 +15,7 @@ Channel fastmail
 Master :fastmail-remote:
 Slave :fastmail-local:
 Patterns *
-Sync Pull
+# Sync Both
 Create Slave
 Expunge Slave
 SyncState *
@@ -25,7 +25,7 @@ Host imap.gmail.com
 User svend@ciffer.net
 PassCmd "pass show imap.gmail.com"
 SSLType IMAPS
-PipelineDepth 1
+# PipelineDepth 1
 
 IMAPStore gmail-remote
 Account gmail
@@ -38,7 +38,7 @@ Channel gmail
 Master :gmail-remote:
 Slave :gmail-local:
 Patterns "[Gmail]/All Mail"
-Sync Pull
+# Sync Both
 Create Slave
 Expunge Slave
 SyncState *
