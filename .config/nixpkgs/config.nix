@@ -62,7 +62,7 @@
         gitAndTools.hub
         gitMinimal
         gnugrep
-        gnupg21
+        gnupg
         gnused
         gnutar
         graphviz
