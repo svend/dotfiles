@@ -15,9 +15,6 @@
 [github]
 	user = svend
 
-[gpg]
-	program = gpg2
-
 [hub]
 	protocol = https
 
