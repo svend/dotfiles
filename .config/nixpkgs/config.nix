@@ -34,8 +34,8 @@
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
-        rev = "3a32d2420cc40ed864215f75aae4f6d868dc1cd2";
-        sha256 = "15j8ll2rna5f0a4zq2bflbn888c6yp852i405qlcxcjvs3jalxcy";
+        rev = "dfa1355a2de2b8ba667ea8f94617c0092d979c97";
+        sha256 = "0r7gcr2vsm6v15d8yzlk9j6naq6xypfnd13jznrsdny9fvlhvivb";
       };
     });
 
