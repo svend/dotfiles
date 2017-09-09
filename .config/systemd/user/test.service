@@ -1,0 +1,9 @@
+[Unit]
+Description=Test service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'echo $PATH'
+
+[Install]
+WantedBy=multi-user.target

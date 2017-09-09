@@ -1,0 +1,13 @@
+[Unit]
+Description=Commit state of %i mail
+After=mbsync.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/.mail/%i
+ExecStart=%h/bin/git-autocommit
+ExecStartPre=%h/.nix-profile/bin/git pull
+ExecStartPost=%h/.nix-profile/bin/git push
+
+[Install]
+WantedBy=mbsync.service

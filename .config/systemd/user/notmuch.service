@@ -1,0 +1,10 @@
+[Unit]
+Description=Notmuch service
+Wants=mbsync.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env notmuch new
+
+[Install]
+WantedBy=multi-user.target

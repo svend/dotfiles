@@ -1,0 +1,10 @@
+[Unit]
+Description=mbsync service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.nix-profile/bin/mbsync --all --verbose
+ExecStartPost=%h/.nix-profile/bin/notmuch new
+
+[Install]
+WantedBy=multi-user.target

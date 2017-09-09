@@ -1,0 +1,13 @@
+[Unit]
+Description=GnuPG private key agent
+IgnoreOnIsolate=true
+
+[Service]
+Type=forking
+ExecStart=%h/.nix-profile/bin/gpg-agent --daemon
+# ExecStartPost=/bin/sh -c "xargs systemctl --user set-environment < %h/.gpg-agent-info"
+# ExecStopPost=$h/.nix-profile/bin/rm %h/.gpg-agent-info
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
