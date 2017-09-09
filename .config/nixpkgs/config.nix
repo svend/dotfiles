@@ -34,8 +34,8 @@
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
-        rev = "dfa1355a2de2b8ba667ea8f94617c0092d979c97";
-        sha256 = "0r7gcr2vsm6v15d8yzlk9j6naq6xypfnd13jznrsdny9fvlhvivb";
+        rev = "87d5b5794f5de02ac5a8c8aef2908db391a7a68c";
+        sha256 = "1jm7w46jwzia62sv02rhgl98pjgb4rki0rnpcj1g6hwrwzm50pwn";
       };
     });
 
@@ -47,7 +47,7 @@
         bashInteractive
         bash-completion
         bind
-        binutils # strings (this also installs an `ld`, which doesn't work with rubygems)
+        binutils
         cacert
         coreutils
         curl
@@ -74,15 +74,15 @@
         keychain
         ledger
         less
-        # libvirt # 2017-04-03 builder for ‘/nix/store/s844y53v7c4p3086yzfwjlmf4h01ms28-attr-2.4.47.drv’ failed with exit code 2
+        libvirt
         mercurial
         mr
-        # netcat # builder for ‘/nix/store/ph3kjq0wf2jj8k8r6zz9xcc6fq1b3cg7-libbsd-0.8.2.drv’ failed with exit code 2
+        # netcat # libbsd FTB 2 2017-09-08
         netcat-gnu
         nim
         nix-prefetch-scripts
         openssh
-        pandoc
+        # pandoc # haskell jailbreak-install FTB 2017-09-08
         parallel
         pass
         postgresql
@@ -99,7 +99,7 @@
         wget
         xz
         zookeeper
-        haskellPackages.ShellCheck
+        # haskellPackages.ShellCheck # haskell jailbreak-install FTB 2017-09-08
       ];
     };
 
