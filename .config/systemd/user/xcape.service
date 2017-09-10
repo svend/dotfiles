@@ -1,0 +1,12 @@
+[Unit]
+Description=xcape
+
+[Service]
+ExecStart=%h/.nix-profile/bin/xcape -e "Hyper_L=space"
+ExecStartPre=%h/.nix-profile/bin/xmodmap -e "keycode 65 = Hyper_L"
+ExecStartPre=%h/.nix-profile/bin/xmodmap -e "remove mod4 = Hyper_L"
+ExecStartPre=%h/.nix-profile/bin/xmodmap -e "add Control = Hyper_L"
+ExecStartPre=%h/.nix-profile/bin/xmodmap -e "keycode any = space"
+
+[Install]
+WantedBy=multi-user.target
