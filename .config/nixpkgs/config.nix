@@ -81,6 +81,7 @@
         netcat-gnu
         nim
         nix-prefetch-scripts
+        notmuch
         openssh
         # pandoc # haskell jailbreak-install FTB 2017-09-08
         parallel
@@ -164,7 +165,7 @@
       name = "linuxEnv";
       paths = [
         chromium
-        firefox
+        firefox-beta-bin
         gitAndTools.gitAnnex
         librecad
         xcape
