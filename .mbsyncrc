@@ -1,7 +1,7 @@
 IMAPAccount fastmail
 Host imap.fastmail.com
 User svend@svends.net
-PassCmd "pass show imap.fastmail.com"
+PassCmd "~/.nix-profile/bin/pass show imap.fastmail.com"
 SSLType IMAPS
 
 IMAPStore fastmail-remote
@@ -23,7 +23,7 @@ SyncState *
 IMAPAccount gmail
 Host imap.gmail.com
 User svend@ciffer.net
-PassCmd "pass show imap.gmail.com"
+PassCmd "~/.nix-profile/bin/pass show imap.gmail.com"
 SSLType IMAPS
 # PipelineDepth 1
 
