@@ -96,6 +96,7 @@
         stow
         time
         tree
+        unzip # Required for Emacs nov.el package
         watch
         wget
         xz
