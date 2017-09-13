@@ -10,4 +10,4 @@ ExecStartPre=%h/.nix-profile/bin/xmodmap -e "add Control = Hyper_L"
 ExecStartPre=%h/.nix-profile/bin/xmodmap -e "keycode any = space"
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
