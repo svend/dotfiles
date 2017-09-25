@@ -34,8 +34,8 @@
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
-        rev = "87d5b5794f5de02ac5a8c8aef2908db391a7a68c";
-        sha256 = "1jm7w46jwzia62sv02rhgl98pjgb4rki0rnpcj1g6hwrwzm50pwn";
+        rev = "52acd65c0db97a83e3f86ca97f9a3bf27135e8f3";
+        sha256 = "19d5nmy7kdlysxzig2akbxvg9h1vnjagp4xh1qpyw8iqgm3kpxxn";
       };
     });
 
@@ -77,13 +77,13 @@
         libvirt
         mercurial
         mr
-        # netcat # libbsd FTB 2 2017-09-08
+        # netcat # libbsd FTB 2017-09-08
         netcat-gnu
         nim
         nix-prefetch-scripts
         notmuch
         openssh
-        # pandoc # haskell jailbreak-install FTB 2017-09-08
+        # pandoc # FTB 2017-09-22
         parallel
         pass
         postgresql
@@ -101,7 +101,7 @@
         wget
         xz
         zookeeper
-        # haskellPackages.ShellCheck # haskell jailbreak-install FTB 2017-09-08
+        haskellPackages.ShellCheck
       ];
     };
 
