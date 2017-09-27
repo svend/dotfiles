@@ -7,4 +7,4 @@ OnUnitActiveSec=10min
 Unit=mbsync.service
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target
