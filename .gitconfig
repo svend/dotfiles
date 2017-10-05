@@ -12,6 +12,10 @@
 [alias]
 	branches-by-date = for-each-ref --format='%(committerdate:short) %(refname:short) %(authorname)' --sort=-committerdate
 
+# Omit a/b prefix so that find-file-at-point works
+[diff]
+	noprefix = true
+
 [github]
 	user = svend
 
