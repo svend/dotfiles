@@ -32,14 +32,14 @@
       srcRepo = true;
     };
 
-    # emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (attrs : {
-    #   src = fetchFromGitHub {
-    #     owner = "politza";
-    #     repo = "pdf-tools";
-    #     rev = "52acd65c0db97a83e3f86ca97f9a3bf27135e8f3";
-    #     sha256 = "19d5nmy7kdlysxzig2akbxvg9h1vnjagp4xh1qpyw8iqgm3kpxxn";
-    #   };
-    # });
+    emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (attrs : {
+      src = fetchFromGitHub {
+        owner = "politza";
+        repo = "pdf-tools";
+        rev = "52acd65c0db97a83e3f86ca97f9a3bf27135e8f3";
+        sha256 = "19d5nmy7kdlysxzig2akbxvg9h1vnjagp4xh1qpyw8iqgm3kpxxn";
+      };
+    });
 
     userEnv = pkgs.buildEnv {
       name = "userEnv";
@@ -56,7 +56,7 @@
         chruby
         dtach
         emacsHead
-        # emacs25PackagesNg-pdf-toolsHead
+        emacs25PackagesNg-pdf-toolsHead
         file
         findutils
         fping
