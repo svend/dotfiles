@@ -1,11 +1,11 @@
 {
 
-# system.replaceRuntimeDependencies = with pkgs.lib;
-#       [{original = pkgs.glibc; replacement = pkgs.stdenv.lib.overrideDerivation pkgs.glibc (oldAttr: { patches = oldAttr.patches ++
-#         [(pkgs.fetchurl { url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/development/libraries/glibc/cve-2015-7547.patch";
-#                           sha256 = "0awpc4rp2x27rjpj83ps0rclmn73hsgfv2xxk18k82w4hdxqpp5r";})];
-#        });}
-#       ];
+  # system.replaceRuntimeDependencies = with pkgs.lib;
+  #       [{original = pkgs.glibc; replacement = pkgs.stdenv.lib.overrideDerivation pkgs.glibc (oldAttr: { patches = oldAttr.patches ++
+  #         [(pkgs.fetchurl { url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/development/libraries/glibc/cve-2015-7547.patch";
+  #                           sha256 = "0awpc4rp2x27rjpj83ps0rclmn73hsgfv2xxk18k82w4hdxqpp5r";})];
+  #        });}
+  #       ];
 
   packageOverrides = super: let self = super.pkgs; in with self; rec {
     # cairo = super.cairo.overrideDerivation (oldAttrs : {
@@ -17,6 +17,7 @@
     #     ; # TODO: maybe liblzo but what would it be for here?
     # });
 
+    # Copied from nixpkgs/pkgs/top-level/all-packages.nix (emacs25)
     emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
       # use override to enable additional features
       libXaw = xorg.libXaw;
@@ -27,7 +28,6 @@
       acl = null;
       gpm = null;
       inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
-      srcRepo = true;
     };
 
     emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (attrs : {
@@ -86,6 +86,7 @@
         # pandoc # FTB 2017-09-22
         parallel
         pass
+        plantuml
         postgresql
         pwgen
         redis
@@ -108,6 +109,7 @@
     goEnv = pkgs.buildEnv {
       name = "goEnv";
       paths = [
+        dep
         glide
         go
         gocode
@@ -132,7 +134,7 @@
     };
 
     rubyEnv = pkgs.buildEnv {
-     name = "rubyEnv";
+      name = "rubyEnv";
       paths = [
         bundler
         ruby
@@ -140,25 +142,25 @@
     };
 
     rustEnv = pkgs.buildEnv {
-     name = "rustEnv";
-       paths = [
-         cargo
-         openssl
-         rustc
-       ];
-       buildInputs = [
-         cargo
-         openssl
-         rustc
-       ];
+      name = "rustEnv";
+      paths = [
+        cargo
+        openssl
+        rustc
+      ];
+      buildInputs = [
+        cargo
+        openssl
+        rustc
+      ];
     };
 
     kubernetesEnv = pkgs.buildEnv {
-        name = "kubernetesEnv";
-        paths = [
-          helm
-          kubernetes
-        ];
+      name = "kubernetesEnv";
+      paths = [
+        helm
+        kubernetes
+      ];
     };
 
     # Linux-specific packages
