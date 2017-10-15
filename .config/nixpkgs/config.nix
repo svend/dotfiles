@@ -147,6 +147,7 @@
       ];
     };
 
+    # See https://github.com/NixOS/nixpkgs/issues/10597#issuecomment-313908853
     python3Env = pkgs.buildEnv {
       name = "python3Env";
       paths = [
@@ -161,17 +162,10 @@
             pip
             pytest
             pyyaml
+            virtualenv
           ];
         })
         ];
-    };
-
-    python3WithPkgs = python36Packages.python.buildEnv.override {
-      extraLibs = with python36Packages; [
-        python36Packages.pip
-        python36Packages.pyyaml
-        python36Packages.setuptools
-      ];
     };
 
     rubyEnv = pkgs.buildEnv {
