@@ -101,6 +101,7 @@
         tree
         unzip # Required for Emacs nov.el package
         watch
+        wrk # HTTP benchmarking tool
         wget
         xz
         zookeeper
@@ -125,13 +126,51 @@
     pythonEnv = pkgs.buildEnv {
       name = "pythonEnv";
       paths = [
+        python36
+        python36Packages.pip
+        python36Packages.pyyaml
         python27
         python27Packages.pip
         python27Packages.flake8
         python27Packages.virtualenv
-        python36
+      ];
+    };
+
+    # python2Env and python3Env don't install in parallel
+    python2Env = pkgs.buildEnv {
+      name = "python2Env";
+      paths = [
+        python27
+        python27Packages.pip
+        python27Packages.flake8
+        python27Packages.virtualenv
+      ];
+    };
+
+    python3Env = pkgs.buildEnv {
+      name = "python3Env";
+      paths = [
+        (with python36Packages; python.buildEnv.override {
+          extraLibs = [
+            setuptools
+            jedi
+            flake8
+            numpy
+            isort
+            yapf
+            pip
+            pytest
+            pyyaml
+          ];
+        })
+        ];
+    };
+
+    python3WithPkgs = python36Packages.python.buildEnv.override {
+      extraLibs = with python36Packages; [
         python36Packages.pip
         python36Packages.pyyaml
+        python36Packages.setuptools
       ];
     };
 
