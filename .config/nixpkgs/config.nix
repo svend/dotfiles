@@ -123,46 +123,20 @@
       ];
     };
 
+    # See https://github.com/NixOS/nixpkgs/issues/10597#issuecomment-313908853
     pythonEnv = pkgs.buildEnv {
       name = "pythonEnv";
       paths = [
-        python36
-        python36Packages.pip
-        python36Packages.pyyaml
-        python27
-        python27Packages.pip
-        python27Packages.flake8
-        python27Packages.virtualenv
-      ];
-    };
-
-    # python2Env and python3Env don't install in parallel
-    python2Env = pkgs.buildEnv {
-      name = "python2Env";
-      paths = [
-        python27
-        python27Packages.pip
-        python27Packages.flake8
-        python27Packages.virtualenv
-      ];
-    };
-
-    # See https://github.com/NixOS/nixpkgs/issues/10597#issuecomment-313908853
-    python3Env = pkgs.buildEnv {
-      name = "python3Env";
-      paths = [
+        (with python27Packages; python.buildEnv.override {
+          extraLibs = [
+            pip
+            virtualenv
+          ];
+        })
         (with python36Packages; python.buildEnv.override {
           extraLibs = [
-            setuptools
-            jedi
             flake8
-            numpy
-            isort
-            yapf
-            pip
-            pytest
             pyyaml
-            virtualenv
           ];
         })
         ];
