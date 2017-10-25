@@ -54,6 +54,7 @@
         coreutils
         curl
         chruby
+        direnv
         dtach
         emacsHead
         emacs25PackagesNg-pdf-toolsHead
