@@ -137,7 +137,10 @@
         (with python36Packages; python.buildEnv.override {
           extraLibs = [
             flake8
+            pip
             pyyaml
+            requests
+            xonsh
           ];
         })
         ];
