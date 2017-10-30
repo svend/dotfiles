@@ -41,11 +41,12 @@
       };
     });
 
+    my_aspell = aspellWithDicts(ps: with ps; [ en ]);
+
     userEnv = pkgs.buildEnv {
       name = "userEnv";
       paths = [
-        aspell
-        aspellDicts.en
+        my_aspell
         bashInteractive
         bash-completion
         bind
