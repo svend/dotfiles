@@ -1,13 +1,5 @@
 {
-
-  # system.replaceRuntimeDependencies = with pkgs.lib;
-  #       [{original = pkgs.glibc; replacement = pkgs.stdenv.lib.overrideDerivation pkgs.glibc (oldAttr: { patches = oldAttr.patches ++
-  #         [(pkgs.fetchurl { url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/development/libraries/glibc/cve-2015-7547.patch";
-  #                           sha256 = "0awpc4rp2x27rjpj83ps0rclmn73hsgfv2xxk18k82w4hdxqpp5r";})];
-  #        });}
-  #       ];
-
-  packageOverrides = super: let self = super.pkgs; in with self; rec {
+  packageOverrides = pkgs: with pkgs; rec {
     # cairo = super.cairo.overrideDerivation (oldAttrs : {
     #   propagatedBuildInputs =
     #     with xorg; [ libXext fontconfig expat freetype pixman zlib libpng libXrender ]
@@ -32,7 +24,7 @@
       srcRepo = true;
     };
 
-    emacs25PackagesNg-pdf-toolsHead = pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (attrs : {
+    emacs25PackagesNg-pdf-toolsHead = let emacs = emacsHead; in pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (attrs : {
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
@@ -40,6 +32,19 @@
         sha256 = "0g92rd68m1l377hw5rr1y14z7fcs1blmyc6vi5a9gybr19bcxb7w";
       };
     });
+
+    emacsEnv = let customEmacsPackages =
+      emacsPackagesNg.overrideScope (super: self: {
+      # use a custom version of emacs
+      emacs = emacsHead;
+    });
+  in customEmacsPackages.emacsWithPackages (epkgs:
+      (with epkgs.melpaStablePackages; [
+        magit
+      ]) ++
+      (with epkgs.melpaPackages; []) ++
+      (with epkgs.elpaPackages; []) ++
+      [emacs25PackagesNg-pdf-toolsHead]);
 
     my_aspell = aspellWithDicts(ps: with ps; [ en ]);
 
@@ -57,8 +62,6 @@
         chruby
         direnv
         dtach
-        emacsHead
-        emacs25PackagesNg-pdf-toolsHead
         file
         findutils
         fping
@@ -78,7 +81,7 @@
         keychain
         ledger
         less
-        libvirt
+        # libvirt # 2017-10-27
         mercurial
         mr
         # netcat # libbsd FTB 2017-09-08
@@ -92,6 +95,7 @@
         pass
         plantuml
         postgresql
+        python36Packages.piep
         pwgen
         redis
         restic
@@ -135,7 +139,7 @@
             virtualenv
           ];
         })
-        (with python36Packages; python.buildEnv.override {
+          (with python36Packages; python.buildEnv.override {
           extraLibs = [
             flake8
             pip
@@ -145,6 +149,14 @@
           ];
         })
         ];
+    };
+
+    clojureEnv = pkgs.buildEnv {
+      name = "clojureEnv";
+      paths = [
+        clojure
+        leiningen
+      ];
     };
 
     rubyEnv = pkgs.buildEnv {
