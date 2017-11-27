@@ -77,6 +77,7 @@ in {
         chruby
         direnv
         dtach
+        # emacs25PackagesNg-pdf-toolsHead # Collision with emacsEnv
         file
         findutils
         fping
@@ -161,7 +162,7 @@ in {
             pip
             pyyaml
             requests
-            xonsh
+            # xonsh
           ];
         })
         ];
