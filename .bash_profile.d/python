@@ -4,3 +4,6 @@ command -v python >/dev/null 2>&1 || return
 # Add user python dir to path
 PATH=$(python -E -m site --user-base)/bin:$PATH
 export PATH
+
+# Add python startup file
+export PYTHONSTARTUP=$HOME/.python-startup.py

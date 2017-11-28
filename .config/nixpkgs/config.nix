@@ -165,6 +165,7 @@ in {
             # xonsh
           ];
         })
+        pipenv
         ];
     };
 
