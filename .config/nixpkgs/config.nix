@@ -1,18 +1,18 @@
 { pkgs }: let
-    # Copied from nixpkgs/pkgs/top-level/all-packages.nix (emacs25)
-    emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
-      # use override to enable additional features
-      libXaw = pkgs.xorg.libXaw;
-      Xaw3d = null;
-      gconf = null;
-      alsaLib = null;
-      imagemagick = null;
-      acl = null;
-      gpm = null;
-      inherit (pkgs.darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
-      # Autoconf, etc
-      srcRepo = true;
-    };
+  # Copied from nixpkgs/pkgs/top-level/all-packages.nix (emacs25)
+  emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
+  # use override to enable additional features
+  libXaw = pkgs.xorg.libXaw;
+  Xaw3d = null;
+  gconf = null;
+  alsaLib = null;
+  imagemagick = null;
+  acl = null;
+  gpm = null;
+  inherit (pkgs.darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
+  # Autoconf, etc
+  srcRepo = true;
+};
 in {
   packageOverrides = pkgs: with pkgs; rec {
     # cairo = super.cairo.overrideDerivation (oldAttrs : {
@@ -105,6 +105,7 @@ in {
         nim
         nix-prefetch-scripts
         notmuch
+        openssl
         openssh
         # pandoc # FTB 2017-09-22
         parallel
