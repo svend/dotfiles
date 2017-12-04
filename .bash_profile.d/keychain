@@ -3,7 +3,10 @@ command -v keychain >/dev/null 2>&1 || return
 
 # Do not start keychain if gpg is configured with ssh-support
 if [ "$(gpgconf --list-options gpg-agent | grep '^enable-ssh-support:' | cut -d : -f 10)" = "1" ]; then
-  return
+         if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+           export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+         fi
+	return
 fi
 
 eval $(keychain --eval --agents ssh --quiet)
