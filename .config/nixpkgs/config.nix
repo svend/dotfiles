@@ -1,28 +1,12 @@
-{ pkgs }: let
-  # Copied from nixpkgs/pkgs/top-level/all-packages.nix (emacs25)
-  emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
-  # use override to enable additional features
-  libXaw = pkgs.xorg.libXaw;
-  Xaw3d = null;
-  gconf = null;
-  alsaLib = null;
-  imagemagick = null;
-  acl = null;
-  gpm = null;
-  inherit (pkgs.darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
-  # Autoconf, etc
-  srcRepo = true;
-};
-in {
-  packageOverrides = pkgs: with pkgs; rec {
-    # cairo = super.cairo.overrideDerivation (oldAttrs : {
-    #   propagatedBuildInputs =
-    #     with xorg; [ libXext fontconfig expat freetype pixman zlib libpng libXrender ]
-    #     ++ stdenv.lib.optional stdenv.lib.optionals xcbSupport [ libxcb xcbutil ]
-    #     ++ stdenv.lib.optional gobjectSupport glib
-    #     ++ stdenv.lib.optional glSupport mesa_noglu
-    #     ; # TODO: maybe liblzo but what would it be for here?
-    # });
+{ packageOverrides = pkgs: with pkgs; rec {
+    xonsh = pkgs.xonsh.overrideAttrs (oldAttrs: rec {
+      propagatedBuildInputs = with python3Packages; [
+        ply
+        prompt_toolkit
+        pyyaml
+        requests
+      ];
+    });
 
     # Copied from nixpkgs/pkgs/top-level/all-packages.nix (emacs25)
     emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
@@ -112,7 +96,7 @@ in {
         pass
         plantuml
         postgresql
-        python36Packages.piep
+        python3Packages.piep
         pwgen
         redis
         restic
@@ -153,20 +137,19 @@ in {
         (with python27Packages; python.buildEnv.override {
           extraLibs = [
             pip
-            openssl
             virtualenv
           ];
         })
-          (with python36Packages; python.buildEnv.override {
+          (with python3Packages; python.buildEnv.override {
           extraLibs = [
             flake8
             pip
             pyyaml
             requests
-            # xonsh
           ];
         })
-        pipenv
+          xonsh
+          pipenv
         ];
     };
 
