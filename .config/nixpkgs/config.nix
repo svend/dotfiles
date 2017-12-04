@@ -17,14 +17,14 @@
     #   srcRepo = true;
     # };
 
-    emacs25PackagesNg-pdf-toolsHead = pkgs.emacs25PackagesNg.pdf-tools.overrideAttrs (oldAttrs: rec {
-      src = fetchFromGitHub {
-        owner = "politza";
-        repo = "pdf-tools";
-        rev = "094b2931de775c734ad353c5d06cf5fc6a55f11d";
-        sha256 = "0g92rd68m1l377hw5rr1y14z7fcs1blmyc6vi5a9gybr19bcxb7w";
-      };
-    });
+    # emacs25PackagesNg-pdf-toolsHead = pkgs.emacs25PackagesNg.pdf-tools.overrideAttrs (oldAttrs: rec {
+    #   src = fetchFromGitHub {
+    #     owner = "politza";
+    #     repo = "pdf-tools";
+    #     rev = "094b2931de775c734ad353c5d06cf5fc6a55f11d";
+    #     sha256 = "0g92rd68m1l377hw5rr1y14z7fcs1blmyc6vi5a9gybr19bcxb7w";
+    #   };
+    # });
 
     emacsHead = (pkgs.emacs.override {
       srcRepo = true;
@@ -55,9 +55,11 @@
       (with epkgs.melpaStablePackages; [
         magit
       ]) ++
-      (with epkgs.melpaPackages; []) ++
-      (with epkgs.elpaPackages; []) ++
-      [emacs25PackagesNg-pdf-toolsHead]);
+      (with epkgs.melpaPackages; [
+      pdf-tools
+    ]) ++
+    (with epkgs.elpaPackages; []) ++
+    []);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
       baseName = "xcape";
