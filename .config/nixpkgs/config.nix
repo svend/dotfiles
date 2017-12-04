@@ -1,35 +1,49 @@
-{ packageOverrides = pkgs: with pkgs; rec {
-    xonsh = pkgs.xonsh.overrideAttrs (oldAttrs: rec {
-      propagatedBuildInputs = with python3Packages; [
-        ply
-        prompt_toolkit
-        pyyaml
-        requests
-      ];
-    });
+{
+  packageOverrides = pkgs: with pkgs; rec {
+    my_aspell = aspellWithDicts(ps: with ps; [ en ]);
 
-    # Copied from nixpkgs/pkgs/top-level/all-packages.nix (emacs25)
-    emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
-      # use override to enable additional features
-      libXaw = xorg.libXaw;
-      Xaw3d = null;
-      gconf = null;
-      alsaLib = null;
-      imagemagick = null;
-      acl = null;
-      gpm = null;
-      inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
-      # Autoconf, etc
-      srcRepo = true;
-    };
+    # # Copied from nixpkgs/pkgs/top-level/all-packages.nix (emacs25)
+    # emacsHead = pkgs.callPackage ~/src/nixpkgs/pkgs/applications/editors/emacs/head.nix {
+    #   # use override to enable additional features
+    #   libXaw = xorg.libXaw;
+    #   Xaw3d = null;
+    #   gconf = null;
+    #   alsaLib = null;
+    #   imagemagick = null;
+    #   acl = null;
+    #   gpm = null;
+    #   inherit (darwin.apple_sdk.frameworks) AppKit CoreWLAN GSS Kerberos ImageIO;
+    #   # Autoconf, etc
+    #   srcRepo = true;
+    # };
 
-    emacs25PackagesNg-pdf-toolsHead = let emacs = emacsHead; in pkgs.stdenv.lib.overrideDerivation pkgs.emacs25PackagesNg.pdf-tools (attrs : {
+    emacs25PackagesNg-pdf-toolsHead = pkgs.emacs25PackagesNg.pdf-tools.overrideAttrs (oldAttrs: rec {
       src = fetchFromGitHub {
         owner = "politza";
         repo = "pdf-tools";
         rev = "094b2931de775c734ad353c5d06cf5fc6a55f11d";
         sha256 = "0g92rd68m1l377hw5rr1y14z7fcs1blmyc6vi5a9gybr19bcxb7w";
       };
+    });
+
+    emacsHead = (pkgs.emacs.override {
+      srcRepo = true;
+    }).overrideAttrs (oldAttrs: rec {
+      name = "emacs-${version}${versionModifier}";
+      version = "26.0";
+      versionModifier = "-git-${builtins.substring 0 7 srcRev}";
+
+      # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
+      srcRev = "8227087194e0817b984ce3b15099f5eae4dc011c";
+      srcSha = "0qj0rghgb62ngkvcbkm2dbha9l3z7gy7jjfghsj94la76hj3f5qd";
+
+      src = fetchgit {
+        url = "git://git.sv.gnu.org/emacs.git";
+        rev = srcRev;
+        sha256 = srcSha;
+      };
+
+      patches = lib.optional stdenv.isDarwin ./at-fdcwd.patch;
     });
 
     emacsEnv = let customEmacsPackages =
@@ -45,7 +59,19 @@
       (with epkgs.elpaPackages; []) ++
       [emacs25PackagesNg-pdf-toolsHead]);
 
-    my_aspell = aspellWithDicts(ps: with ps; [ en ]);
+    xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
+      rev = "6ded5b453b50642197044a170402664cbf6d2c96";
+      sha256 = "193dz9n3y5jchxnpzm2yyyhx30ncn2s8rfr3hhr18aldi0cv548k";
+    });
+
+    xonsh = pkgs.xonsh.overrideAttrs (oldAttrs: rec {
+      propagatedBuildInputs = with python3Packages; [
+        ply
+        prompt_toolkit
+        pyyaml
+        requests
+      ];
+    });
 
     userEnv = pkgs.buildEnv {
       name = "userEnv";
@@ -96,7 +122,6 @@
         pass
         plantuml
         postgresql
-        python3Packages.piep
         pwgen
         redis
         restic
