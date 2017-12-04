@@ -57,7 +57,7 @@
       ]) ++
       (with epkgs.melpaPackages; []) ++
     (with epkgs.elpaPackages; []) ++
-    [pkgs.emacs25PackagesNg.pdf-tools]);
+    [emacs25PackagesNg.pdf-tools]);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
       baseName = "xcape";
