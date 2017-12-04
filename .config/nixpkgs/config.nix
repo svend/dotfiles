@@ -43,10 +43,10 @@
         sha256 = srcSha;
       };
 
-      patches = lib.optional stdenv.isDarwin ./at-fdcwd.patch;
+      patches = []; #lib.optional stdenv.isDarwin ./at-fdcwd.patch;
     });
 
-    emacsEnv = let customEmacsPackages =
+    my_emacs = let customEmacsPackages =
       emacsPackagesNg.overrideScope (super: self: {
       # use a custom version of emacs
       emacs = emacsHead;
@@ -92,7 +92,7 @@
         chruby
         direnv
         dtach
-        # emacs25PackagesNg-pdf-toolsHead # Collision with emacsEnv
+        my_emacs
         file
         findutils
         fping
@@ -178,7 +178,7 @@
             requests
           ];
         })
-          xonsh
+          # xonsh
           pipenv
         ];
     };
@@ -203,12 +203,10 @@
       name = "rustEnv";
       paths = [
         cargo
-        openssl
         rustc
       ];
       buildInputs = [
         cargo
-        openssl
         rustc
       ];
     };
