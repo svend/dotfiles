@@ -55,11 +55,9 @@
       (with epkgs.melpaStablePackages; [
         magit
       ]) ++
-      (with epkgs.melpaPackages; [
-      pdf-tools
-    ]) ++
+      (with epkgs.melpaPackages; []) ++
     (with epkgs.elpaPackages; []) ++
-    []);
+    [pkgs.emacs25PackagesNg.pdf-tools]);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
       baseName = "xcape";
