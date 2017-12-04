@@ -60,8 +60,13 @@
       [emacs25PackagesNg-pdf-toolsHead]);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
-      rev = "6ded5b453b50642197044a170402664cbf6d2c96";
-      sha256 = "193dz9n3y5jchxnpzm2yyyhx30ncn2s8rfr3hhr18aldi0cv548k";
+      baseName = "xcape";
+      src = fetchFromGitHub {
+        owner = "alols";
+        repo = baseName;
+        rev = "6ded5b453b50642197044a170402664cbf6d2c96";
+        sha256 = "193dz9n3y5jchxnpzm2yyyhx30ncn2s8rfr3hhr18aldi0cv548k";
+      };
     });
 
     xonsh = pkgs.xonsh.overrideAttrs (oldAttrs: rec {
