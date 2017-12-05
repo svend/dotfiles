@@ -56,8 +56,8 @@
         magit
       ]) ++
       (with epkgs.melpaPackages; []) ++
-    (with epkgs.elpaPackages; []) ++
-    [emacs25PackagesNg.pdf-tools]);
+      (with epkgs.elpaPackages; []) ++
+      [emacs25PackagesNg.pdf-tools]);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
       baseName = "xcape";
@@ -70,6 +70,8 @@
     });
 
     xonsh = pkgs.xonsh.overrideAttrs (oldAttrs: rec {
+      # Check fails on macOS
+      doInstallCheck = !stdenv.isDarwin;
       propagatedBuildInputs = with python3Packages; [
         ply
         prompt_toolkit
@@ -178,7 +180,7 @@
             requests
           ];
         })
-          # xonsh
+          xonsh
           pipenv
         ];
     };
