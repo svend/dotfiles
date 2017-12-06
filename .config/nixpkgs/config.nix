@@ -53,11 +53,61 @@
     });
   in customEmacsPackages.emacsWithPackages (epkgs:
       (with epkgs.melpaStablePackages; [
+        ace-link
+        aggressive-indent
+        bash-completion
+        cider
+        company
+        company-jedi
+        exec-path-from-shell
+        flycheck
+        ivy
         magit
+        nix-mode
+        projectile
+        racer
+        robe
+        smartparens
+        super-save
+        use-package
+        visual-fill-column
+        yasnippet
+
+        clojure-mode
+        dockerfile-mode
+        gitconfig-mode
+        gitignore-mode
+        go-mode
+        groovy-mode
+        haskell-mode
+        json-mode
+        ledger-mode
+        lua-mode
+        markdown-mode
+        nginx-mode
+        nim-mode
+        nix-mode
+        plantuml-mode
+        rust-mode
+        scala-mode
+        terraform-mode
+        yaml-mode
       ]) ++
-      (with epkgs.melpaPackages; []) ++
-      (with epkgs.elpaPackages; []) ++
-      [emacs25PackagesNg.pdf-tools]);
+      (with epkgs.melpaPackages; [
+      amx
+      flycheck-rust
+      ibuffer-tramp
+      ob-go
+      # ob-scala
+      ob-rust
+      tango-plus-theme
+
+      toml-mode
+    ]) ++
+    (with epkgs.elpaPackages; [
+    csv-mode
+  ]) ++
+  [emacs25PackagesNg.pdf-tools]);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
       baseName = "xcape";
