@@ -54,6 +54,7 @@
   in customEmacsPackages.emacsWithPackages (epkgs:
       (with epkgs.melpaStablePackages; [
         ace-link
+        ace-window
         aggressive-indent
         bash-completion
         cider
@@ -100,6 +101,7 @@
       ob-go
       # ob-scala
       ob-rust
+      password-store
       tango-plus-theme
 
       toml-mode
