@@ -60,8 +60,10 @@
         cider
         company
         company-jedi
+        counsel
         exec-path-from-shell
         flycheck
+        hydra
         ivy
         magit
         nix-mode
