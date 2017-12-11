@@ -85,11 +85,11 @@
 
       nix-mode
       toml-mode
-      ]) ++
-      (with epkgs.elpaPackages; [
-        csv-mode
-      ]) ++
-      [emacs25PackagesNg.pdf-tools]);
+    ]) ++
+    (with epkgs.elpaPackages; [
+    csv-mode
+  ]) ++
+  [emacs25PackagesNg.pdf-tools]);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
       baseName = "xcape";
