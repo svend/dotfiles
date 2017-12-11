@@ -42,7 +42,7 @@
         hydra
         ivy
         magit
-        nix-mode
+        nov
         projectile
         racer
         robe
@@ -65,7 +65,6 @@
         markdown-mode
         nginx-mode
         nim-mode
-        nix-mode
         plantuml-mode
         rust-mode
         scala-mode
@@ -73,22 +72,23 @@
         yaml-mode
       ]) ++
       (with epkgs.melpaPackages; [
-      amx
-      flycheck-rust
-      ibuffer-tramp
-      ob-go
-      # ob-scala
-      ob-rust
-      password-store
-      tao-theme
-      tango-plus-theme
+        amx
+        flycheck-rust
+        ibuffer-tramp
+        ob-go
+        # ob-scala
+        ob-rust
+        password-store
+        tao-theme
+        tango-plus-theme
 
-      toml-mode
-    ]) ++
-    (with epkgs.elpaPackages; [
-    csv-mode
-  ]) ++
-  [emacs25PackagesNg.pdf-tools]);
+        nix-mode
+        toml-mode
+      ]) ++
+      (with epkgs.elpaPackages; [
+        csv-mode
+      ]) ++
+      [emacs25PackagesNg.pdf-tools]);
 
     xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
       baseName = "xcape";
