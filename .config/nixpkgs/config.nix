@@ -80,41 +80,19 @@
       # ob-scala
       ob-rust
       password-store
-      # zoom-frm
-
-      # Themes
-      tao-theme
-      tango-plus-theme
-
-      # Modes
-      toml-mode
-    ]) ++
-    (with epkgs.elpaPackages; [
-    csv-mode
-  ]) ++
-  [emacs25PackagesNg.pdf-tools]);
-    =======
-      amx
-      flycheck-rust
-      ibuffer-tramp
-      ob-go
-      # ob-scala
-      ob-rust
-      password-store
       tao-theme
       tango-plus-theme
 
       nix-mode
       toml-mode
-    ]) ++
-    (with epkgs.elpaPackages; [
-    csv-mode
-  ]) ++
-  [emacs25PackagesNg.pdf-tools]);
->>>>>>> b299661d57939399b335d5c74d3462c37168dc56
+      ]) ++
+      (with epkgs.elpaPackages; [
+        csv-mode
+      ]) ++
+      [emacs25PackagesNg.pdf-tools]);
 
-  xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
-  baseName = "xcape";
+    xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
+      baseName = "xcape";
       src = fetchFromGitHub {
         owner = "alols";
         repo = baseName;
