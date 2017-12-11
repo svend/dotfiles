@@ -52,6 +52,7 @@
         visual-fill-column
         yasnippet
 
+        # Modes
         clojure-mode
         dockerfile-mode
         gitconfig-mode
@@ -80,9 +81,13 @@
       # ob-scala
       ob-rust
       password-store
+      # zoom-frm
+
+      # Themes
       tao-theme
       tango-plus-theme
 
+      # Modes
       toml-mode
     ]) ++
     (with epkgs.elpaPackages; [
