@@ -37,6 +37,7 @@
         company-jedi
         counsel
         exec-path-from-shell
+        expand-region
         flycheck
         hydra
         ivy
