@@ -32,7 +32,6 @@
         ace-link
         ace-window
         aggressive-indent
-        bash-completion
         cider
         company
         company-jedi
@@ -58,7 +57,6 @@
         gitconfig-mode
         gitignore-mode
         go-mode
-        groovy-mode
         haskell-mode
         json-mode
         ledger-mode
@@ -74,6 +72,8 @@
       ]) ++
       (with epkgs.melpaPackages; [
       amx
+      bash-completion
+      bpr
       flycheck-rust
       ibuffer-tramp
       ob-go
@@ -83,6 +83,7 @@
       tao-theme
       tango-plus-theme
 
+      groovy-mode
       nix-mode
       toml-mode
     ]) ++
