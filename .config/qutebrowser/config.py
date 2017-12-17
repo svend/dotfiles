@@ -18,7 +18,7 @@
 
 ## Always restore open sites when qutebrowser is reopened.
 ## Type: Bool
-# c.auto_save.session = False
+c.auto_save.session = True
 
 ## The backend to use to display websites. qutebrowser supports two
 ## different web rendering engines / backends, QtWebKit and QtWebEngine.
@@ -709,7 +709,6 @@
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-# c.editor.command = ['gvim', '-f', '{}']
 c.editor.command = ['sh', '-c', '~/.nix-profile/bin/emacsclient "{}"']
 
 ## Encoding to use for the editor.
@@ -906,7 +905,7 @@ c.fonts.tabs = '10pt monospace'
 ## Automatically enter insert mode if an editable element is focused
 ## after loading the page.
 ## Type: Bool
-# c.input.insert_mode.auto_load = False
+c.input.insert_mode.auto_load = True
 
 ## Switch to insert mode when clicking flash and other plugins.
 ## Type: Bool
@@ -920,7 +919,7 @@ c.fonts.tabs = '10pt monospace'
 ## current input forms only partial matches, the keystring will be
 ## cleared after this time.
 ## Type: Int
-# c.input.partial_timeout = 5000
+c.input.partial_timeout = 10000
 
 ## Enable Opera-like mouse rocker gestures. This disables the context
 ## menu.
@@ -1298,6 +1297,7 @@ c.fonts.tabs = '10pt monospace'
 # config.bind('-', 'zoom-out')
 # config.bind('.', 'repeat-command')
 # config.bind('/', 'set-cmd-text /')
+config.bind('<Ctrl-S>', 'set-cmd-text /')
 # config.bind(':', 'set-cmd-text :')
 # config.bind(';I', 'hint images tab')
 # config.bind(';O', 'hint links fill :open -t -r {hint-url}')
@@ -1358,6 +1358,7 @@ c.fonts.tabs = '10pt monospace'
 # config.bind('D', 'tab-close -o')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
+config.bind('>', 'scroll-to-perc')
 # config.bind('H', 'back')
 # config.bind('J', 'tab-next')
 # config.bind('K', 'tab-prev')
@@ -1396,6 +1397,7 @@ c.fonts.tabs = '10pt monospace'
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
+config.bind('<', 'scroll-to-perc 0')
 # config.bind('gl', 'tab-move -')
 # config.bind('gm', 'tab-move')
 # config.bind('go', 'set-cmd-text :open {url:pretty}')
@@ -1504,6 +1506,8 @@ c.fonts.tabs = '10pt monospace'
 # config.bind('<Shift-Tab>', 'completion-item-focus prev', mode='command')
 # config.bind('<Tab>', 'completion-item-focus next', mode='command')
 # config.bind('<Up>', 'command-history-prev', mode='command')
+config.bind('<Alt-P>', 'completion-item-focus prev', mode='command')
+config.bind('<Alt-N>', 'completion-item-focus next', mode='command')
 
 ## Bindings for hint mode
 # config.bind('<Ctrl-B>', 'hint all tab-bg', mode='hint')
@@ -1544,6 +1548,8 @@ c.fonts.tabs = '10pt monospace'
 # config.bind('<Up>', 'prompt-item-focus prev', mode='prompt')
 # config.bind('n', 'prompt-accept no', mode='prompt')
 # config.bind('y', 'prompt-accept yes', mode='prompt')
+config.bind('<Alt-P>', 'prompt-item-focus prev', mode='prompt')
+config.bind('<Alt-N>', 'prompt-item-focus next', mode='prompt')
 
 ## Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
