@@ -263,6 +263,7 @@
         firefox-beta-bin
         gitAndTools.gitAnnex
         librecad
+        qutebrowser
         xcape
         xlibs.xmodmap
       ];
