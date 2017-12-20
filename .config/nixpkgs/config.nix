@@ -36,6 +36,7 @@
         company
         company-jedi
         counsel
+        edit-indirect
         exec-path-from-shell
         expand-region
         flycheck
