@@ -44,6 +44,10 @@ c.auto_save.session = True
 ## the mapping is ignored.
 ## Type: Dict
 # c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>', '<Shift-Return>': '<Return>', '<Enter>': '<Return>', '<Shift-Enter>': '<Return>', '<Ctrl-Enter>': '<Ctrl-Return>'}
+# c.bindings.key_mappings = {
+#     '<Ctrl-N>': 'fake-key <Down>',
+#     '<Ctrl-P>': 'fake-key <Up>'
+# }
 
 ## Background color of the completion widget category headers.
 ## Type: QssColor
@@ -1075,7 +1079,7 @@ c.scrolling.bar = True
 
 ## Padding for the statusbar.
 ## Type: Padding
-# c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
+c.statusbar.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 0}
 
 ## The position of the status bar.
 ## Type: VerticalPosition
@@ -1518,9 +1522,26 @@ config.bind('<Ctrl-N>', 'completion-item-focus next', mode='command')
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
 ## Bindings for insert mode
-# config.bind('<Ctrl-E>', 'open-editor', mode='insert')
+config.bind('<Meta-E>', 'open-editor', mode='insert')
+# config.bind('<Alt-E>', 'open-editor', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
+
+config.bind('<Ctrl-A>', 'fake-key <Home>', mode='insert')
+config.bind('<Ctrl-D>', 'fake-key <Delete>', mode='insert')
+config.bind('<Ctrl-B>', 'fake-key <Left>', mode='insert')
+config.bind('<Ctrl-E>', 'fake-key <End>', mode='insert')
+config.bind('<Ctrl-F>', 'fake-key <Right>', mode='insert')
+config.bind('<Ctrl-H>', 'fake-key <Backspace>', mode='insert')
+config.bind('<Ctrl-K>', 'fake-key <Shift-End> ;; fake-key <Delete>', mode='insert')
+config.bind('<Ctrl-N>', 'fake-key <Down>', mode='insert')
+config.bind('<Ctrl-P>', 'fake-key <Up>', mode='insert')
+config.bind('<Ctrl-W>', 'fake-key <Ctrl-backspace>', mode='insert')
+# config.bind('<Alt-B>', 'rl-backward-word', mode='insert')
+# config.bind('<Alt-Backspace>', 'rl-backward-kill-word', mode='insert')
+# config.bind('<Alt-D>', 'rl-kill-word', mode='insert')
+# config.bind('<Alt-F>', 'rl-forward-word', mode='insert')
+# config.bind('<Ctrl-Y>', 'rl-yank', mode='insert')
 
 ## Bindings for passthrough mode
 # config.bind('<Ctrl-V>', 'leave-mode', mode='passthrough')
