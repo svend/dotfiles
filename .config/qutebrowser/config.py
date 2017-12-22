@@ -3,6 +3,8 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+DEFAULT_FONT = '12pt monospace'
+
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
 # config.load_autoconfig()
@@ -717,39 +719,39 @@ c.editor.command = ['sh', '-c', '~/.nix-profile/bin/emacsclient "{}"']
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = 'bold 10pt monospace'
+c.fonts.completion.category = 'bold 12pt monospace'
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = '10pt monospace'
+c.fonts.completion.entry = DEFAULT_FONT
 
 ## Font used for the debugging console.
 ## Type: QtFont
-c.fonts.debug_console = '10pt monospace'
+c.fonts.debug_console = DEFAULT_FONT
 
 ## Font used for the downloadbar.
 ## Type: Font
-c.fonts.downloads = '10pt monospace'
+c.fonts.downloads = DEFAULT_FONT
 
 ## Font used for the hints.
 ## Type: Font
-# c.fonts.hints = 'bold 10pt monospace'
+# c.fonts.hints = 'bold 12pt monospace'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = '10pt monospace'
+c.fonts.keyhint = DEFAULT_FONT
 
 ## Font used for error messages.
 ## Type: Font
-c.fonts.messages.error = '10pt monospace'
+c.fonts.messages.error = DEFAULT_FONT
 
 ## Font used for info messages.
 ## Type: Font
-c.fonts.messages.info = '10pt monospace'
+c.fonts.messages.info = DEFAULT_FONT
 
 ## Font used for warning messages.
 ## Type: Font
-c.fonts.messages.warning = '10pt monospace'
+c.fonts.messages.warning = DEFAULT_FONT
 
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
@@ -758,15 +760,15 @@ c.fonts.messages.warning = '10pt monospace'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '10pt sans-serif'
+c.fonts.prompts = '12pt sans-serif'
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = '10pt monospace'
+c.fonts.statusbar = DEFAULT_FONT
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '10pt monospace'
+c.fonts.tabs = DEFAULT_FONT
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1006,7 +1008,7 @@ c.input.partial_timeout = 10000
 
 ## Show a scrollbar.
 ## Type: Bool
-# c.scrolling.bar = False
+c.scrolling.bar = True
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
@@ -1141,7 +1143,7 @@ c.input.partial_timeout = 10000
 
 ## Padding around text for tabs
 ## Type: Padding
-# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
+c.tabs.padding = {'top': 1, 'bottom': 1, 'left': 5, 'right': 5}
 
 ## The position of the tab bar.
 ## Type: Position
@@ -1248,7 +1250,7 @@ c.input.partial_timeout = 10000
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}'}
 
 ## The page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
@@ -1299,6 +1301,7 @@ c.input.partial_timeout = 10000
 # config.bind('/', 'set-cmd-text /')
 config.bind('<Ctrl-S>', 'set-cmd-text /')
 # config.bind(':', 'set-cmd-text :')
+config.bind('<Alt-x>', 'set-cmd-text :')
 # config.bind(';I', 'hint images tab')
 # config.bind(';O', 'hint links fill :open -t -r {hint-url}')
 # config.bind(';R', 'hint --rapid links window')
@@ -1339,7 +1342,7 @@ config.bind('<Ctrl-S>', 'set-cmd-text /')
 # config.bind('<Ctrl-Tab>', 'tab-focus last')
 # config.bind('<Ctrl-U>', 'scroll-page 0 -0.5')
 # config.bind('<Ctrl-V>', 'enter-mode passthrough')
-# config.bind('<Ctrl-W>', 'tab-close')
+config.unbind('<Ctrl-W>')
 # config.bind('<Ctrl-X>', 'navigate decrement')
 # config.bind('<Ctrl-^>', 'tab-focus last')
 # config.bind('<Ctrl-h>', 'home')
@@ -1352,7 +1355,7 @@ config.bind('<Ctrl-S>', 'set-cmd-text /')
 # config.bind('<back>', 'back')
 # config.bind('<forward>', 'forward')
 # config.bind('=', 'zoom')
-# config.bind('?', 'set-cmd-text ?')
+config.bind('<Ctrl-R>', 'set-cmd-text ?')
 # config.bind('@', 'run-macro')
 # config.bind('B', 'set-cmd-text -s :quickmark-load -t')
 # config.bind('D', 'tab-close -o')
@@ -1492,8 +1495,8 @@ config.bind('<', 'scroll-to-perc 0')
 # config.bind('<Ctrl-F>', 'rl-forward-char', mode='command')
 # config.bind('<Ctrl-H>', 'rl-backward-delete-char', mode='command')
 # config.bind('<Ctrl-K>', 'rl-kill-line', mode='command')
-# config.bind('<Ctrl-N>', 'command-history-next', mode='command')
-# config.bind('<Ctrl-P>', 'command-history-prev', mode='command')
+config.bind('<Alt-N>', 'command-history-next', mode='command')
+config.bind('<Alt-P>', 'command-history-prev', mode='command')
 # config.bind('<Ctrl-Shift-Tab>', 'completion-item-focus prev-category', mode='command')
 # config.bind('<Ctrl-Tab>', 'completion-item-focus next-category', mode='command')
 # config.bind('<Ctrl-U>', 'rl-unix-line-discard', mode='command')
@@ -1503,11 +1506,9 @@ config.bind('<', 'scroll-to-perc 0')
 # config.bind('<Escape>', 'leave-mode', mode='command')
 # config.bind('<Return>', 'command-accept', mode='command')
 # config.bind('<Shift-Delete>', 'completion-item-del', mode='command')
-# config.bind('<Shift-Tab>', 'completion-item-focus prev', mode='command')
-# config.bind('<Tab>', 'completion-item-focus next', mode='command')
+config.bind('<Ctrl-P>', 'completion-item-focus prev', mode='command')
+config.bind('<Ctrl-N>', 'completion-item-focus next', mode='command')
 # config.bind('<Up>', 'command-history-prev', mode='command')
-config.bind('<Alt-P>', 'completion-item-focus prev', mode='command')
-config.bind('<Alt-N>', 'completion-item-focus next', mode='command')
 
 ## Bindings for hint mode
 # config.bind('<Ctrl-B>', 'hint all tab-bg', mode='hint')
@@ -1548,8 +1549,6 @@ config.bind('<Alt-N>', 'completion-item-focus next', mode='command')
 # config.bind('<Up>', 'prompt-item-focus prev', mode='prompt')
 # config.bind('n', 'prompt-accept no', mode='prompt')
 # config.bind('y', 'prompt-accept yes', mode='prompt')
-config.bind('<Alt-P>', 'prompt-item-focus prev', mode='prompt')
-config.bind('<Alt-N>', 'prompt-item-focus next', mode='prompt')
 
 ## Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
