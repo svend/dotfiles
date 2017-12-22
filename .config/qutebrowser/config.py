@@ -1344,6 +1344,8 @@ config.bind('<Alt-x>', 'set-cmd-text :')
 # config.bind('<Ctrl-Shift-W>', 'close')
 # config.bind('<Ctrl-T>', 'open -t')
 # config.bind('<Ctrl-Tab>', 'tab-focus last')
+# https://github.com/qutebrowser/qutebrowser/issues/2142
+config.bind('<Ctrl-`>', 'tab-focus last')
 # config.bind('<Ctrl-U>', 'scroll-page 0 -0.5')
 # config.bind('<Ctrl-V>', 'enter-mode passthrough')
 config.unbind('<Ctrl-W>')
