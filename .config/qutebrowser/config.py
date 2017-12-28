@@ -49,10 +49,9 @@ c.auto_save.session = True
 ## the mapping is ignored.
 ## Type: Dict
 # c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>', '<Shift-Return>': '<Return>', '<Enter>': '<Return>', '<Shift-Enter>': '<Return>', '<Ctrl-Enter>': '<Ctrl-Return>'}
-# c.bindings.key_mappings = {
-#     '<Ctrl-N>': 'fake-key <Down>',
-#     '<Ctrl-P>': 'fake-key <Up>'
-# }
+c.bindings.key_mappings = {
+    '<Ctrl-G>': '<Escape>',
+}
 
 ## Background color of the completion widget category headers.
 ## Type: QssColor
@@ -1496,12 +1495,13 @@ config.bind('<', 'scroll-to-perc 0')
 ## Bindings for command mode
 # config.bind('<Alt-B>', 'rl-backward-word', mode='command')
 # config.bind('<Alt-Backspace>', 'rl-backward-kill-word', mode='command')
-# config.bind('<Alt-D>', 'rl-kill-word', mode='command')
+# config.bind('<Alt-d>', 'rl-kill-word', mode='command')
 # config.bind('<Alt-F>', 'rl-forward-word', mode='command')
 # config.bind('<Ctrl-?>', 'rl-delete-char', mode='command')
 # config.bind('<Ctrl-A>', 'rl-beginning-of-line', mode='command')
 # config.bind('<Ctrl-B>', 'rl-backward-char', mode='command')
-# config.bind('<Ctrl-D>', 'completion-item-del', mode='command')
+config.bind('<Ctrl-Shift-D>', 'completion-item-del', mode='command')
+config.bind('<Ctrl-D>', 'rl-delete-char', mode='command')
 # config.bind('<Ctrl-E>', 'rl-end-of-line', mode='command')
 # config.bind('<Ctrl-F>', 'rl-forward-char', mode='command')
 # config.bind('<Ctrl-H>', 'rl-backward-delete-char', mode='command')
