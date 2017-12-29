@@ -392,7 +392,7 @@ c.bindings.key_mappings = {
 ## Move on to the next part when there's only one possible completion
 ## left.
 ## Type: Bool
-# c.completion.quick = True
+c.completion.quick = False
 
 ## Padding of scrollbar handle in the completion window (in px).
 ## Type: Int
