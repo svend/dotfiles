@@ -43,6 +43,7 @@
         hydra
         ivy
         magit
+        notmuch
         nov
         projectile
         racer

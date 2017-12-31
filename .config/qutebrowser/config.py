@@ -915,7 +915,7 @@ c.fonts.tabs = DEFAULT_FONT
 ## Automatically enter insert mode if an editable element is focused
 ## after loading the page.
 ## Type: Bool
-c.input.insert_mode.auto_load = True
+# c.input.insert_mode.auto_load = False
 
 ## Switch to insert mode when clicking flash and other plugins.
 ## Type: Bool
