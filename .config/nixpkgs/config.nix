@@ -10,8 +10,8 @@
       versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
       # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
-      srcRev = "acd289c5a4d9679ec8051b330e7a8685d4fde20f";
-      srcSha = "1j155gmr6ys9c1w9a2875hm106lh5mshrpmjb9z6lr2jz7vdwmv5";
+      srcRev = "e25f961e37b063c10d7ffb3caa167ff61e816dcb";
+      srcSha = "0wn17fsgzl90dw4sg8584p6r90bh1b3qqr4xz0n9wm8mxva8yj0z";
 
       src = fetchgit {
         url = "git://git.sv.gnu.org/emacs.git";
@@ -130,6 +130,7 @@
         direnv
         dtach
         my_emacs
+        etcdctl
         file
         findutils
         fping
