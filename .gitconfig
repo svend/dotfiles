@@ -1,10 +1,5 @@
 # Git config file
 
-# Default git versions
-# lucid: 1.7.0
-# precise: 1.7.9.5
-# trusty: 1.9.1
-
 # This can be located in ~/.config/git/config as of v1.7.12.
 #
 # https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.12.txt#L18
@@ -30,14 +25,6 @@
 
 [pull]
 	ff = only
-
-[push]
-	# Push mode "simple" was introduced in v1.7.11 and made the default in
-	# v2.2.2.
-	#
-	# https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.11.txt#L9
-	# https://github.com/git/git/blob/master/Documentation/RelNotes/2.2.2.txt#L25
-	default = simple
 
 [tag]
 	sort = version:refname
