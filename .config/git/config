@@ -44,4 +44,4 @@
 
 # This include must come last
 [include]
-	path = ~/.gitconfig.local
+	path = config.local
