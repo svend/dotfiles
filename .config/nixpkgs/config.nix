@@ -10,8 +10,8 @@
       versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
       # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
-      srcRev = "e25f961e37b063c10d7ffb3caa167ff61e816dcb";
-      srcSha = "0wn17fsgzl90dw4sg8584p6r90bh1b3qqr4xz0n9wm8mxva8yj0z";
+      srcRev = "1fc98ed073a2d26ad941748ecb13aa6f47dd7b01";
+      srcSha = "1vvr9pc4hdrj087wy1h9hamw348v8m6q7i4jkfjp0dfrsyzivi2x";
 
       src = fetchgit {
         url = "git://git.sv.gnu.org/emacs.git";
