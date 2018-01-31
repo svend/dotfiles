@@ -79,6 +79,7 @@
       bpr
       flycheck-rust
       ibuffer-tramp
+      gnus-alias
       ob-go
       # ob-scala
       ob-rust
