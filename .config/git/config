@@ -5,8 +5,8 @@
 # https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.12.txt#L18
 
 [alias]
-	branches-by-date = branch --all --format='%(committerdate:short) %(refname:short) %(authorname)' --sort=-committerdate
-	tags-by-date = tag --format='%(creatordate:short) %(refname:short)'
+	branches-by-date = branch --format='%(creatordate:short) %(refname:short) %(authorname)' --sort=creatordate
+	tags-by-date = tag --format='%(creatordate:short) %(refname:short)' --sort=creatordate
 	# tags-by-date = tag --format='%(creatordate:iso8601) %(refname:short)'
 
 # Omit a/b prefix so that find-file-at-point works
