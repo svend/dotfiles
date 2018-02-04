@@ -5,3 +5,9 @@ export HISTCONTROL=ignorespace
 
 # Never truncate history file (This isn't working.)
 #unset HISTFILESIZE
+
+# Write history file after each command
+# if block taken from `direnv hook bash`
+if ! [[ "$PROMPT_COMMAND" =~ 'history -a' ]]; then
+  PROMPT_COMMAND="history -a;$PROMPT_COMMAND";
+fi
