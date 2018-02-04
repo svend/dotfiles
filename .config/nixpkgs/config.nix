@@ -61,6 +61,7 @@
         gitignore-mode
         go-mode
         haskell-mode
+        ibuffer-tramp
         json-mode
         ledger-mode
         lua-mode
@@ -78,7 +79,6 @@
       bash-completion
       bpr
       flycheck-rust
-      ibuffer-tramp
       gnus-alias
       ob-go
       # ob-scala
