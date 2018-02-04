@@ -87,6 +87,7 @@
       tao-theme
       tango-plus-theme
 
+      # Modes
       groovy-mode
       nix-mode
       toml-mode
