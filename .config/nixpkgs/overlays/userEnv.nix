@@ -1,8 +1,6 @@
 self: super:
 with super.pkgs;
 {
-    my_aspell = aspellWithDicts(ps: with ps; [ en ]);
-
     emacsHead = (pkgs.emacs.override {
       srcRepo = true;
     }).overrideAttrs (oldAttrs: rec {
