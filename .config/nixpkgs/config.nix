@@ -218,20 +218,6 @@
       ];
     };
 
-    goEnv = pkgs.buildEnv {
-      name = "goEnv";
-      paths = [
-        dep
-        glide
-        go
-        gocode
-        godep
-        godef
-        goimports
-        golint
-      ];
-    };
-
     # See https://github.com/NixOS/nixpkgs/issues/10597#issuecomment-313908853
     pythonEnv = pkgs.buildEnv {
       name = "pythonEnv";
@@ -304,17 +290,7 @@
         xlibs.xmodmap
       ];
     };
-
-    # Mac-specific packages
-    macEnv = pkgs.buildEnv {
-      name = "macEnv";
-      paths = [
-        terminal-notifier
-        pinentry_mac
-      ];
-    };
   };
-
   # Allow installation of broken packages to allow install on darwin platform
   allowBroken = true;
   allowUnfree = true;
