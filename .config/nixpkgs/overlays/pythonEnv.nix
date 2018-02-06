@@ -1,8 +1,7 @@
 self: super:
-with super.pkgs;
 {
   # See https://github.com/NixOS/nixpkgs/issues/10597#issuecomment-313908853
-  pythonEnv = pkgs.buildEnv {
+  pythonEnv = with super; buildEnv {
     name = "pythonEnv";
     paths = [
       (with python27Packages; python.buildEnv.override {
@@ -19,7 +18,7 @@ with super.pkgs;
           requests
         ];
       })
-        my_xonsh
+        xonsh
         pipenv
       ];
   };

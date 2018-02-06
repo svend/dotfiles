@@ -1,7 +1,6 @@
 self: super:
-with super.pkgs;
 {
-  rustEnv = pkgs.buildEnv {
+  rustEnv = with super; buildEnv {
     name = "rustEnv";
     paths = [
       cargo

@@ -1,10 +1,9 @@
 self: super:
-with super.pkgs;
 {
-  userEnv = pkgs.buildEnv {
+  userEnv = with self; super.buildEnv {
     name = "userEnv";
     paths = [
-      aspell
+      aspellWithDicts
       bashInteractive
       bash-completion
       bind

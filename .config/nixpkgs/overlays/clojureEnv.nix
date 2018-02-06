@@ -1,7 +1,6 @@
 self: super:
-with super.pkgs;
 {
-    clojureEnv = pkgs.buildEnv {
+    clojureEnv = with self; super.buildEnv {
       name = "clojureEnv";
       paths = [
         clojure

@@ -1,7 +1,6 @@
 self: super:
-with super.pkgs;
 {
-    kubernetesEnv = pkgs.buildEnv {
+    kubernetesEnv = with self; super.buildEnv {
       name = "kubernetesEnv";
       paths = [
         helm

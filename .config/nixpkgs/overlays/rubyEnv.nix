@@ -1,7 +1,6 @@
 self: super:
-with super.pkgs;
 {
-  rubyEnv = pkgs.buildEnv {
+  rubyEnv = with super; buildEnv {
     name = "rubyEnv";
     paths = [
       bundler

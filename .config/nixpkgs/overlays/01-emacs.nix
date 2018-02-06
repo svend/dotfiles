@@ -21,7 +21,7 @@ with super.pkgs;
       patches = []; #lib.optional stdenv.isDarwin ./at-fdcwd.patch;
     });
 
-    emacs = let customEmacsPackages =
+    my_emacs = let customEmacsPackages =
       emacsPackagesNg.overrideScope (super: self: {
       # use a custom version of emacs
       emacs = emacsHead;

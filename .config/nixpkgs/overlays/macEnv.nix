@@ -1,8 +1,7 @@
 self: super:
-with super.pkgs;
 {
     # Mac-specific packages
-    macEnv = pkgs.buildEnv {
+    macEnv = with self; super.buildEnv {
       name = "macEnv";
       paths = [
         terminal-notifier
