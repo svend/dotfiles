@@ -108,6 +108,7 @@
     });
 
     # 2018-02-02 Fix "couldn't find libtalloc in nix store"
+    # https://github.com/NixOS/nixpkgs/pull/34577
     notmuch = pkgs.notmuch.overrideAttrs (oldAttrs: rec {
       preFixup = lib.optionalString stdenv.isDarwin ''
         set -e
