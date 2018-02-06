@@ -217,80 +217,8 @@
         haskellPackages.ShellCheck
       ];
     };
-
-    # See https://github.com/NixOS/nixpkgs/issues/10597#issuecomment-313908853
-    pythonEnv = pkgs.buildEnv {
-      name = "pythonEnv";
-      paths = [
-        (with python27Packages; python.buildEnv.override {
-          extraLibs = [
-            pip
-            virtualenv
-          ];
-        })
-          (with python3Packages; python.buildEnv.override {
-          extraLibs = [
-            flake8
-            pip
-            pyyaml
-            requests
-          ];
-        })
-          xonsh
-          pipenv
-        ];
-    };
-
-    clojureEnv = pkgs.buildEnv {
-      name = "clojureEnv";
-      paths = [
-        clojure
-        leiningen
-      ];
-    };
-
-    rubyEnv = pkgs.buildEnv {
-      name = "rubyEnv";
-      paths = [
-        bundler
-        ruby
-      ];
-    };
-
-    rustEnv = pkgs.buildEnv {
-      name = "rustEnv";
-      paths = [
-        cargo
-        rustc
-      ];
-      buildInputs = [
-        cargo
-        rustc
-      ];
-    };
-
-    kubernetesEnv = pkgs.buildEnv {
-      name = "kubernetesEnv";
-      paths = [
-        helm
-        kubernetes
-      ];
-    };
-
-    # Linux-specific packages
-    linuxEnv = pkgs.buildEnv {
-      name = "linuxEnv";
-      paths = [
-        chromium
-        firefox-beta-bin
-        gitAndTools.gitAnnex
-        librecad
-        qutebrowser
-        xcape
-        xlibs.xmodmap
-      ];
-    };
   };
+
   # Allow installation of broken packages to allow install on darwin platform
   allowBroken = true;
   allowUnfree = true;
