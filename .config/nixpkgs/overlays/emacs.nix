@@ -3,7 +3,7 @@ with super.pkgs;
 {
     emacsHead = (super.emacs.override {
       srcRepo = true;
-    }).overrideAttrs (oldAttrs: rec {
+    }).overrideAttrs (old: rec {
       name = "emacs-${version}${versionModifier}";
       version = "26.0";
       versionModifier = "-git-${builtins.substring 0 7 srcRev}";

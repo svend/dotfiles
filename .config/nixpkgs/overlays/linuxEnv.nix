@@ -1,7 +1,7 @@
 self: super:
 with super.pkgs;
 {
-    xcape = pkgs.xcape.overrideAttrs (oldAttrs: rec {
+    xcape = pkgs.xcape.overrideAttrs (old: rec {
       baseName = "xcape";
       src = fetchFromGitHub {
         owner = "alols";
