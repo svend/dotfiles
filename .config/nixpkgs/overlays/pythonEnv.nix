@@ -1,6 +1,17 @@
 self: super:
 with super.pkgs;
 {
+    my_xonsh = pkgs.xonsh.overrideAttrs (oldAttrs: rec {
+      # Check fails on macOS
+      doInstallCheck = !stdenv.isDarwin;
+      propagatedBuildInputs = with python3Packages; [
+        ply
+        prompt_toolkit
+        pyyaml
+        requests
+      ];
+    });
+
     # See https://github.com/NixOS/nixpkgs/issues/10597#issuecomment-313908853
     pythonEnv = pkgs.buildEnv {
       name = "pythonEnv";
@@ -19,7 +30,7 @@ with super.pkgs;
             requests
           ];
         })
-          xonsh
+          my_xonsh
           pipenv
         ];
     };
