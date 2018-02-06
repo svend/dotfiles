@@ -1,7 +1,7 @@
 self: super:
 with super.pkgs;
 {
-    emacsHead = (emacs.override {
+    emacsHead = (super.emacs.override {
       srcRepo = true;
     }).overrideAttrs (oldAttrs: rec {
       name = "emacs-${version}${versionModifier}";
@@ -21,7 +21,7 @@ with super.pkgs;
       patches = []; #lib.optional stdenv.isDarwin ./at-fdcwd.patch;
     });
 
-    my_emacs = let customEmacsPackages =
+    emacs = let customEmacsPackages =
       emacsPackagesNg.overrideScope (super: self: {
       # use a custom version of emacs
       emacs = emacsHead;
