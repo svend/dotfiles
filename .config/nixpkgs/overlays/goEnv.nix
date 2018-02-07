@@ -4,6 +4,7 @@ self: super:
     name = "goEnv";
     paths = [
       dep
+      errcheck
       glide
       go
       gocode
