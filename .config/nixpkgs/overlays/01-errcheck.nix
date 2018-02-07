@@ -1,4 +1,4 @@
 self: super:
 {
-  errcheck = super.callPackage ../errcheck { };
+  errcheck = super.callPackage ../pkgs/errcheck { };
 }
