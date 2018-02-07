@@ -1,5 +1,4 @@
 self: super:
-with super.pkgs;
 {
     emacsHead = (super.emacs.override {
       srcRepo = true;
@@ -12,7 +11,7 @@ with super.pkgs;
       srcRev = "1fc98ed073a2d26ad941748ecb13aa6f47dd7b01";
       srcSha = "1vvr9pc4hdrj087wy1h9hamw348v8m6q7i4jkfjp0dfrsyzivi2x";
 
-      src = fetchgit {
+      src = super.fetchgit {
         url = "git://git.sv.gnu.org/emacs.git";
         rev = srcRev;
         sha256 = srcSha;
@@ -21,8 +20,8 @@ with super.pkgs;
       patches = []; #lib.optional stdenv.isDarwin ./at-fdcwd.patch;
     });
 
-    emacs = let customEmacsPackages =
-      emacsPackagesNg.overrideScope (super: self: {
+    emacs = with self; let customEmacsPackages =
+      super.emacsPackagesNg.overrideScope (super: self: {
       # use a custom version of emacs
       emacs = emacsHead;
     });
