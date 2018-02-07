@@ -1,6 +1,6 @@
 self: super:
 {
-  rubyEnv = with super; buildEnv {
+  rubyEnv = with self; super.buildEnv {
     name = "rubyEnv";
     paths = [
       bundler

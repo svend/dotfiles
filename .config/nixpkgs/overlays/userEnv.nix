@@ -3,6 +3,7 @@ self: super:
   userEnv = with self; super.buildEnv {
     name = "userEnv";
     paths = [
+      awscli
       aspellWithDicts
       bashInteractive
       bash-completion

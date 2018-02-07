@@ -1,6 +1,6 @@
 self: super:
 {
-  rustEnv = with super; buildEnv {
+  rustEnv = with self; super.buildEnv {
     name = "rustEnv";
     paths = [
       cargo
