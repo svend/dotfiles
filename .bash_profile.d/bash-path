@@ -1,3 +1,0 @@
-# -*- mode: sh; -*-
-PATH=$HOME/bin:$PATH
-export PATH

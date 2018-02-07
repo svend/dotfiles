@@ -5,6 +5,6 @@ post_update = cd .. && stow -R dotfiles
 [.emacs.d]
 checkout = git clone https://github.com/svend/dot-emacsd.git
 
-[bin]
+[.local/bin]
 checkout = git clone https://github.com/svend/home-bin.git
 
