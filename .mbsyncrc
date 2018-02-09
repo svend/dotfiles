@@ -10,6 +10,7 @@ Account fastmail
 MaildirStore fastmail-local
 Path ~/.mail/fastmail/ # The trailing "/" is important
 Inbox ~/.mail/fastmail/Inbox
+SubFolders Verbatim
 
 Channel fastmail
 Master :fastmail-remote:
@@ -33,6 +34,7 @@ Account gmail
 MaildirStore gmail-local
 Path ~/.mail/gmail/ # The trailing "/" is important
 Inbox ~/.mail/gmail/Inbox
+SubFolders Verbatim
 
 Channel gmail
 Master :gmail-remote:
