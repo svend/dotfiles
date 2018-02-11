@@ -4,10 +4,8 @@ self: super:
     name = "rustEnv";
     paths = [
       cargo
-      rustc
-    ];
-    buildInputs = [
-      cargo
+      # cargo-script  # fails to build
+      rustracer
       rustc
     ];
   };

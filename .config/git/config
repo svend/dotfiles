@@ -5,7 +5,7 @@
 # https://github.com/git/git/blob/master/Documentation/RelNotes/1.7.12.txt#L18
 
 [alias]
-	branches-by-date = branch --format='%(creatordate:short) %(refname:short) %(authorname)' --sort=creatordate
+	branches-by-date = branch --format='%(creatordate:short) %(refname:short) %(contents:subject)' --sort=creatordate
 	tags-by-date = tag --format='%(creatordate:short) %(refname:short)' --sort=creatordate
 	# tags-by-date = tag --format='%(creatordate:iso8601) %(refname:short)'
 

@@ -67,7 +67,7 @@ self: super:
         nginx-mode
         nim-mode
         plantuml-mode
-        rust-mode
+        # rust-mode # out of date
         scala-mode
         terraform-mode
         yaml-mode
@@ -88,6 +88,7 @@ self: super:
       # Modes
       groovy-mode
       nix-mode
+      rust-mode
       toml-mode
     ]) ++
     (with epkgs.elpaPackages; [
