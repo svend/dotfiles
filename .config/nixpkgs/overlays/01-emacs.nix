@@ -67,7 +67,6 @@ self: super:
         nginx-mode
         nim-mode
         plantuml-mode
-        # rust-mode # out of date
         scala-mode
         terraform-mode
         yaml-mode
@@ -82,13 +81,14 @@ self: super:
       # ob-scala
       ob-rust
       password-store
+      ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
       tao-theme
       tango-plus-theme
 
       # Modes
       groovy-mode
-      nix-mode
-      rust-mode
+      nix-mode # https://github.com/NixOS/nix-mode/compare/v1.2.1...master
+      rust-mode # https://github.com/rust-lang/rust-mode/compare/0.3.0...master
       toml-mode
     ]) ++
     (with epkgs.elpaPackages; [
