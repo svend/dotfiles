@@ -9,6 +9,7 @@ self: super:
       gitAndTools.gitAnnex
       librecad
       qutebrowser
+      signal-desktop
       xcape
       xlibs.xmodmap
     ];
