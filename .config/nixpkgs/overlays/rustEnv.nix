@@ -9,8 +9,5 @@ self: super:
       # cargo-script  # fails to build
       rustracer
     ];
-    buildInputs = [
-      latest.rustChannels.nightly.rust
-    ];
   };
 }
