@@ -7,7 +7,6 @@ self: super:
       (with python27Packages; python.buildEnv.override {
         extraLibs = [
           pip
-          virtualenv
         ];
       })
         (with python3Packages; python.buildEnv.override {
