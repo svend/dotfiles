@@ -5,8 +5,8 @@
     fetch = {
       type = "git";
       url = "https://github.com/kisielk/gotool";
-      rev = "d6ce6262d87e3a4e153e86023ff56ae771554a41";
-      sha256 = "1gq26rx7rhwhfj2ql079xnj94k4gqsg9n0s2ccp86mcg1rsd9zyc";
+      rev = "80517062f582ea3340cd4baf70e86d539ae7d84d";
+      sha256 = "14af2pa0ssyp8bp2mvdw184s5wcysk6akil3wzxmr05wwy951iwn";
     };
   }
   {
@@ -14,8 +14,8 @@
     fetch = {
       type = "git";
       url = "https://go.googlesource.com/tools";
-      rev = "e4b401d06e5ee9f990011dc4f24cd24162131565";
-      sha256 = "1f0krr2cm2n6kisrcjq2989cj1s82qrbmmdz89mpv4mzgd57lah1";
+      rev = "73e16cff9e0d4a802937444bebb562458548241d";
+      sha256 = "1qjjh6nfgpz97zga62m7vj6kcf830yiksxbyb9slyvkwfll5f9p3";
     };
   }
 ]

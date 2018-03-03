@@ -3,15 +3,15 @@
 
 buildGoPackage rec {
   name = "errcheck-unstable-${version}";
-  version = "2017-09-18";
-  rev = "b1445a9dd8285a50c6d1661d16f0a9ceb08125f7";
+  version = "2018-02-21";
+  rev = "4f638ae6fe63ac7e89149052aaa2ac1ae3ec5111";
 
   goPackagePath = "github.com/kisielk/errcheck";
 
   src = fetchgit {
     inherit rev;
     url = "https://github.com/kisielk/errcheck";
-    sha256 = "0xq4zwl201iw7hf2ln4yg20vpgz4gbghgx3f874kh8h9klk5rap7";
+    sha256 = "0070150hmhdk9q6n78il0m6a2g8l4r0b9m2jsiq2c7sh7imzcdbb";
   };
 
   goDeps = ./deps.nix;
