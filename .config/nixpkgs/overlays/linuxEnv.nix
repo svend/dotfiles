@@ -8,6 +8,7 @@ self: super:
       firefox-beta-bin
       gitAndTools.gitAnnex
       librecad
+      isync
       qutebrowser
       signal-desktop
       xcape
