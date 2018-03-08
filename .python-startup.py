@@ -1,12 +1,18 @@
-import os
 import pprint
 import sys
 
 
-def mypprint(x):
-    columns = os.get_terminal_size().columns
-    pprint.pprint(x, width=columns or 80, compact=True)
+def _python3():
+    return sys.version_info.major == 3
 
 
-sys.displayhook = mypprint
-# sys.displayhook = lambda x: pprint.pprint(x, compact=True)
+if _python3():
+    import os
+
+    def mypprint(x):
+        columns = os.get_terminal_size().columns
+        pprint.pprint(x, width=columns or 80, compact=True)
+
+    sys.displayhook = mypprint
+else:
+    sys.displayhook = lambda x: pprint.pprint(x)
