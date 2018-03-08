@@ -5,7 +5,6 @@ self: super:
     name = "macEnv";
     paths = [
       terminal-notifier
-      pinentry_mac
     ];
   };
 }
