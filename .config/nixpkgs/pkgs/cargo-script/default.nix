@@ -15,7 +15,7 @@ buildRustPackage rec {
   };
 
   cargoSha256 = "1cgqk1dj8ln1x0ll63h83alrazhic20bqjzrn0kmphf136d9z8fm";
-
+  doCheck = false;
   meta = with stdenv.lib; {
     description = "Cargo script subcommand";
     homepage = https://github.com/DanielKeep/cargo-script;

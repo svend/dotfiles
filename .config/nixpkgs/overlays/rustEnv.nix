@@ -6,7 +6,7 @@ self: super:
       cargo
       rustc
       # latest.rustChannels.nightly.rust
-      # cargo-script  # fails to build
+      cargo-script
       rustracer
     ];
   };
