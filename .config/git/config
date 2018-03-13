@@ -5,6 +5,7 @@
 	# Delete local branches that have been merged to master
 	branch-cleanup = ! git branch --merged master | grep -v master | xargs git branch -d
 	tags-by-date = tag --format='%(creatordate:short) %(refname:short)' --sort=creatordate
+	pr = "!f() { echo git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && echo git checkout pr/$1; }; f"
 
 # Omit a/b prefix so that find-file-at-point works
 [diff]
