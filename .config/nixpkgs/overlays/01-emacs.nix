@@ -45,6 +45,7 @@ in customEmacsPackages.emacsWithPackages (epkgs:
       notmuch
       nov
       projectile
+      py-isort
       racer
       robe
       smartparens
