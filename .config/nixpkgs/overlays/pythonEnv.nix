@@ -13,6 +13,7 @@ self: super:
         (with python3Packages; python.buildEnv.override {
         extraLibs = [
           flake8
+          isort
           pip
           pyyaml
           requests
