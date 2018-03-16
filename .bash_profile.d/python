@@ -1,8 +1,8 @@
 # -*- mode: sh; -*-
 command -v python >/dev/null 2>&1 || return
 
-# Add user python dir to path
-PATH=$(python -E -m site --user-base)/bin:$PATH
+# Add user pipenv venv to path
+PATH=$HOME/.pipenv/.venv/bin:$PATH
 export PATH
 
 # Add python startup file
