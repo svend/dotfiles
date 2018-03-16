@@ -1,0 +1,4 @@
+# -*- mode: sh; -*-
+# Add system user-binaries directory to path (see `systemd-path user-binaries`)
+PATH=$HOME/.local/bin:$PATH
+export PATH
