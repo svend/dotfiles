@@ -38,9 +38,9 @@
         },
         "pipenv": {
             "hashes": [
-                "sha256:94b3604874bbd40b2c2a3b769214c3a92681feeff3493c7d416e2d3ce38068bd"
+                "sha256:7b3c52fb57e17ca61b6141b75c8f5ba61a95c713ca470754240f7f1dbd0a4968"
             ],
-            "version": "==11.8.0"
+            "version": "==11.9.0"
         },
         "virtualenv": {
             "hashes": [
