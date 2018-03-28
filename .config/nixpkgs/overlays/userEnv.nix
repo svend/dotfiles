@@ -36,17 +36,17 @@ self: super:
       keychain
       ledger
       less
-      # libvirt # 2017-10-27
+      libvirt
       mercurial
       mr
       # netcat # libbsd FTB 2017-09-08
       netcat-gnu
       nim
-      nix-prefetch-scripts
+      # nix-prefetch-scripts # FTB 2018-03-28
       notmuch
       openssl
       openssh
-      # pandoc # FTB 2017-09-22
+      pandoc
       parallel
       pass
       plantuml
@@ -56,7 +56,7 @@ self: super:
       restic
       ripgrep
       rsync
-      # sshuttle # https://github.com/NixOS/nixpkgs/issues/27643
+      sshuttle
       stow
       time
       tree
