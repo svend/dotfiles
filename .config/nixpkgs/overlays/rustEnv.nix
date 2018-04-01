@@ -4,6 +4,7 @@ self: super:
     name = "rustEnv";
     paths = [
       cargo
+      rustfmt
       rustc
       # latest.rustChannels.nightly.rust
       cargo-script
