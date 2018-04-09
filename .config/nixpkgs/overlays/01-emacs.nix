@@ -8,8 +8,8 @@ self: super:
     versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
     # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
-    srcRev = "ff49d86b6419f88205ff9a5d8b1cc46fcda8371c";
-    srcSha = "1v8h4c2wwxw2cbbdsip9mf3yccrvwxsjy33pn8b29vw418xypfgs";
+    srcRev = "c267421647510319d2a70554e42f0d1c394dba0a";
+    srcSha = "040yv5f58dzvk88n1qbp3wy8nyg9mki3bpw1wbd8dvk1km08rrji";
 
     src = super.fetchgit {
       url = "git://git.sv.gnu.org/emacs.git";
