@@ -77,6 +77,7 @@ in customEmacsPackages.emacsWithPackages (epkgs:
     (with epkgs.melpaPackages; [
     amx
     bash-completion
+    # blacken # Not in nixpkgs-unstable yet
     bpr
     flycheck-rust
     gnus-alias

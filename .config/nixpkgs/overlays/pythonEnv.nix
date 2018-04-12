@@ -12,6 +12,7 @@ self: super:
       })
         (with python3Packages; python.buildEnv.override {
         extraLibs = [
+          black
           flake8
           isort
           pip
