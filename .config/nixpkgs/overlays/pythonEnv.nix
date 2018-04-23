@@ -21,7 +21,7 @@ self: super:
         ];
       })
         xonsh
-        pipenv
+        # pipenv # Error while finding module specification for 'pipenv.pew' (ModuleNotFoundError: No module named 'pipenv')
       ];
   };
 }
