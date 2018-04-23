@@ -16,7 +16,7 @@ self: super:
       direnv
       dtach
       emacs
-      # etcdctl # is not supported on ‘x86_64-apple-darwin’
+      etcdctl
       file
       findutils
       fping

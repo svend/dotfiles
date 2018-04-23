@@ -1,5 +1,5 @@
 {
-  # Allow installation of broken packages to allow install on darwin platform
-  allowBroken = true;
+  # Allow installation on darwin platform
+  allowUnsupportedSystem = true;
   allowUnfree = true;
 }
