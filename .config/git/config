@@ -4,6 +4,7 @@
 	branches-by-date = branch --format='%(creatordate:short) %(refname:short) %(contents:subject)' --sort=creatordate
 	# Delete local branches that have been merged to master
 	branch-cleanup = ! git branch --merged master | grep -v master | xargs git branch -d
+	branch-current = rev-parse --abbrev-ref HEAD
 	tags-by-date = tag --format='%(creatordate:short) %(refname:short)' --sort=creatordate
 	# Fetch PR branches
 	prs = "! git config --replace-all remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*' '^\\+refs/pull/\\*/head:refs/remotes/origin/pr/\\*$' && git fetch origin"
