@@ -6,8 +6,11 @@ name = "pypi"
 [packages]
 ansible = "*"
 glom = "*"
-
-[dev-packages]
+black = "*"
+pipenv = "*"
 
 [requires]
 python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
