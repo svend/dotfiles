@@ -8,6 +8,8 @@
 	tags-by-date = tag --format='%(creatordate:short) %(refname:short)' --sort=creatordate
 	# Fetch PR branches
 	prs = "! git config --replace-all remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*' '^\\+refs/pull/\\*/head:refs/remotes/origin/pr/\\*$' && git fetch origin"
+	# Set correct remote ref for PR branches
+	pr = "! [ -n \"$1\" ] && git config --replace-all branch.pr/$1.merge refs/pull/$1/head"
 
 # Omit a/b prefix so that find-file-at-point works
 [diff]
