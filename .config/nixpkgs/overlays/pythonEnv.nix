@@ -16,6 +16,7 @@ self: super:
           flake8
           isort
           pip
+          pylint
           pyyaml
           requests
         ];
