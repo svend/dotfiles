@@ -3,21 +3,19 @@ self: super:
   emacsHead = (super.emacs.override {
     srcRepo = true;
   }).overrideAttrs (old: rec {
-    name = "emacs-${version}${versionModifier}";
-    version = "26.0";
-    versionModifier = "-git-${builtins.substring 0 7 srcRev}";
+    # name = "emacs-${version}${versionModifier}";
+    # version = "26.0";
+    # versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
-    # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
-    srcRev = "e7952bdfc87aa333dfc564658bfbce6f1fbfc851";
-    srcSha = "1fsr2l8b9n6wm1ypx35k83blabl5sj2bjm2l7xm6b3vdrs02crn4";
+    # # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
+    # srcRev = "e7952bdfc87aa333dfc564658bfbce6f1fbfc851";
+    # srcSha = "1fsr2l8b9n6wm1ypx35k83blabl5sj2bjm2l7xm6b3vdrs02crn4";
 
-    src = super.fetchgit {
-      url = "git://git.sv.gnu.org/emacs.git";
-      rev = srcRev;
-      sha256 = srcSha;
-    };
-
-    patches = []; #lib.optional stdenv.isDarwin ./at-fdcwd.patch;
+    # src = super.fetchgit {
+    #   url = "git://git.sv.gnu.org/emacs.git";
+    #   rev = srcRev;
+    #   sha256 = srcSha;
+    # };
   });
 
   emacs = with self; let customEmacsPackages =
@@ -97,5 +95,7 @@ in customEmacsPackages.emacsWithPackages (epkgs:
   (with epkgs.elpaPackages; [
   csv-mode
 ]) ++
-[emacs25PackagesNg.pdf-tools]);
+# No longer building 2018-06-08
+# [emacs25PackagesNg.pdf-tools]);
+[]);
 }

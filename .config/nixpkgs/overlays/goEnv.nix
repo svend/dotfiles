@@ -8,7 +8,6 @@ self: super:
       glide
       go
       gocode
-      godep
       godef
       goimports
       golint
