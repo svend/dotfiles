@@ -8,7 +8,7 @@ self: super:
       bashInteractive
       bash-completion
       bind
-      binutils
+      # binutils # conflicts with rustEnv
       cacert
       coreutils
       curl

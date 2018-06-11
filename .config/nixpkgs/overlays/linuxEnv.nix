@@ -4,8 +4,6 @@ self: super:
   linuxEnv = with self; super.buildEnv {
     name = "linuxEnv";
     paths = [
-      chromium
-      firefox-beta-bin
       gitAndTools.gitAnnex
       librecad
       isync
