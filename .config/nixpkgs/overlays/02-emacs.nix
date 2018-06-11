@@ -96,6 +96,6 @@ in customEmacsPackages.emacsWithPackages (epkgs:
   csv-mode
 ]) ++
 # No longer building 2018-06-08
-# [emacs25PackagesNg.pdf-tools]);
-[]);
+  [emacsPackagesNg-pdf-tools]);
+  # []);
 }
