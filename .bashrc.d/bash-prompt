@@ -3,7 +3,7 @@
 PS1='\h:\W '
 # Add kubernetes context to prompt
 if type -t kubectl >/dev/null; then
-  PS1="$PS1"'(k8s:$(kubectl config current-context)) '
+  PS1="$PS1"'(k8s:$(kubectl config current-context 2>/dev/null)) '
 fi
 # Add git to the prompt
 if type -t __git_ps1 >/dev/null; then
