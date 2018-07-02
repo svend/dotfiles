@@ -41,7 +41,7 @@ self: super:
       mr
       # netcat # libbsd FTB 2017-09-08
       netcat-gnu
-      # nix-prefetch-scripts # FTB 2018-06-26
+      # nix-prefetch-scripts # FTB 2018-06-28
       notmuch
       openssl
       openssh
