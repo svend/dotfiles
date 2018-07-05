@@ -79,6 +79,7 @@ in customEmacsPackages.emacsWithPackages (epkgs:
     bpr
     flycheck-rust
     gnus-alias
+    kubernetes
     ob-go
     # ob-scala
     ob-rust
