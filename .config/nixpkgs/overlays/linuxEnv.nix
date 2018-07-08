@@ -9,6 +9,7 @@ self: super:
       isync
       qutebrowser
       signal-desktop
+      smartmontools
       xcape
       xlibs.xmodmap
     ];
