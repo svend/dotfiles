@@ -43,6 +43,7 @@ self: super:
       netcat-gnu
       # nix-prefetch-scripts # FTB 2018-06-28
       notmuch
+      nmap
       openssl
       openssh
       pandoc
