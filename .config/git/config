@@ -1,6 +1,8 @@
 # Git config file
 
 [alias]
+	# Print current branch name
+	br = describe --contains --all HEAD
 	branches-by-date = branch --format='%(creatordate:short) %(refname:short) %(contents:subject)' --sort=creatordate
 	# Delete local branches that have been merged to master
 	branch-cleanup = ! git branch --merged master | grep -v master | xargs git branch -d

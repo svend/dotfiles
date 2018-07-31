@@ -79,7 +79,7 @@ in customEmacsPackages.emacsWithPackages (epkgs:
     bpr
     flycheck-rust
     gnus-alias
-    kubernetes
+    # kubernetes # FTB 2018-07-31: Searching for program: No such file or directory, git
     ob-go
     # ob-scala
     ob-rust
@@ -96,7 +96,5 @@ in customEmacsPackages.emacsWithPackages (epkgs:
   (with epkgs.elpaPackages; [
   csv-mode
 ]) ++
-# No longer building 2018-06-08
   [emacsPackagesNg-pdf-tools]);
-  # []);
 }
