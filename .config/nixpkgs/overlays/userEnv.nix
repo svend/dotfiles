@@ -36,7 +36,6 @@ self: super:
       keychain
       ledger
       less
-      libvirt
       mercurial
       mr
       # netcat # libbsd FTB 2017-09-08
