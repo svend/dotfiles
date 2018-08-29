@@ -22,57 +22,56 @@ self: super:
     super.emacsPackagesNg.overrideScope (super: self: {
     # use a custom version of emacs
     emacs = emacsHead;
-  });
-in customEmacsPackages.emacsWithPackages (epkgs:
-    (with epkgs.melpaStablePackages; [
-      ace-link
-      ace-window
-      aggressive-indent
-      cider
-      company
-      company-jedi
-      counsel
-      edit-indirect
-      exec-path-from-shell
-      expand-region
-      flycheck
-      go-eldoc
-      hydra
-      ivy
-      magit
-      notmuch
-      nov
-      projectile
-      py-isort
-      racer
-      robe
-      smartparens
-      super-save
-      use-package
-      visual-fill-column
-      yasnippet
+    });
+  in customEmacsPackages.emacsWithPackages (epkgs:
+  (with epkgs.melpaStablePackages; [
+    ace-link
+    ace-window
+    aggressive-indent
+    cider
+    company
+    company-jedi
+    counsel
+    edit-indirect
+    exec-path-from-shell
+    expand-region
+    flycheck
+    go-eldoc
+    hydra
+    ivy
+    magit
+    notmuch
+    nov
+    projectile
+    py-isort
+    racer
+    robe
+    smartparens
+    super-save
+    use-package
+    visual-fill-column
+    yasnippet
 
-      # Modes
-      clojure-mode
-      dockerfile-mode
-      gitconfig-mode
-      gitignore-mode
-      go-mode
-      haskell-mode
-      ibuffer-tramp
-      json-mode
-      ledger-mode
-      lua-mode
-      markdown-mode
-      nginx-mode
-      nim-mode
-      nix-mode # TODO: Switch to melpaPackages on next nixpkgs-unstable update
-      plantuml-mode
-      scala-mode
-      terraform-mode
-      yaml-mode
-    ]) ++
-    (with epkgs.melpaPackages; [
+    # Modes
+    clojure-mode
+    dockerfile-mode
+    gitconfig-mode
+    gitignore-mode
+    go-mode
+    haskell-mode
+    ibuffer-tramp
+    json-mode
+    ledger-mode
+    lua-mode
+    markdown-mode
+    nginx-mode
+    nim-mode
+    plantuml-mode
+    scala-mode
+    terraform-mode
+    yaml-mode
+  ]) ++
+  (with epkgs.melpaPackages; [
     amx
     bash-completion
     blacken
@@ -80,6 +79,7 @@ in customEmacsPackages.emacsWithPackages (epkgs:
     flycheck-rust
     gnus-alias
     # kubernetes # FTB 2018-07-31: Searching for program: No such file or directory, git
+    nix-mode
     ob-go
     # ob-scala
     ob-rust
@@ -94,7 +94,7 @@ in customEmacsPackages.emacsWithPackages (epkgs:
     toml-mode
   ]) ++
   (with epkgs.elpaPackages; [
-  csv-mode
-]) ++
+    csv-mode
+  ]) ++
   [emacsPackagesNg-pdf-tools]);
 }
