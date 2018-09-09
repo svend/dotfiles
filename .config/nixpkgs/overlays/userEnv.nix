@@ -10,7 +10,7 @@ self: super:
       bind
       # binutils # conflicts with rustEnv
       cacert
-      coreutils
+      # coreutils # conflicts with gotools link
       curl
       chruby
       direnv
@@ -38,6 +38,7 @@ self: super:
       less
       mercurial
       mr
+      multi-x509
       # netcat # libbsd FTB 2017-09-08
       netcat-gnu
       # nix-prefetch-scripts # FTB 2018-06-28

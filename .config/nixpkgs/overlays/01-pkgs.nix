@@ -2,4 +2,5 @@ self: super:
 {
   cargo-script = super.callPackage ../pkgs/cargo-script { };
   errcheck = super.callPackage ../pkgs/errcheck { };
+  multi-x509 = super.callPackage ../pkgs/multi-x509 { };
 }
