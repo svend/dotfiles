@@ -10,7 +10,7 @@ self: super:
       bind
       # binutils # conflicts with rustEnv
       cacert
-      # coreutils # conflicts with gotools link
+      coreutils
       curl
       chruby
       direnv
