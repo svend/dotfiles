@@ -9,8 +9,9 @@ self: super:
       go
       gocode
       godef
-      goimports
+      # goimports # included in gotools
       golint
+      gotools # nix-env --set-flag priority 6 goEnv
     ];
   };
 }
