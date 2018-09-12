@@ -59,6 +59,7 @@ self: super:
       sshuttle
       stow
       time
+      tokei
       tree
       unzip # Required for Emacs nov.el package
       watch

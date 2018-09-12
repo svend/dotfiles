@@ -1,4 +1,4 @@
- self: super:
+self: super:
 {
   glide = with super; glide.overrideAttrs (old: rec {
     name = "glide-${version}";
