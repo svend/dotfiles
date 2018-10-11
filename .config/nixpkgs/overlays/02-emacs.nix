@@ -3,19 +3,19 @@ self: super:
   emacsHead = (super.emacs.override {
     srcRepo = true;
   }).overrideAttrs (old: rec {
-    # name = "emacs-${version}${versionModifier}";
-    # version = "26.0";
-    # versionModifier = "-git-${builtins.substring 0 7 srcRev}";
+    name = "emacs-${version}${versionModifier}";
+    version = "26.2-pre";
+    versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
-    # # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
-    # srcRev = "e7952bdfc87aa333dfc564658bfbce6f1fbfc851";
-    # srcSha = "1fsr2l8b9n6wm1ypx35k83blabl5sj2bjm2l7xm6b3vdrs02crn4";
+    # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
+    srcRev = "8c53d9fede22b1929de4b9aaaca6a5611d5c5475";
+    srcSha = "099y76rli72bi1xv0zxy3r4vrwain432zhd21p4bmzh8gf651ifi";
 
-    # src = super.fetchgit {
-    #   url = "git://git.sv.gnu.org/emacs.git";
-    #   rev = srcRev;
-    #   sha256 = srcSha;
-    # };
+    src = super.fetchgit {
+      url = "git://git.sv.gnu.org/emacs.git";
+      rev = srcRev;
+      sha256 = srcSha;
+    };
   });
 
   emacs = with self; let customEmacsPackages =
@@ -38,7 +38,6 @@ self: super:
     flycheck
     go-eldoc
     hydra
-    ivy
     magit
     notmuch
     nov
@@ -78,6 +77,7 @@ self: super:
     bpr
     flycheck-rust
     gnus-alias
+    ivy # https://github.com/abo-abo/swiper/commit/b022886c0392bd7a04d8296a2c6c68d2d858d841
     # kubernetes # FTB 2018-07-31: Searching for program: No such file or directory, git
     nix-mode
     ob-go
