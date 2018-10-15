@@ -11,7 +11,7 @@ self: super:
       godef
       # goimports # included in gotools
       golint
-      # gotools # nix-env --set-flag priority 6 goEnv
+      gotools
     ];
   };
 }
