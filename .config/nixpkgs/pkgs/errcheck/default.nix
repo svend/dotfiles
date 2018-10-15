@@ -11,7 +11,7 @@ buildGoPackage rec {
   src = fetchgit {
     inherit rev;
     url = "https://github.com/kisielk/errcheck";
-    sha256 = "0070150hmhdk9q6n78il0m6a2g8l4r0b9m2jsiq2c7sh7imzcdbb";
+    sha256 = "0sax6gaxrpgcqx9x5cmsbcfzkl66vrdknkpw854zkzc39yk5cnvq";
   };
 
   goDeps = ./deps.nix;
