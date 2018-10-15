@@ -3,8 +3,8 @@
 
 buildGoPackage rec {
   name = "errcheck-unstable-${version}";
-  version = "2018-02-21";
-  rev = "4f638ae6fe63ac7e89149052aaa2ac1ae3ec5111";
+  version = "2018-08-07";
+  rev = "1787c4bee836470bf45018cfbc783650db3c6501";
 
   goPackagePath = "github.com/kisielk/errcheck";
 
