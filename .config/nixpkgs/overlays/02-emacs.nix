@@ -48,7 +48,6 @@ self: super:
     smartparens
     super-save
     use-package
-    visual-fill-column
     yasnippet
 
     # Modes
@@ -85,8 +84,10 @@ self: super:
     ob-rust
     password-store
     ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
+    spacemacs-theme
     tao-theme
     tango-plus-theme
+    visual-fill-column # https://github.com/joostkremers/visual-fill-column/compare/1.11...master
 
     # Modes
     groovy-mode
