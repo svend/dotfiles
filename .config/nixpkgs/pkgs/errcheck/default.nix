@@ -4,14 +4,15 @@
 buildGoPackage rec {
   name = "errcheck-unstable-${version}";
   version = "2018-08-07";
-  rev = "1787c4bee836470bf45018cfbc783650db3c6501";
+  # Version with go module support. See https://github.com/kisielk/errcheck/issues/150.
+  rev = "355fb1c0ffd69d82ee81377edb8bbeb738c11819";
 
   goPackagePath = "github.com/kisielk/errcheck";
 
   src = fetchgit {
     inherit rev;
     url = "https://github.com/kisielk/errcheck";
-    sha256 = "0sax6gaxrpgcqx9x5cmsbcfzkl66vrdknkpw854zkzc39yk5cnvq";
+    sha256 = "1fsm8hp0xk2q80jval6aqsfx1shscpb07885lzwyg7mmd8hfq3pc";
   };
 
   goDeps = ./deps.nix;

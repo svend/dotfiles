@@ -7,6 +7,7 @@ self: super:
       errcheck
       glide
       go
+      go2nix
       gocode
       godef
       # goimports # included in gotools
