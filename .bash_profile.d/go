@@ -1,8 +1,3 @@
 # -*- mode: sh; -*-
 
-# GOPATH=~/go is the default as of go 1.8
-# https://github.com/golang/go/blob/4cce27a3fa0cc1f13afa6ffa358efa07144e00ec/doc/go1.8.html#L384-L393
-export GOPATH="$HOME/go"
-# export GOROOT="$(go env GOROOT)"
-export GOROOT="$HOME/.nix-profile/share/go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
