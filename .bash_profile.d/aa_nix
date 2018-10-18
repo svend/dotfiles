@@ -4,13 +4,8 @@ if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
-[ -n "$NIX_SSL_CERT_FILE" ] || return
-
 # Copy of $HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt with additional local
 # certs added
 if [ -e "$HOME/.certs/ca-bundle.crt" ]; then
   export NIX_SSL_CERT_FILE="$HOME/.certs/ca-bundle.crt"
-  # Why are these required for curl/git all of a sudden? 2017-08-08
-  export CURL_CA_BUNDLE=$NIX_SSL_CERT_FILE
-  export GIT_SSL_CAINFO=$NIX_SSL_CERT_FILE
 fi
