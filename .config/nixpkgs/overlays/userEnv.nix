@@ -13,7 +13,6 @@ self: super:
       coreutils
       curl
       chruby
-      direnv
       dtach
       emacs
       etcdctl
