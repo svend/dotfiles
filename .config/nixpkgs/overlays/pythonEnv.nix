@@ -11,7 +11,7 @@ self: super:
         ];
       })
 
-      (with python37Packages; python.buildEnv.override {
+      (with pythonPackages; python.buildEnv.override {
         extraLibs = [
           black
           flake8
