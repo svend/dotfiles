@@ -15,7 +15,7 @@
 	# Check out pull request
 	pr = "! git pr-init 2>/dev/null && git checkout pull/$1 && git config --replace-all branch.pull/$1.merge refs/pull/$1/head"
 	# List pull request branches
-	prs = "! git pr-init 2>/dev/null && git branch -a --list 'origin/pull/*' --format='%(refname:short)' --sort=creatordate | cut -d/ -f2,3"
+	prs = "! git pr-init 2>/dev/null && git branch --all --list 'origin/pull/*' --format='%(refname:short)' --sort=creatordate | cut -d/ -f2,3"
 
 [diff]
 	# Omit a/b prefix so that find-file-at-point works
