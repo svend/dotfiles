@@ -19,7 +19,7 @@ self: super:
   });
 
   emacs = with self; let customEmacsPackages =
-    super.emacsPackagesNg.overrideScope (super: self: {
+    super.emacsPackagesNg.overrideScope (self: super: {
     # use a custom version of emacs
     emacs = emacsHead;
     });
