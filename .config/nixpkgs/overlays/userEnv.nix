@@ -37,9 +37,9 @@ self: super:
       mercurial
       mr
       multi-x509
-      # netcat # libbsd FTB 2017-09-08
-      netcat-gnu
-      # nix-prefetch-scripts # FTB 2018-06-28
+      netcat
+      # netcat-gnu
+      nix-prefetch-scripts
       nmap
       notmuch
       openssl
@@ -57,7 +57,7 @@ self: super:
       sshuttle
       stow
       time
-      tokei
+      # tokei # Cargo failing on Darwin with ld: framework not found Security
       tree
       unzip # Required for Emacs nov.el package
       watch

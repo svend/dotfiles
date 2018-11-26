@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, rustPlatform, makeWrapper }:
+{ stdenv, fetchFromGitHub, rustPlatform, makeWrapper, Security  }:
 
 with rustPlatform;
 
@@ -15,7 +15,9 @@ buildRustPackage rec {
   };
 
   cargoSha256 = "1ii9sqfm6ipw0nxpc0pcncrg6xylglp6srdznjwmqv233k60ra5h";
-  doCheck = false;
+
+  buildInputs = stdenv.lib.optional stdenv.isDarwin Security;
+
   meta = with stdenv.lib; {
     description = "Run a command on each x509 certificate";
     homepage = https://github.com/svend/multi-x509;

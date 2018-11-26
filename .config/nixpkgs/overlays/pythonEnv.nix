@@ -17,13 +17,13 @@ self: super:
           flake8
           isort
           pip
-          # pylint # astroid-2.0.1 FTB on Python 3.7
+          pylint # 2018-11-26 FTB on pylint tests
           pyyaml
-          # requests # hypothesis-3.66.2 FTB on Python 3.7
+          requests
         ];
       })
 
-      xonsh
+      # xonsh # https://github.com/NixOS/nixpkgs/issues/51019
       # pipenv # Error while finding module specification for 'pipenv.pew' (ModuleNotFoundError: No module named 'pipenv')
     ];
   };
