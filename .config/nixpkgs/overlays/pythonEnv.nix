@@ -17,7 +17,7 @@ self: super:
           flake8
           isort
           pip
-          pylint # 2018-11-26 FTB on pylint tests
+          # pylint # 2018-11-28 FTB: RecursionError
           pyyaml
           requests
         ];
