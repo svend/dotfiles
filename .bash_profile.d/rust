@@ -2,13 +2,3 @@
 [ -d "$HOME/.cargo/bin" ] || return
 
 export PATH="$HOME/.cargo/bin:$PATH"
-# Racer
-# To test:
-# racer complete std::io::B
-
-RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-if [ -d "$RUST_SRC_PATH" ]; then
-  export RUST_SRC_PATH
-else
-  export RUST_SRC_PATH=
-fi
