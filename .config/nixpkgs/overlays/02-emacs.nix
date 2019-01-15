@@ -82,6 +82,7 @@ self: super:
     ob-go
     # ob-scala
     ob-rust
+    pdf-tools
     password-store
     ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
     spacemacs-theme
@@ -96,6 +97,5 @@ self: super:
   ]) ++
   (with epkgs.elpaPackages; [
     csv-mode
-  ]) ++
-  [emacsPackagesNg-pdf-tools]);
+  ]));
 }
