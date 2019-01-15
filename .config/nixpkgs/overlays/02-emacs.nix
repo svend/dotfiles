@@ -44,7 +44,6 @@ self: super:
     nov
     projectile
     py-isort
-    racer
     robe
     smartparens
     super-save
@@ -84,6 +83,7 @@ self: super:
     # ob-scala
     ob-rust
     password-store
+    racer # https://github.com/racer-rust/emacs-racer/compare/1.2...master
     ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
     spacemacs-theme
     tao-theme
