@@ -53,6 +53,7 @@ self: super:
       redis
       restic
       ripgrep
+      rust-scripts
       rsync
       sshuttle
       stow
