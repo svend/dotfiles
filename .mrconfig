@@ -7,4 +7,3 @@ checkout = git clone https://github.com/svend/dot-emacsd.git
 
 [.local/bin]
 checkout = git clone https://github.com/svend/home-bin.git bin
-
