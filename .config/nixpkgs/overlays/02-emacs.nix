@@ -74,6 +74,7 @@ self: super:
     bash-completion
     blacken
     bpr
+    company-go
     flycheck-rust
     gnus-alias
     ivy # https://github.com/abo-abo/swiper/commit/b022886c0392bd7a04d8296a2c6c68d2d858d841
