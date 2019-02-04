@@ -86,6 +86,7 @@ self: super:
     password-store
     racer # https://github.com/racer-rust/emacs-racer/compare/1.2...master
     ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
+    ruby-tools
     spacemacs-theme
     tao-theme
     tango-plus-theme
