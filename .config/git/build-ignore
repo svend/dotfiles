@@ -2,11 +2,16 @@
 
 set -e
 
-BASE_URL=https://raw.githubusercontent.com/github/gitignore/master/
-IGNORES='Global/Emacs.gitignore Global/OSX.gitignore Global/vim.gitignore'
+BASE_URL=https://raw.githubusercontent.com/github/gitignore/master
+IGNORES='
+Global/Emacs.gitignore
+Global/Vim.gitignore
+Global/macOS.gitignore
+'
 
 cat ignore.local > ignore
 
 for s in ${IGNORES}; do
-  curl -s "${BASE_URL}/${s}" >> ignore
+  echo "${BASE_URL}/${s}"
+  curl -sS --fail "${BASE_URL}/${s}" >> ignore
 done
