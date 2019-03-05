@@ -6,7 +6,7 @@ self: super:
       dep
       errcheck
       glide
-      go
+      # go
       go2nix
       gocode
       godef
