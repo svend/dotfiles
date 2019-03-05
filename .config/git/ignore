@@ -4,8 +4,6 @@
 
 # Emacs flycheck (see flycheck-temp-prefix)
 flycheck_*
-# Emacs projectile
-.projectile
 # Ensime
 .ensime
 .ensime_cache
@@ -43,6 +41,41 @@ tramp
 
 # cask packages
 .cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+# network security
+/network-security.data
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+*~
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+# General
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -60,6 +93,7 @@ Icon
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
 # Directories potentially created on remote AFP share
 .AppleDB
@@ -67,4 +101,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-Not Found
