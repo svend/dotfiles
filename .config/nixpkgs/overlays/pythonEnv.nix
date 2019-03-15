@@ -17,14 +17,14 @@ self: super:
           flake8
           isort
           pip
-          # pylint # 2018-11-28 FTB: RecursionError
+          # pylint # 2019-03-15 FTB: RecursionError
           pyyaml
           requests
         ];
       })
 
-      # xonsh # https://github.com/NixOS/nixpkgs/issues/51019
-      # pipenv # Error while finding module specification for 'pipenv.pew' (ModuleNotFoundError: No module named 'pipenv')
+      xonsh
+      pipenv
     ];
   };
 }
