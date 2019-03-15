@@ -58,7 +58,7 @@ self: super:
       sshuttle
       stow
       time
-      # tokei # Cargo failing on Darwin with ld: framework not found Security
+      # tokei # count lines of code / FTB on Darwin: ld: framework not found Security
       tree
       unzip # Required for Emacs nov.el package
       watch
