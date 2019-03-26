@@ -39,6 +39,7 @@ self: super:
     flycheck
     go-eldoc
     hydra
+    ivy
     magit
     notmuch
     nov
@@ -77,7 +78,6 @@ self: super:
     company-go
     flycheck-rust
     gnus-alias
-    ivy # https://github.com/abo-abo/swiper/commit/b022886c0392bd7a04d8296a2c6c68d2d858d841
     # kubernetes # FTB 2018-07-31: Searching for program: No such file or directory, git
     nix-mode
     ob-go
@@ -94,7 +94,7 @@ self: super:
 
     # Modes
     groovy-mode
-    rust-mode # https://github.com/rust-lang/rust-mode/compare/0.3.0...master
+    rust-mode # https://github.com/rust-lang/rust-mode/compare/0.4.0...master
     toml-mode
   ]) ++
   (with epkgs.elpaPackages; [
