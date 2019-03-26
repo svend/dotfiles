@@ -46,7 +46,7 @@ self: super:
       openssh
       pandoc
       parallel
-      pass
+      pass # FTB 2019-03-25
       plantuml
       postgresql
       pwgen
