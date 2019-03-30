@@ -7,9 +7,9 @@ self: super:
       rustc
       rustfmt
 
-      gcc
-      gnumake
-      binutils-unwrapped
+      # gcc
+      # gnumake
+      # binutils-unwrapped
 
       cargo-script
       rustracer
