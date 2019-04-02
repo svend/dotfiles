@@ -12,7 +12,7 @@ self: super:
       godef
       # goimports # included in gotools
       golint
-      gotools
+      # gotools # FTB on darwin 2019-03-26
     ];
   };
 }

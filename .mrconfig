@@ -3,7 +3,7 @@ checkout = git clone https://github.com/svend/dotfiles.git
 post_update = cd .. && stow -R dotfiles
 
 [.emacs.d]
-checkout = git clone https://github.com/svend/dot-emacsd.git
+checkout = git clone https://github.com/svend/dot-emacsd.git .emacs.d
 
 [.local/bin]
 checkout = git clone https://github.com/svend/home-bin.git bin

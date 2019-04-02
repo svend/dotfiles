@@ -77,8 +77,8 @@ self: super:
     bpr
     company-go
     flycheck-rust
-    gnus-alias
     flycheck-golangci-lint
+    gnus-alias
     # kubernetes # FTB 2018-07-31: Searching for program: No such file or directory, git
     nix-mode
     ob-go
