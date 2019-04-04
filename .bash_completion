@@ -4,3 +4,10 @@
 for m in "$HOME/.bash_completion.d/"*; do
   . "$m"
 done
+
+# Homebrew (https://docs.brew.sh/Shell-Completion)
+if type brew &>/dev/null; then
+  for COMPLETION in "$(brew --prefix)"/etc/bash_completion.d/*; do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+fi
