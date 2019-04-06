@@ -3,6 +3,3 @@ command -v python >/dev/null 2>&1 || return
 
 # Add python startup file
 export PYTHONSTARTUP=$HOME/.python-startup.py
-
-# Add pipenv installed binaries to path
-export PATH="$HOME/.pipenv/bin:$PATH"
