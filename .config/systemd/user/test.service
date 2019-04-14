@@ -1,6 +1,0 @@
-[Unit]
-Description=Test service
-
-[Service]
-Type=oneshot
-ExecStart=/bin/sh -c 'echo $PATH'
