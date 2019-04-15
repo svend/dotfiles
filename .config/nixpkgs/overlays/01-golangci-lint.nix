@@ -1,5 +1,6 @@
 self: super:
 {
+  # https://github.com/NixOS/nixpkgs/pull/58336
   golangci-lint = with super; golangci-lint.overrideAttrs (old: rec {
     version = "1.16.0";
 
