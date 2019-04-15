@@ -10,6 +10,7 @@ self: super:
       go2nix
       gocode
       godef
+      golangci-lint
       golint
       gotools # FTB on darwin 2019-03-26
     ];
