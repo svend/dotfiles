@@ -2,6 +2,7 @@ self: super:
 {
   # https://github.com/NixOS/nixpkgs/pull/58336
   golangci-lint = with super; golangci-lint.overrideAttrs (old: rec {
+    name = "golangci-lint-${version}";
     version = "1.16.0";
 
     src = fetchFromGitHub {
