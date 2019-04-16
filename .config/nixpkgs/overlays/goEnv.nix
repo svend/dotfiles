@@ -6,13 +6,14 @@ self: super:
       dep
       errcheck
       glide
-      go
       go2nix
       gocode
       godef
       golangci-lint
       golint
-      gotools # FTB on darwin 2019-03-26
+      gotools
+    ] ++ lib.optionals stdenv.isLinux [
+      go # https://github.com/NixOS/nixpkgs/issues/56348
     ];
   };
 }

@@ -46,7 +46,7 @@ self: super:
       openssh
       pandoc
       parallel
-      pass # FTB 2019-03-25
+      pass
       plantuml
       postgresql
       pwgen
@@ -67,6 +67,17 @@ self: super:
       xz
       zookeeper
       haskellPackages.ShellCheck
+    ] ++ lib.optionals stdenv.isDarwin [
+      terminal-notifier
+    ] ++ lib.optionals stdenv.isLinux [
+      gitAndTools.gitAnnex
+      isync
+      librecad
+      qutebrowser
+      signal-desktop
+      smartmontools
+      xcape
+      xlibs.xmodmap
     ];
   };
 }
