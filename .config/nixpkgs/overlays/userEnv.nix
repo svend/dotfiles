@@ -58,7 +58,6 @@ self: super:
       sshuttle
       stow
       time
-      # tokei # count lines of code / FTB on Darwin: ld: framework not found Security
       tree
       unzip # Required for Emacs nov.el package
       watch
@@ -76,6 +75,7 @@ self: super:
       qutebrowser
       signal-desktop
       smartmontools
+      tokei # count lines of code / FTB on Darwin: ld: framework not found Security
       xcape
       xlibs.xmodmap
     ];
