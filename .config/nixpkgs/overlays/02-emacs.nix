@@ -40,6 +40,7 @@ self: super:
     go-eldoc
     hydra
     ivy
+    lv # Remove on next update of hydra: https://github.com/abo-abo/hydra/pull/324
     magit
     notmuch
     nov
