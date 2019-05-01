@@ -18,7 +18,7 @@ buildRustPackage rec {
   # crate sources of this package. Currently it is obtained by inserting a fake
   # checksum into the expression and building the package once. The correct
   # checksum can be then take from the failed build.
-  cargoSha256 = "0xml0a0sk06l1h3kxb27dwdq27b2y8v7kdqqd2d9h7pchqq6m5cc";
+  cargoSha256 = "0kyhpflp528p4bssf5b94z884gmqjx6zszqnzpbsq1clvy3c78cb";
 
   buildInputs = stdenv.lib.optional stdenv.isDarwin Security;
 
