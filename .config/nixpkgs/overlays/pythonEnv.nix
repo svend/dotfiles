@@ -24,7 +24,7 @@ self: super:
       })
 
       xonsh
-      pipenv
+      # pipenv
     ];
   };
 }

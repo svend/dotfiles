@@ -14,7 +14,7 @@ buildRustPackage rec {
     sha256 = "18fljjr49lpi1lyxwfx0bsp9fhz5ii63w8hsskjqahgvdqay3bdf";
   };
 
-  cargoSha256 = "1cgqk1dj8ln1x0ll63h83alrazhic20bqjzrn0kmphf136d9z8fm";
+  cargoSha256 = "1q1jcxpzfg9kcvv7idg4c5ixcyhsbpyyhxhq8x8jnnfx10pwxpiq";
   doCheck = false;
   meta = with stdenv.lib; {
     description = "Cargo script subcommand";
