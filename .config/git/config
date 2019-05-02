@@ -13,24 +13,25 @@
 	# Print tags, sorted by date
 	tags-by-date = tag --format='%(creatordate:short) %(refname:short)' --sort=creatordate
 
-	# Work with GitHub pull requests
+	# Configure git to fetch GitHub pull request references
+	# (https://help.github.com/en/articles/checking-out-pull-requests-locally#modifying-an-inactive-pull-request-locally)
 	pr-init = "! \
 	git config --replace-all remote.origin.fetch \
 	'+refs/pull/*/head:refs/remotes/origin/pull/*' \
 	'^\\+refs/pull/\\*/head:refs/remotes/origin/pull/\\*$' \
 	&& git fetch origin"
 
-	# Check out pull request
-	pr = "! \
-	git pr-init 2>/dev/null \
-	&& git checkout pull/$1 \
-	&& git config --replace-all branch.pull/$1.merge refs/pull/$1/head"
-
-	# List pull request branches
+	# List GitHub pull requests
 	prs = "! \
 	git pr-init 2>/dev/null \
 	&& git branch --all --list 'origin/pull/*' --format='%(refname:short)' --sort=creatordate \
 	| cut -d/ -f2,3"
+
+	# Check out GitHub pull request (`git pr 1234`)
+	pr = "! \
+	git pr-init 2>/dev/null \
+	&& git checkout pull/$1 \
+	&& git config --replace-all branch.pull/$1.merge refs/pull/$1/head"
 
 [diff]
 	# Omit a/b prefix so that find-file-at-point works
