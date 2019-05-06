@@ -18,10 +18,11 @@ self: super:
     };
   });
 
+  # https://github.com/NixOS/nixpkgs/blob/7c93bbec22508f40b05660d56b28eb5002872bd7/pkgs/build-support/emacs/wrapper.nix
   emacs = with self; let customEmacsPackages =
-    super.emacsPackagesNg.overrideScope (self: super: {
-    # use a custom version of emacs
-    emacs = emacsHead;
+    emacsPackagesNg.overrideScope' (self: super: {
+      # use a custom version of emacs
+      emacs = emacsHead;
     });
   in customEmacsPackages.emacsWithPackages (epkgs:
   (with epkgs.melpaStablePackages; [
