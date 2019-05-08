@@ -3,7 +3,6 @@ self: super: {
     packageOverrides = python-self: python-super: {
       aiohttp = python-super.aiohttp.overrideAttrs (oldAttrs: {
         doInstallCheck = !stdenv.isDarwin;
-        # doCheck = !stdenv.isDarwin;
       });
     };
   };

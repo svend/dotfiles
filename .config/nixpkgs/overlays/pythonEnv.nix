@@ -25,8 +25,8 @@ self: super:
         ];
       })
 
-      # xonsh
-      pipenv # https://github.com/NixOS/nixpkgs/issues/61027
+      xonsh
+      pipenv
     ];
   };
 }
