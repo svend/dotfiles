@@ -41,6 +41,7 @@ self: super:
       # netcat-gnu
       nix-prefetch-scripts
       nmap
+      notmuch
       openssl
       openssh
       pandoc
@@ -71,7 +72,6 @@ self: super:
       gitAndTools.gitAnnex
       isync
       librecad
-      notmuch # FTB on darwin: gpgme 2019-04-25
       qutebrowser
       signal-desktop
       smartmontools
