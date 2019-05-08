@@ -24,8 +24,7 @@
 	# List GitHub pull requests
 	prs = "! \
 	git pr-init 2>/dev/null \
-	&& git branch --all --list 'origin/pull/*' --format='%(refname:short)' --sort=creatordate \
-	| cut -d/ -f2,3"
+	&& git branch --all --list 'origin/pull/*' --sort=creatordate"
 
 	# Check out GitHub pull request (`git pr 1234`)
 	pr = "! \
