@@ -63,6 +63,7 @@ self: super:
       watch
       wrk # HTTP benchmarking tool
       wget
+      xsv
       xz
       zookeeper
       haskellPackages.ShellCheck
