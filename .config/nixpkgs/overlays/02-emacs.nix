@@ -41,7 +41,7 @@ self: super:
     go-eldoc
     hydra
     ivy
-    lv # Remove on next update of hydra: https://github.com/abo-abo/hydra/pull/324
+    lv # Remove when hydra 0.15 hits nixpkgs-unstable: https://github.com/abo-abo/hydra/pull/324
     magit
     notmuch
     nov
