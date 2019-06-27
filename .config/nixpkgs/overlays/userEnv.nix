@@ -40,6 +40,8 @@ self: super:
       netcat
       # netcat-gnu
       nix-prefetch-scripts
+      nmap
+      notmuch
       openssl
       openssh
       pandoc
@@ -72,8 +74,6 @@ self: super:
       gitAndTools.gitAnnex
       isync
       librecad
-      nmap # 2019-05-20: FTB: https://github.com/NixOS/nixpkgs/issues/61595
-      notmuch # 2019-05-20: gpgme FTB: gpg: can't connect to the agent: File name too long
       qutebrowser
       signal-desktop
       smartmontools
