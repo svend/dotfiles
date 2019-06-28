@@ -31,6 +31,7 @@ self: super:
       imagemagick
       ipcalc
       jq
+      jsonnet
       keychain
       ledger
       less

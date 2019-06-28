@@ -96,6 +96,7 @@ self: super:
 
     # Modes
     groovy-mode
+    jsonnet-mode
     rust-mode # https://github.com/rust-lang/rust-mode/compare/0.4.0...master
     toml-mode
   ]) ++
