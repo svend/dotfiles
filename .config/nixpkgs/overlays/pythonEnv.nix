@@ -10,7 +10,7 @@ self: super:
           black
           flake8
           isort
-          # pylint # FTB: 2019-05-06: enchant-1.6.1.drv' failed with exit code 2
+          pylint
           pyyaml
           requests
         ];

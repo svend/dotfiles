@@ -61,7 +61,7 @@ self: super:
       time
       tokei # count lines of code
       tree
-      unzip # Required for Emacs nov.el package
+      unzip # required for Emacs nov.el package
       watch
       wrk # HTTP benchmarking tool
       wget

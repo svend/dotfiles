@@ -40,8 +40,6 @@ self: super:
     flycheck
     go-eldoc
     hydra
-    ivy
-    lv # Remove when hydra 0.15 hits nixpkgs-unstable: https://github.com/abo-abo/hydra/pull/324
     magit
     notmuch
     nov
@@ -81,6 +79,7 @@ self: super:
     flycheck-rust
     flycheck-golangci-lint
     gnus-alias
+    ivy # https://github.com/abo-abo/swiper/issues/2088
     nix-mode
     ob-go
     # ob-scala
