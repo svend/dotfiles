@@ -18,10 +18,12 @@ self: super:
       file
       findutils
       fping
+      gettext # for envsubst
       git-crypt
       gitAndTools.hub
       gitMinimal
       gnugrep
+      gnuplot
       gnupg
       gnused
       gnutar
@@ -38,8 +40,8 @@ self: super:
       mercurial
       mr
       multi-x509
-      netcat
-      # netcat-gnu
+      # netcat # use nmap/ncat
+      # netcat-gnu # use nmap/ncat
       nix-prefetch-scripts
       nmap
       notmuch
@@ -63,7 +65,7 @@ self: super:
       tree
       unzip # required for Emacs nov.el package
       watch
-      wrk # HTTP benchmarking tool
+      wrk2 # HTTP benchmarking tool
       wget
       xsv
       xz
