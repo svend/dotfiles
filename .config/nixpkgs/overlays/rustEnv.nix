@@ -3,21 +3,20 @@ self: super:
   rustEnv = with self; super.buildEnv {
     name = "rustEnv";
     paths = [
-      cargo
-      rustc
-      rustfmt
+      # cargo
+      # rustc
+      # rustfmt
 
       # gcc
       # gnumake
       # binutils-unwrapped
 
-      cargo-script
+      # cargo-script
       rustracer
 
       # rustup
 
-      # latest.rustChannels.nightly.rust
-      # rustChannels.nightly.rust
+      latest.rustChannels.nightly.rust
     ];
   };
 }
