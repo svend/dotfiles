@@ -3,19 +3,19 @@ self: super:
   emacsHead = (super.emacs.override {
     srcRepo = true;
   }).overrideAttrs (old: rec {
-    name = "emacs-${version}${versionModifier}";
-    version = "26.2-pre";
-    versionModifier = "-git-${builtins.substring 0 7 srcRev}";
+    # name = "emacs-${version}${versionModifier}";
+    # version = "26.3";
+    # versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
-    # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
-    srcRev = "emacs-26.2";
-    srcSha = "0wln9zadc2n5vxi5z20mx2i1544ni8l4z81kh9dda10jz8ddwsqj";
+    # # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
+    # srcRev = "emacs-26.3";
+    # srcSha = "0s5szdgs6pmj1x8brca7403jvv61s4xq19g4s0bfgiwvqzv0f6d5";
 
-    src = super.fetchgit {
-      url = "git://git.sv.gnu.org/emacs.git";
-      rev = srcRev;
-      sha256 = srcSha;
-    };
+    # src = super.fetchgit {
+    #   url = "git://git.sv.gnu.org/emacs.git";
+    #   rev = srcRev;
+    #   sha256 = srcSha;
+    # };
   });
 
   # https://github.com/NixOS/nixpkgs/blob/7c93bbec22508f40b05660d56b28eb5002872bd7/pkgs/build-support/emacs/wrapper.nix
@@ -31,6 +31,7 @@ self: super:
     aggressive-indent
     cider
     company
+    company-lsp
     company-jedi
     counsel
     diminish
@@ -40,6 +41,7 @@ self: super:
     flycheck
     go-eldoc
     hydra
+    lsp-ui
     magit
     notmuch
     nov
@@ -61,6 +63,7 @@ self: super:
     ibuffer-tramp
     json-mode
     ledger-mode
+    lsp-mode
     lua-mode
     markdown-mode
     nginx-mode
@@ -85,7 +88,6 @@ self: super:
     # ob-scala
     ob-rust
     password-store
-    racer # https://github.com/racer-rust/emacs-racer/compare/1.2...master
     ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
     ruby-tools
     spacemacs-theme
