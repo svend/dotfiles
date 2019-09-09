@@ -12,7 +12,7 @@ self: super:
       # binutils-unwrapped
 
       # cargo-script
-      rustracer
+      # rustracer # use Rust Language Server (rls), provided by rustup
 
       # rustup
 

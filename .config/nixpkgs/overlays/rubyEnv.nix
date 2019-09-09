@@ -3,7 +3,7 @@ self: super:
   rubyEnv = with self; super.buildEnv {
     name = "rubyEnv";
     paths = [
-      bundler
+      # bundler # ruby 2.6.4 includes bundler
       ruby
     ];
   };

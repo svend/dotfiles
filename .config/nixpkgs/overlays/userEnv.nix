@@ -43,7 +43,7 @@ self: super:
       # netcat-gnu # use nmap/ncat
       nix-prefetch-scripts
       nmap
-      notmuch
+      # notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
       openssl
       openssh
       pandoc
@@ -76,6 +76,7 @@ self: super:
       gitAndTools.gitAnnex
       isync
       librecad
+      notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
       qutebrowser
       signal-desktop
       smartmontools
