@@ -6,8 +6,9 @@ self: super:
       dep
       glide
       go2nix
-      gocode
-      godef
+      # Use gopls
+      # gocode
+      # godef
       golangci-lint
       golint
       gotools
