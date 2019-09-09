@@ -31,7 +31,6 @@ self: super:
     aggressive-indent
     cider
     company
-    company-lsp
     company-jedi
     counsel
     diminish
@@ -39,9 +38,7 @@ self: super:
     exec-path-from-shell
     expand-region
     flycheck
-    go-eldoc
     hydra
-    lsp-ui
     magit
     notmuch
     nov
@@ -63,9 +60,7 @@ self: super:
     ibuffer-tramp
     json-mode
     ledger-mode
-    lsp-mode
     lua-mode
-    markdown-mode
     nginx-mode
     nim-mode
     plantuml-mode
@@ -95,9 +90,15 @@ self: super:
     tango-plus-theme
     visual-fill-column # https://github.com/joostkremers/visual-fill-column/compare/1.11...master
 
+    # LSP
+    company-lsp
+    lsp-mode
+    lsp-ui
+
     # Modes
     groovy-mode
     jsonnet-mode
+    markdown-mode # something installs this from melpa non-stable
     rust-mode # https://github.com/rust-lang/rust-mode/compare/0.4.0...master
     toml-mode
   ]) ++
