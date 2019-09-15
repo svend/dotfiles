@@ -11,6 +11,8 @@ self: super:
       # cacert # nix default install includes nss-cacert-3.40.1
       coreutils
       curl
+      dhall
+      dhall-json
       dtach
       emacs
       etcdctl

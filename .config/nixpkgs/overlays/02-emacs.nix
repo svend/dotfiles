@@ -96,6 +96,7 @@ self: super:
     lsp-ui
 
     # Modes
+    dhall-mode
     groovy-mode
     jsonnet-mode
     markdown-mode # something installs this from melpa non-stable
@@ -104,6 +105,7 @@ self: super:
   ]) ++
   (with epkgs.elpaPackages; [
     csv-mode
+    eglot
   ]) ++
   ([emacsPackagesNg.pdf-tools])
   );
