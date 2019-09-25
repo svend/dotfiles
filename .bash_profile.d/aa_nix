@@ -8,4 +8,5 @@ fi
 # certs added
 if [ -e "$HOME/.certs/ca-bundle.crt" ]; then
   export NIX_SSL_CERT_FILE="$HOME/.certs/ca-bundle.crt"
+  export REQUESTS_CA_BUNDLE="$NIX_SSL_CERT_FILE"
 fi
