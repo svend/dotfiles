@@ -78,6 +78,7 @@ self: super:
     flycheck-golangci-lint
     gnus-alias
     ivy # https://github.com/abo-abo/swiper/issues/2088
+    kubernetes
     nix-mode
     ob-go
     # ob-scala
