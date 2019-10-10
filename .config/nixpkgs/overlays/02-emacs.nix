@@ -64,7 +64,6 @@ self: super:
     nginx-mode
     nim-mode
     plantuml-mode
-    scala-mode
     terraform-mode
     yaml-mode
   ]) ++
@@ -74,6 +73,7 @@ self: super:
     blacken
     bpr
     company-go
+    epresent
     flycheck-rust
     flycheck-golangci-lint
     gnus-alias
@@ -81,7 +81,6 @@ self: super:
     kubernetes
     nix-mode
     ob-go
-    # ob-scala
     ob-rust
     password-store
     ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
