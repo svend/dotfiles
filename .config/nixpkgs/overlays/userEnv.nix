@@ -76,6 +76,7 @@ self: super:
       terminal-notifier
     ] ++ lib.optionals stdenv.isLinux [
       gitAndTools.gitAnnex
+      go-font
       isync
       librecad
       notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
