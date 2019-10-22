@@ -72,6 +72,13 @@ self: super:
       xz
       zookeeper
       haskellPackages.ShellCheck
+
+      # fonts
+      dejavu_fonts
+      iosevka
+      # input-fonts
+      go-font
+      source-code-pro
     ] ++ lib.optionals stdenv.isDarwin [
       terminal-notifier
     ] ++ lib.optionals stdenv.isLinux [
