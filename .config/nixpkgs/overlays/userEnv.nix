@@ -80,6 +80,7 @@ self: super:
       go-font
       source-code-pro
     ] ++ lib.optionals stdenv.isDarwin [
+      pinentry_mac
       terminal-notifier
     ] ++ lib.optionals stdenv.isLinux [
       gitAndTools.gitAnnex

@@ -73,6 +73,7 @@ self: super:
     blacken
     bpr
     company-go
+    eglot
     epresent
     flycheck-rust
     flycheck-golangci-lint
@@ -105,7 +106,6 @@ self: super:
   ]) ++
   (with epkgs.elpaPackages; [
     csv-mode
-    eglot
   ]) ++
   ([emacsPackagesNg.pdf-tools])
   );

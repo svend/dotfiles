@@ -7,6 +7,7 @@ alias kn='kubectl get nodes -o jsonpath='\''{range .items[*]}{.metadata.name}{"\
 alias kg='kubectl get -o jsonpath='\''{range .items[*]}{.metadata.name}{"\n"}{end}'\'''
 alias kcs='kubectl config view -o jsonpath='\''{range .contexts[*]}{.name}{"\n"}{end}'\'''
 alias kuc='kubectl config use-context'
+alias kubectl='TZ=UTC kubectl'
 alias rg='rg --color always --smart-case'
 alias ssh-p='ssh -o PasswordAuthentication=yes -o PubkeyAuthentication=no -o ControlPath=none'
 alias ssh-m='ssh -o ControlPath=none'

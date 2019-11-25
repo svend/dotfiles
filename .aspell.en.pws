@@ -1,15 +1,19 @@
-personal_ws-1.1 en 14 
+personal_ws-1.1 en 18 
 CloudFormation
 cardinality
 TLS
+idempotence
 Istio
 stateful
+deduplicate
 Kubernetes
 ASG
+observability
 Grafana
 JSON
 namespaces
 balancer
 kubelet
 kubectl
+declaratively
 RedHat
