@@ -16,7 +16,7 @@ self: super:
 
       # rustup
 
-      latest.rustChannels.nightly.rust
+      latest.rustChannels.stable.rust
     ];
   };
 }
