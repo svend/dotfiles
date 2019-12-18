@@ -59,6 +59,7 @@ self: super:
       ripgrep
       rust-scripts
       rsync
+      scriptisto
       sshuttle
       stow
       time

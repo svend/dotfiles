@@ -11,7 +11,6 @@ self: super:
       # gnumake
       # binutils-unwrapped
 
-      # cargo-script
       # rustracer # use Rust Language Server (rls), provided by rustup
 
       # rustup
