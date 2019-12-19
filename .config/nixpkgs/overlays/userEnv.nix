@@ -43,7 +43,7 @@ self: super:
       multi-x509
       # netcat # use nmap/ncat
       # netcat-gnu # use nmap/ncat
-      # nix-prefetch-scripts # nano ftb: https://github.com/NixOS/nixpkgs/issues/74840
+      nix-prefetch-scripts
       nmap
       # notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
       openssl
