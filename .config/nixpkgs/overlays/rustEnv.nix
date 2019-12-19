@@ -11,11 +11,10 @@ self: super:
       # gnumake
       # binutils-unwrapped
 
-      # rust-analyzer # test are failing
-
       # rustup
 
       latest.rustChannels.stable.rust
+      rust-analyzer
     ];
   };
 }
