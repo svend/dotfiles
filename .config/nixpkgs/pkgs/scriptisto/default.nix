@@ -9,7 +9,6 @@ buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "igor-petruk";
     repo = "scriptisto";
-    # rev = "${version}";
     rev = "v0.6.2";
     sha256 = "04h5n3bc2664gd8xnwc4aczcqyldrvj8shnmam7pj2rkxn1kpn2s";
   };

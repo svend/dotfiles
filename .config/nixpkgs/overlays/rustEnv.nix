@@ -11,7 +11,7 @@ self: super:
       # gnumake
       # binutils-unwrapped
 
-      # rustracer # use Rust Language Server (rls), provided by rustup
+      # rust-analyzer # test are failing
 
       # rustup
 
