@@ -2,7 +2,7 @@ self: super:
 {
   glide = with super; glide.overrideAttrs (old: rec {
     name = "glide-${version}";
-    version = "0.13.1";
+    version = "0.13.3";
 
     buildFlagsArray = ''
     -ldflags=
@@ -13,7 +13,7 @@ self: super:
       rev = "v${version}";
       owner = "Masterminds";
       repo = "glide";
-      sha256 = "1gbik31mxb9m9j2lm1n4da049914r1404fi0j5g6b08i69dd092v";
+      sha256 = "1wskg1cxqy9sp0738qiiagdw09dbs3swxsk4z6w5hsfiq2h44a54";
     };
   });
 }
