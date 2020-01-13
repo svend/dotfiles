@@ -10,15 +10,15 @@ buildRustPackage rec {
     owner = "rust-analyzer";
     repo = "rust-analyzer";
     # rev = "${version}";
-    rev = "8dd0e0086fc07422c9b1044b1db021cff6563214";
-    sha256 = "1h24b2pi88ym3657xrqv4vdsl79czghkj5xfjsb10jgk8j729krz";
+    rev = "d8d8c20077702b8537086d49914d02654a46ebc5";
+    sha256 = "00l7l75552sr4rk7fg0s4rfd8hiy915h9wchc4bnwqywngq18hly";
   };
 
   # buildRustPackage requires a cargoSha256 attribute which is computed over all
   # crate sources of this package. Currently it is obtained by inserting a fake
   # checksum into the expression and building the package once. The correct
   # checksum can be then take from the failed build.
-  cargoSha256 = "09hrkrzl9bmjzdhp5w268w9vq92mzsl52f240wfnwyv445kp2mi5";
+  cargoSha256 = "1nh0cx0rv0liszasfgflc50j7zfgr5qs8ssvsxqsafrvdwpcksbh";
 
   buildInputs = stdenv.lib.optional stdenv.isDarwin [CoreServices Security];
 
