@@ -86,10 +86,14 @@ self: super:
     password-store
     ripgrep # https://github.com/nlamirault/ripgrep.el/compare/0.4.0...master
     ruby-tools
-    spacemacs-theme
-    tao-theme
-    tango-plus-theme
     visual-fill-column # https://github.com/joostkremers/visual-fill-column/compare/1.11...master
+
+    # Themes
+    # modus-operandi-theme
+    # modus-vivendi-theme
+    spacemacs-theme
+    tango-plus-theme
+    tao-theme
 
     # LSP
     company-lsp
