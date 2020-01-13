@@ -77,7 +77,7 @@ self: super:
       # fonts
       dejavu_fonts
       iosevka
-      # input-fonts
+      # input-fonts # non-free
       go-font
       source-code-pro
     ] ++ lib.optionals stdenv.isDarwin [
