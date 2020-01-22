@@ -76,9 +76,13 @@ self: super:
 
       # fonts
       dejavu_fonts
+      fira
+      fira-code
       iosevka
       # input-fonts # non-free
+      jetbrains-mono
       go-font
+      oxygenfonts
       source-code-pro
     ] ++ lib.optionals stdenv.isDarwin [
       pinentry_mac
