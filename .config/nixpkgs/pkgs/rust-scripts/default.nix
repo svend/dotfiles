@@ -10,8 +10,8 @@ buildRustPackage rec {
     owner = "svend";
     repo = "rust-scripts";
     # rev = "${version}";
-    rev = "510c3cdfb52247a7b45e4e3f01491d937068033d";
-    sha256 = "0fivqbf0sfzjzi1wbbiv5bdpv3kdcp1n4asbyr7l9aw0ppw5kg4i";
+    rev = "7a356f392fdcd8d47cbe592341e4b469be66f6f9";
+    sha256 = "1dkd3cq542vmvvgw3a5rbc6mnpffkps824lzhi5nbkl0czi8wjz5";
   };
 
   # buildRustPackage requires a cargoSha256 attribute which is computed over all
