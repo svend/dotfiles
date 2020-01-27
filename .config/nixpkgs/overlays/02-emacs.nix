@@ -89,8 +89,8 @@ self: super:
     visual-fill-column # https://github.com/joostkremers/visual-fill-column/compare/1.11...master
 
     # Themes
-    # modus-operandi-theme
-    # modus-vivendi-theme
+    modus-operandi-theme
+    modus-vivendi-theme
     spacemacs-theme
     tango-plus-theme
     tao-theme
