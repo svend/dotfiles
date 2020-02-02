@@ -4,20 +4,20 @@ with rustPlatform;
 
 buildRustPackage rec {
   name = "rust-analyzer-${version}";
-  version = "2020-01-27";
+  version = "2020-01-29";
 
   src = fetchFromGitHub {
     owner = "rust-analyzer";
     repo = "rust-analyzer";
     rev = "${version}";
-    sha256 = "090a0bw9jmy37zwnxbqy10syiq9fd2jrfcjsghmzs5vihc67zzkn";
+    sha256 = "1m4y1vmh4kmxd051kv645jj8hs74bnfvcgdrsxlm3a8m7sy6zn1y";
   };
 
   # buildRustPackage requires a cargoSha256 attribute which is computed over all
   # crate sources of this package. Currently it is obtained by inserting a fake
   # checksum into the expression and building the package once. The correct
   # checksum can be then take from the failed build.
-  cargoSha256 = "0s2jwrplyvk5gzhmmjbncsq9mhlna74fkxi1vblk4gqi51psrlbp";
+  cargoSha256 = "0lnv7pakiizxswfbzmgyi9vwxn4bny4hyfwxxskk2q9nyvv354m9";
 
   buildInputs = stdenv.lib.optional stdenv.isDarwin [CoreServices Security];
 
