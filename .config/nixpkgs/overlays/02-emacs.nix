@@ -42,6 +42,7 @@ self: super:
     magit
     notmuch
     nov
+    package-lint
     projectile
     py-isort
     robe
