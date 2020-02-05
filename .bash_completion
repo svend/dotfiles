@@ -1,9 +1,7 @@
 # -*- mode: sh; -*-
 # ~/.bash_completion: This file is sourced by bash_completion
 
-for COMPLETION in "$HOME/.bash_completion.d/"*; do
-  [[ -f $COMPLETION ]] && source "$COMPLETION"
-done
+# put local completions in ~/.local/share/bash-completion/completions/
 
 # Homebrew (https://docs.brew.sh/Shell-Completion)
 if type brew &>/dev/null; then
