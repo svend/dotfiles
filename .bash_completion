@@ -2,6 +2,9 @@
 # ~/.bash_completion: This file is sourced by bash_completion
 
 # put local completions in ~/.local/share/bash-completion/completions/
+#
+# See https://github.com/scop/bash-completion#faq (Q. Where should I install my
+# own local completions?)
 
 # Homebrew (https://docs.brew.sh/Shell-Completion)
 if type brew &>/dev/null; then
