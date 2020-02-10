@@ -26,7 +26,7 @@ self: super:
       })
 
       xonsh
-      pipenv
+      # pipenv # FTB on Darwin: No module named 'pip._internal.cli.main'
     ];
   };
 }
