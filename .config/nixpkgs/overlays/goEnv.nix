@@ -12,6 +12,7 @@ self: super:
       golangci-lint
       golint
       gotools
+      pprof
     ] ++ lib.optionals stdenv.isLinux [
       go # https://github.com/NixOS/nixpkgs/issues/56348
     ];
