@@ -63,6 +63,8 @@ self: super:
       sshuttle
       stow
       time
+      terraform
+      terraform-lsp
       tokei # count lines of code
       tree
       unzip # required for Emacs nov.el package
