@@ -4,13 +4,13 @@ with rustPlatform;
 
 buildRustPackage rec {
   name = "rust-analyzer-${version}";
-  version = "2020-02-11";
+  version = "2020-02-17";
 
   src = fetchFromGitHub {
     owner = "rust-analyzer";
     repo = "rust-analyzer";
     rev = "${version}";
-    sha256 = "0xr8iz7cmmj745ymbjig66pxvl8pi93fhigm70dp2brb685ibaay";
+    sha256 = "04bl9k7sv51hb5r0lcxb5sa6y3v7ia1xay79dchy43dg3lm0yvvs";
   };
 
   # buildRustPackage requires a cargoSha256 attribute which is computed over all
