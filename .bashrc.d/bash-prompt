@@ -1,6 +1,11 @@
 # -*- mode: sh; -*-
 # Set prompt
-PS1='\h:\W '
+
+# Only add hostname if remote
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  PS1='\h:'
+fi
+PS1="$PS1"'\W '
 # Add kubernetes context to prompt
 if type -t kubectl >/dev/null; then
   PS1="$PS1"'(k8s:$(kubectl config current-context 2>/dev/null)) '
