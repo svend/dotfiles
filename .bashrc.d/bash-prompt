@@ -2,6 +2,7 @@
 # Set prompt
 
 # Only add hostname if remote
+PS1=''
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   PS1='\h:'
 fi
