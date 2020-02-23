@@ -2,8 +2,8 @@
 Description=Start mbsync
 
 [Timer]
-OnBootSec=10min
-OnUnitActiveSec=10min
+OnBootSec=5min
+OnUnitActiveSec=5min
 Unit=mbsync.service
 
 [Install]
