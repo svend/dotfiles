@@ -4,20 +4,20 @@ with rustPlatform;
 
 buildRustPackage rec {
   name = "scriptisto-${version}";
-  version = "v0.6.2";
+  version = "v0.6.5";
 
   src = fetchFromGitHub {
     owner = "igor-petruk";
     repo = "scriptisto";
-    rev = "v0.6.2";
-    sha256 = "04h5n3bc2664gd8xnwc4aczcqyldrvj8shnmam7pj2rkxn1kpn2s";
+    rev = version;
+    sha256 = "0jm5v1rbcjprbk5c4djbra9w12jx728fr7gl8c2i9s8akfilaas0";
   };
 
   # buildRustPackage requires a cargoSha256 attribute which is computed over all
   # crate sources of this package. Currently it is obtained by inserting a fake
   # checksum into the expression and building the package once. The correct
   # checksum can be then take from the failed build.
-  cargoSha256 = "1f89cidk1idm92j7cyvir8424bs4zmfcpv4m58xaxrbyq0qwv8v2";
+  cargoSha256 = "1fnk33crzwpyj96jpbgspv13vdcwvfv4mjbss0a74p45fm8mskyd";
 
   buildInputs = stdenv.lib.optional stdenv.isDarwin Security;
 
