@@ -90,13 +90,10 @@ self: super:
       pinentry_mac
       terminal-notifier
     ] ++ lib.optionals stdenv.isLinux [
-      gitAndTools.gitAnnex
-      go-font
-      isync
+      gitAndTools.gitAnnex # slow to build, linux has pre-built binaries
+      isync # mbsync
       librecad
       notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
-      qutebrowser
-      signal-desktop
       smartmontools
       xcape
       xlibs.xmodmap
