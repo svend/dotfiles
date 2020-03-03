@@ -38,6 +38,7 @@ self: super:
     exec-path-from-shell
     expand-region
     flycheck
+    gnuplot
     hydra
     magit
     notmuch
