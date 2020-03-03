@@ -61,7 +61,7 @@ self: super:
       rust-scripts
       rsync
       scriptisto
-      sshuttle
+      # sshuttle # broken by https://github.com/NixOS/nixpkgs/pull/80746
       stow
       time
       terraform
