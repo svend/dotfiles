@@ -9,7 +9,7 @@ trap '__prompt_start' DEBUG
 
 __prompt_start() {
   : "${_LAST_DATE:=$(__prompt_date)}"
-  : "${_LAST_START:=$SECONDS}"
+  : "${_LAST_SECONDS:=$SECONDS}"
 }
 
 PROMPT_COMMAND=__prompt_command
@@ -17,9 +17,9 @@ PROMPT_COMMAND=__prompt_command
 __prompt_command() {
   # $? needs to be first
   LAST_EXIT=$?
-  LAST_DURATION=$((SECONDS - _LAST_START))
+  LAST_DURATION=$((SECONDS - _LAST_SECONDS))
   LAST_DATE=$_LAST_DATE
-  unset _LAST_START _LAST_DATE
+  unset _LAST_SECONDS _LAST_DATE
 }
 
 # Start with an empty prompt
