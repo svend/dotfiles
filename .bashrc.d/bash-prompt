@@ -8,8 +8,8 @@ __prompt_date() {
 trap '__prompt_start' DEBUG
 
 __prompt_start() {
-  : "${LAST_START_DATE:=$(__prompt_date)}"
-  : "${LAST_START:=$SECONDS}"
+  : "${_LAST_DATE:=$(__prompt_date)}"
+  : "${_LAST_START:=$SECONDS}"
 }
 
 PROMPT_COMMAND=__prompt_command
@@ -17,18 +17,24 @@ PROMPT_COMMAND=__prompt_command
 __prompt_command() {
   # $? needs to be first
   LAST_EXIT=$?
-  LAST_DURATION=$((SECONDS - LAST_START))
-  LAST_DATE=$LAST_START_DATE
-  unset LAST_START LAST_START_DATE
+  LAST_DURATION=$((SECONDS - _LAST_START))
+  LAST_DATE=$_LAST_DATE
+  unset _LAST_START _LAST_DATE
 }
 
 # Start with an empty prompt
 PS1=''
 
+# Add info line
+# Set color to blue
+PS1="$PS1"'\[\033[01;34m\]'
 PS1="$PS1"'[$LAST_DATE/$LAST_EXIT/${LAST_DURATION}s]'
 PS1="$PS1"'[k8s:$(kubectl config current-context 2>/dev/null)]'
+# Reset color
+PS1="$PS1"'\[\033[00m\]'
 PS1="$PS1"'\n'
 
+# Add hostname:directory to the prompt
 # Only add hostname if remote
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   PS1="$PS1"'\h:'
