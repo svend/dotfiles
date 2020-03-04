@@ -11,6 +11,7 @@ self: super:
       # godef
       golangci-lint
       golint
+      gopls
       gotools
       pprof
     ] ++ lib.optionals stdenv.isLinux [
