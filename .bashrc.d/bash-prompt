@@ -1,16 +1,40 @@
 # -*- mode: sh; -*-
 # Set prompt
 
-# Only add hostname if remote
+__prompt_date() {
+  date '+%H:%M:%S'
+}
+
+trap '__prompt_start' DEBUG
+
+__prompt_start() {
+  : "${LAST_START_DATE:=$(__prompt_date)}"
+  : "${LAST_START:=$SECONDS}"
+}
+
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+  # $? needs to be first
+  LAST_EXIT=$?
+  LAST_DURATION=$((SECONDS - LAST_START))
+  LAST_DATE=$LAST_START_DATE
+  unset LAST_START LAST_START_DATE
+}
+
+# Start with an empty prompt
 PS1=''
+
+PS1="$PS1"'[$LAST_DATE/$LAST_EXIT/${LAST_DURATION}s]'
+PS1="$PS1"'[k8s:$(kubectl config current-context 2>/dev/null)]'
+PS1="$PS1"'\n'
+
+# Only add hostname if remote
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  PS1='\h:'
+  PS1="$PS1"'\h:'
 fi
 PS1="$PS1"'\W '
-# Add kubernetes context to prompt
-if type -t kubectl >/dev/null; then
-  PS1="$PS1"'(k8s:$(kubectl config current-context 2>/dev/null)) '
-fi
+
 # Add git to the prompt
 if type -t __git_ps1 >/dev/null; then
   # These settings can be slow for large repositories
@@ -19,5 +43,7 @@ if type -t __git_ps1 >/dev/null; then
   export GIT_PS1_SHOWUPSTREAM=auto
   PS1="$PS1"'$(__git_ps1 "(%s) ")'
 fi
+
+# Add $ to the end
 PS1="$PS1"'\$ '
 export PS1
