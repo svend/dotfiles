@@ -62,6 +62,7 @@ self: super:
       rsync
       scriptisto
       # sshuttle # broken by https://github.com/NixOS/nixpkgs/pull/80746
+      sops
       stow
       time
       terraform

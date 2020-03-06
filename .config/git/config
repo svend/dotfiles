@@ -36,6 +36,9 @@
 	# Omit a/b prefix so that find-file-at-point works
 	noprefix = true
 
+[diff "sopsdiffer"]
+	textconv = sops -d
+
 [github]
 	user = svend
 
