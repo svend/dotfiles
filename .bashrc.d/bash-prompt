@@ -22,14 +22,24 @@ __prompt_command() {
   unset _LAST_SECONDS _LAST_DATE
 }
 
+__prompt_k8s() {
+  local context
+  context=$(kubectl config current-context 2>/dev/null)
+  if [ -n "$context" ]; then
+    echo " k8s:$context"
+  fi
+}
+
 # Start with an empty prompt
 PS1=''
 
 # Add info line
 # Set color to blue
 PS1="$PS1"'\[\033[01;34m\]'
-PS1="$PS1"'[$LAST_DATE/$LAST_EXIT/${LAST_DURATION}s]'
-PS1="$PS1"'[k8s:$(kubectl config current-context 2>/dev/null)]'
+PS1="$PS1"'['
+PS1="$PS1"'$LAST_DATE/$LAST_EXIT/${LAST_DURATION}'
+PS1="$PS1"'$(__prompt_k8s)'
+PS1="$PS1"']'
 # Reset color
 PS1="$PS1"'\[\033[00m\]'
 PS1="$PS1"'\n'
