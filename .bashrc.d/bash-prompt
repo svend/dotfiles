@@ -37,7 +37,7 @@ PS1=''
 # Set color to blue
 PS1="$PS1"'\[\033[01;34m\]'
 PS1="$PS1"'['
-PS1="$PS1"'$LAST_DATE/$LAST_EXIT/${LAST_DURATION}'
+PS1="$PS1"'$LAST_DATE/$LAST_EXIT/${LAST_DURATION}s'
 PS1="$PS1"'$(__k8s_ps1)'
 PS1="$PS1"']'
 # Reset color
