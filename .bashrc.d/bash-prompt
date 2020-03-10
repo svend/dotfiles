@@ -43,6 +43,7 @@ if type -t __git_ps1 >/dev/null; then
   # These settings can be slow for large repositories
   export GIT_PS1_SHOWDIRTYSTATE=true
   export GIT_PS1_SHOWUNTRACKEDFILES=true
+  export GIT_PS1_STATESEPARATOR=
   export GIT_PS1_SHOWUPSTREAM=auto
   PS1="$PS1"'$(__git_ps1 " git:%s")'
 fi
