@@ -19,6 +19,7 @@ self: super:
       file
       findutils
       fping
+      gawk
       gettext # for envsubst
       git-crypt
       gitAndTools.hub
