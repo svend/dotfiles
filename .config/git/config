@@ -36,8 +36,10 @@
 	# Omit a/b prefix so that find-file-at-point works
 	noprefix = true
 
-[diff "sopsdiffer"]
-	textconv = sops -d
+# TODO: This can fail when the right AWS environment is not configured, which
+# breaks "git diff/show/...". Disable for now.
+# [diff "sopsdiffer"]
+# 	textconv = sops -d
 
 [github]
 	user = svend
