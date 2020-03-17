@@ -26,7 +26,6 @@ self: super:
       gitMinimal
       gnugrep
       gnuplot
-      gnupg
       gnused
       gnutar
       graphviz
@@ -90,6 +89,7 @@ self: super:
       oxygenfonts
       source-code-pro
     ] ++ lib.optionals stdenv.isDarwin [
+      gnupg # nixos configuration includes gnupg
       pinentry_mac
       terminal-notifier
     ] ++ lib.optionals stdenv.isLinux [
