@@ -1,4 +1,4 @@
-{ stdenv, go, buildGoModule, fetchgit }:
+{ stdenv, go, buildGoModule, fetchgit, Security }:
 
 buildGoModule rec {
   pname = "gopls";
@@ -14,6 +14,8 @@ buildGoModule rec {
   modRoot = "./gopls";
 
   modSha256 = "1ni0gfrgnkjddpdmknkgyac6wf0r3aq9na27bv7zf3k20ii22213";
+
+  buildInputs = stdenv.lib.optionals stdenv.isDarwin [ Security ];
 
   # Do not copy this without a good reason for enabling
   # In this case tools is heavily coupled with go itself and embeds paths.
