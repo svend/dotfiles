@@ -82,6 +82,7 @@ self: super:
     gnus-alias
     ivy # https://github.com/abo-abo/swiper/issues/2088
     kubernetes
+    # native-complete # Need nixpkgs Melpa to be updated
     nix-mode
     ob-go
     ob-rust
