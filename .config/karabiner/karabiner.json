@@ -102,13 +102,14 @@
                         ]
                     },
                     {
-                        "description": "Option+L to Lock Screen (macOS 10.13+)",
+                        "description": "Command+Option+L to Lock Screen (macOS 10.13+)",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
+                                            "command",
                                             "option"
                                         ]
                                     }
@@ -301,6 +302,19 @@
                             }
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 50184,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
