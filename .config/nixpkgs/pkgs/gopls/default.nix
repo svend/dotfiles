@@ -3,12 +3,12 @@
 buildGoModule rec {
   pname = "gopls";
   version = "v0.3.3";
-  rev = "gopls/v0.3.3";
+  rev = "gopls/v0.3.4";
 
   src = fetchgit {
     inherit rev;
     url = "https://go.googlesource.com/tools";
-    sha256 = "03gnpnmdnjcxgzsnds7jgqgxzmhx1rbq1m8kyg62xcvz4phvn1z8";
+    sha256 = "0rqcrz5fkld92wv0n9993qq4mspqhqf9d8d6qciiby0p227q5yhk";
   };
 
   modRoot = "./gopls";
