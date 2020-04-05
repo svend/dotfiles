@@ -6,11 +6,9 @@ self: super:
       aspellWithDicts
       bashInteractive
       bash-completion
-      bind
       # binutils # conflicts with rustEnv
       # cacert # nix default install includes nss-cacert-3.40.1
       coreutils
-      curl
       dhall
       dhall-json
       dtach
@@ -18,7 +16,6 @@ self: super:
       etcdctl
       file
       findutils
-      fping
       gawk
       gettext # for envsubst
       git-crypt
@@ -32,7 +29,6 @@ self: super:
       gzip
       htop
       imagemagick
-      ipcalc
       jq
       jsonnet
       keychain
@@ -45,10 +41,7 @@ self: super:
       # netcat # use nmap/ncat
       # netcat-gnu # use nmap/ncat
       nix-prefetch-scripts
-      nmap
       # notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
-      openssl
-      openssh
       pandoc
       parallel
       pass
@@ -59,9 +52,7 @@ self: super:
       restic
       ripgrep
       rust-scripts
-      rsync
       scriptisto
-      # sshuttle # broken by https://github.com/NixOS/nixpkgs/pull/80746
       sops
       stow
       time
@@ -71,12 +62,23 @@ self: super:
       tree
       unzip # required for Emacs nov.el package
       watch
-      wrk2 # HTTP benchmarking tool
-      wget
       xsv
       xz
       zookeeper
       haskellPackages.ShellCheck
+
+      # network tools
+      curl
+      bind
+      fping
+      ipcalc
+      nmap
+      openssh
+      openssl
+      rsync
+      sshuttle
+      wrk2 # HTTP benchmarking tool
+      wget
 
       # fonts
       dejavu_fonts
