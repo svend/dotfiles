@@ -76,7 +76,6 @@ self: super:
       openssh
       openssl
       rsync
-      sshuttle
       wrk2 # HTTP benchmarking tool
       wget
 
@@ -91,7 +90,8 @@ self: super:
       oxygenfonts
       source-code-pro
     ] ++ lib.optionals stdenv.isDarwin [
-      gnupg # nixos configuration includes gnupg
+      gnupg # NixOS configuration includes gnupg
+      passff-host # included with Firefox config on NixOS
       pinentry_mac
       terminal-notifier
     ] ++ lib.optionals stdenv.isLinux [
