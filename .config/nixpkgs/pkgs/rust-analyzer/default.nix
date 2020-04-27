@@ -1,25 +1,26 @@
-{ stdenv, fetchFromGitHub, rustPlatform, makeWrapper, CoreServices, Security  }:
+{ stdenv, fetchFromGitHub, rustPlatform, makeWrapper, CoreServices  }:
 
 with rustPlatform;
 
 buildRustPackage rec {
   name = "rust-analyzer-${version}";
-  version = "2020-04-13";
+  version = "2020-04-27";
 
   src = fetchFromGitHub {
     owner = "rust-analyzer";
     repo = "rust-analyzer";
     rev = "${version}";
-    sha256 = "0giwhknmv1km0z5l2x4sixkyj45ha9ynmxz3dfd22dys6kr8fp0p";
+    sha256 = "15y25ii1bs010jga87wi3jirqwq65jhjxfwxgriykzw10g7a97as";
   };
 
   # buildRustPackage requires a cargoSha256 attribute which is computed over all
   # crate sources of this package. Currently it is obtained by inserting a fake
   # checksum into the expression and building the package once. The correct
   # checksum can be then take from the failed build.
-  cargoSha256 = "1hfhpvaqsz1nlqszfggkxmw0skqx06hg7az0z790zlj5bcmc92wc";
+  cargoSha256 = "1ivxddigh8fasmqlah8k00bb0slil92w7mgfly1pz6bh6pac5lna";
 
-  buildInputs = stdenv.lib.optional stdenv.isDarwin [CoreServices Security];
+  buildInputs = stdenv.lib.optionals stdenv.hostPlatform.isDarwin
+    [ CoreServices ];
 
   # Test fail:
   #
@@ -40,3 +41,14 @@ buildRustPackage rec {
     platforms = platforms.all;
   };
 }
+
+# { pkgs, callPackage }:
+
+# {
+#   rust-analyzer = callPackage ./generic.nix rec {
+#     rev = "2020-04-27";
+#     version = "unstable-${rev}";
+#     sha256 = "15y25ii1bs010jga87wi3jirqwq65jhjxfwxgriykzw10g7a97as";
+#     cargoSha256 = "1ivxddigh8fasmqlah8k00bb0slil92w7mgfly1pz6bh6pac5lna";
+#   };
+# }
