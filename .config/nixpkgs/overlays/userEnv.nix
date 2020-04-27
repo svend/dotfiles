@@ -71,6 +71,7 @@ self: super:
       curl
       bind
       fping
+      grpcurl
       ipcalc
       nmap
       openssh
