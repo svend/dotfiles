@@ -97,6 +97,7 @@ self: super:
       terminal-notifier
     ] ++ lib.optionals stdenv.isLinux [
       gitAndTools.gitAnnex # slow to build, linux has pre-built binaries
+      inetutils
       isync # mbsync
       librecad
       notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long

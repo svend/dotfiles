@@ -13,6 +13,7 @@ self: super:
 
       # rustup
 
+      cargo-edit
       latest.rustChannels.stable.rust
       rust-analyzer
     ];
