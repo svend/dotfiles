@@ -20,27 +20,3 @@ Patterns *
 Create Slave
 Expunge Slave
 SyncState *
-
-IMAPAccount gmail
-Host imap.gmail.com
-User svend@ciffer.net
-PassCmd "~/.nix-profile/bin/pass show general/imap.gmail.com"
-SSLType IMAPS
-# PipelineDepth 1
-
-IMAPStore gmail-remote
-Account gmail
-
-MaildirStore gmail-local
-Path ~/.mail/gmail/ # The trailing "/" is important
-Inbox ~/.mail/gmail/Inbox
-SubFolders Verbatim
-
-Channel gmail
-Master :gmail-remote:
-Slave :gmail-local:
-Patterns "[Gmail]/All Mail"
-# Sync Both
-Create Slave
-Expunge Slave
-SyncState *
