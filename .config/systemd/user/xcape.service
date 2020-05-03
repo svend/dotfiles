@@ -4,6 +4,9 @@ Description=xcape
 [Service]
 # `-f` flag is in master
 ExecStart=%h/.nix-profile/bin/xcape -f -e "Hyper_L=space"
+# My Thinkpad X230 has developed an issue where pressing righ-shift results in
+# shift and pgup. Disable pgup.
+ExecStartPre=%h/.nix-profile/bin/xmodmap -e "keycode 112 ="
 ExecStartPre=%h/.nix-profile/bin/xmodmap -e "keycode 65 = Hyper_L"
 ExecStartPre=%h/.nix-profile/bin/xmodmap -e "remove mod4 = Hyper_L"
 ExecStartPre=%h/.nix-profile/bin/xmodmap -e "add Control = Hyper_L"
