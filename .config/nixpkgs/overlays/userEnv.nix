@@ -32,6 +32,7 @@ self: super:
       jq
       jsonnet
       keychain
+      github-cli
       gnuplot
       ledger
       less

@@ -1,5 +1,6 @@
 self: super:
 {
+  github-cli = super.callPackage ../pkgs/github-cli { };
   gopls = super.callPackage ../pkgs/gopls { inherit (super.darwin.apple_sdk.frameworks) Security; };
   multi-x509 = super.callPackage ../pkgs/multi-x509 { inherit (super.darwin.apple_sdk.frameworks) Security; };
   rust-scripts = super.callPackage ../pkgs/rust-scripts { inherit (super.darwin.apple_sdk.frameworks) Security; };
