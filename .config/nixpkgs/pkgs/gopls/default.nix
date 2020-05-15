@@ -13,7 +13,7 @@ buildGoModule rec {
 
   modRoot = "./gopls";
 
-  modSha256 = "1p0g28i707xyxz1g6hb56qlc4km9ik7vjky0v80hw7n73vzs5mr9";
+  vendorSha256 = "1jaav6c5vybgks5hc164is0i7h097c5l75s7w3wi5a3zyzkbiyny";
 
   buildInputs = stdenv.lib.optionals stdenv.isDarwin [ Security ];
 
