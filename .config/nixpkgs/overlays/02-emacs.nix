@@ -71,7 +71,6 @@ self: super:
   ]) ++
   (with epkgs.melpaPackages; [
     amx
-    bash-completion
     blacken
     bpr
     company-go
