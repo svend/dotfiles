@@ -1,19 +1,20 @@
-personal_ws-1.1 en 18 
-CloudFormation
-cardinality
-TLS
-idempotence
-Istio
-stateful
-deduplicate
-Kubernetes
+personal_ws-1.1 en 19 
 ASG
-observability
+CloudFormation
 Grafana
+Istio
 JSON
-namespaces
-balancer
-kubelet
-kubectl
-declaratively
+Kubernetes
 RedHat
+TLS
+balancer
+cardinality
+declaratively
+deduplicate
+idempotence
+kubectl
+kubelet
+latencies
+namespaces
+observability
+stateful
