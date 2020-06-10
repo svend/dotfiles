@@ -3,19 +3,21 @@ self: super:
   emacsHead = (super.emacs.override {
     srcRepo = true;
   }).overrideAttrs (old: rec {
-    # name = "emacs-${version}${versionModifier}";
-    # version = "26.3";
-    # versionModifier = "-git-${builtins.substring 0 7 srcRev}";
+    name = "emacs-${version}${versionModifier}";
+    version = "27.0";
+    versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
-    # # nix-prefetch-git --rev refs/heads/emacs-26 git://git.sv.gnu.org/emacs.git
-    # srcRev = "emacs-26.3";
-    # srcSha = "0s5szdgs6pmj1x8brca7403jvv61s4xq19g4s0bfgiwvqzv0f6d5";
+    # nix-prefetch-git --rev refs/heads/emacs-27 git://git.sv.gnu.org/emacs.git
+    srcRev = "emacs-27.0.91";
+    srcSha = "0mlrg2npy1r79laahkgzhxd1qassfcdz8qk1cpw7mqgf6y5x505h";
 
-    # src = super.fetchgit {
-    #   url = "git://git.sv.gnu.org/emacs.git";
-    #   rev = srcRev;
-    #   sha256 = srcSha;
-    # };
+    src = super.fetchgit {
+      url = "git://git.sv.gnu.org/emacs.git";
+      rev = srcRev;
+      sha256 = srcSha;
+    };
+
+    patches = [];
   });
 
   # https://github.com/NixOS/nixpkgs/blob/7c93bbec22508f40b05660d56b28eb5002872bd7/pkgs/build-support/emacs/wrapper.nix
