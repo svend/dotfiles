@@ -1,23 +1,22 @@
-{ stdenv, go, buildGoModule, fetchgit, Security }:
+{ stdenv, go, buildGoModule, fetchgit }:
 
 buildGoModule rec {
   pname = "gopls";
-  version = "v0.4.1";
-  rev = "gopls/${version}";
+  version = "0.4.1";
 
   src = fetchgit {
-    inherit rev;
+    rev = "gopls/v${version}";
     url = "https://go.googlesource.com/tools";
     sha256 = "18migk7arxm8ysfzidl7mdr069fxym9bfi6zisj7dliczw0qnkzv";
   };
 
-  modRoot = "./gopls";
-
+  modRoot = "gopls";
   vendorSha256 = "1jaav6c5vybgks5hc164is0i7h097c5l75s7w3wi5a3zyzkbiyny";
 
-  buildInputs = stdenv.lib.optionals stdenv.isDarwin [ Security ];
-
-  # Do not copy this without a good reason for enabling
-  # In this case tools is heavily coupled with go itself and embeds paths.
-  allowGoReference = true;
+  meta = with stdenv.lib; {
+    description = "Official language server for the Go language";
+    homepage = "https://github.com/golang/tools/tree/master/gopls";
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ mic92 ];
+  };
 }
