@@ -4,6 +4,7 @@ self: super:
     name = "kubernetesEnv";
     paths = [
       helm
+      kind
       kubernetes
     ];
   };
