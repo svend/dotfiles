@@ -5,7 +5,7 @@ self: super:
     paths = [
       helm
       kind
-      kubernetes
+      kubectl
     ];
   };
 }
