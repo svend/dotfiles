@@ -1,4 +1,7 @@
 # -*- mode: sh; -*-
+
+# FIXME: This takes five seconds to run on macOS
+
 # (see gpg-agent man page)
 export GPG_TTY
 GPG_TTY=$(tty)
