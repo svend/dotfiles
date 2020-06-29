@@ -3,19 +3,20 @@ self: super:
   goEnv = with self; super.buildEnv {
     name = "goEnv";
     paths = [
+      go # https://github.com/NixOS/nixpkgs/issues/56348
+
+      # Legacy dependency management tools
       dep
       glide
-      go2nix
-      # Use gopls
-      # gocode
-      # godef
+
+      # Development tools
       golangci-lint
       golint
-      gopls
-      gotools
+      gopls # replaces gocode and godef
+      gotools # godoc (doc web server), goimports
+
+      go2nix
       pprof
-    ] ++ lib.optionals stdenv.isLinux [
-      go # https://github.com/NixOS/nixpkgs/issues/56348
     ];
   };
 }

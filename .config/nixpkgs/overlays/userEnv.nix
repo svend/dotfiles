@@ -57,8 +57,7 @@ self: super:
       sops
       stow
       time
-      terraform
-      terraform-lsp
+
       tokei # count lines of code
       tree
       unzip # required for Emacs nov.el package
@@ -80,6 +79,11 @@ self: super:
       rsync
       wrk2 # HTTP benchmarking tool
       wget
+
+      # Terraform
+      terraform
+      terraform-lsp
+      tflint
 
       # fonts
       dejavu_fonts
