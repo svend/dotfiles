@@ -1,4 +1,6 @@
+# TODO: Remove this overlay once commit is merged to master
 # https://github.com/NixOS/nixpkgs/pull/91347
+# git branch -a --contains 81a8b76b3aadd1c73122cc076d44796fbf9a112f
 self: super:
 {
   go_1_14 = with super; go_1_14.overrideAttrs (old: rec {
