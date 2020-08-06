@@ -3,7 +3,7 @@ self: super:
   nodeEnv = with self; super.buildEnv {
     name = "nodeEnv";
     paths = [
-      nodejs-13_x
+      nodejs-14_x
     ];
   };
 }

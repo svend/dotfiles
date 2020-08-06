@@ -6,6 +6,7 @@ self: super:
       aspellWithDicts
       bashInteractive
       bash-completion
+      bats # bash shell testing framework
       # binutils # conflicts with rustEnv
       # cacert # nix default install includes nss-cacert-3.40.1
       coreutils
