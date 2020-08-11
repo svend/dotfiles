@@ -4,12 +4,12 @@ self: super:
     srcRepo = true;
   }).overrideAttrs (old: rec {
     name = "emacs-${version}${versionModifier}";
-    version = "27.0";
+    version = "27.1";
     versionModifier = "-git-${builtins.substring 0 7 srcRev}";
 
     # nix-prefetch-git --rev refs/heads/emacs-27 git://git.sv.gnu.org/emacs.git
-    srcRev = "emacs-27.1-rc1";
-    srcSha = "1vyw8bpairxfxim931xg3pwyl3afh2mmjxa2i1igsaiaaxyssbc6";
+    srcRev = "emacs-27.1";
+    srcSha = "1i50ksf96fxa3ymdb1irpc82vi67861sr4xlcmh9f64qw9imm3ks";
 
     src = super.fetchgit {
       url = "git://git.sv.gnu.org/emacs.git";
