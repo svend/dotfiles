@@ -17,6 +17,7 @@ self: super:
       sha256 = srcSha;
     };
 
+    # TODO: emacs 26 patches don't apply to 27
     patches = [];
   });
 
