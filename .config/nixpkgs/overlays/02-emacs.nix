@@ -44,7 +44,7 @@ self: super:
     gnuplot
     hydra
     magit
-    notmuch
+    # notmuch # FTB: Invalid version syntax: `0.31.-1.1'
     nov
     package-lint
     projectile
@@ -86,6 +86,7 @@ self: super:
     kubernetes
     native-complete
     nix-mode
+    notmuch
     ob-go
     ob-rust
     password-store
