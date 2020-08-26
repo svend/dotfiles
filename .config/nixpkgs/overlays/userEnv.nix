@@ -105,7 +105,7 @@ self: super:
       gitAndTools.gitAnnex # slow to build, linux has pre-built binaries
       inetutils
       isync # mbsync
-      librecad
+      # librecad # TODO: https://github.com/NixOS/nixpkgs/pull/96248
       notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
       smartmontools
       xcape
