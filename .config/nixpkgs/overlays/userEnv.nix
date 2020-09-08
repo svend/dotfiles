@@ -82,7 +82,7 @@ self: super:
       wget
 
       # Terraform
-      terraform
+      # terraform # Work version pinned
       terraform-lsp
       tflint
 
