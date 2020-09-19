@@ -108,8 +108,8 @@ self: super:
       # librecad # TODO: https://github.com/NixOS/nixpkgs/pull/96248
       notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
       smartmontools
-      xcape
-      xlibs.xmodmap
+      # xcape # Replaced with interception-tools/dual-function-keys
+      xlibs.xmodmap # Need to disable malfunctioning key on Thinkpad
     ];
   };
 }
