@@ -6,6 +6,7 @@ self: super:
       helm
       kind
       kubectl
+      kustomize
     ];
   };
 }
