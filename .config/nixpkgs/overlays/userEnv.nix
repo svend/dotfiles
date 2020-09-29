@@ -97,6 +97,7 @@ self: super:
 
       # Nix
       nix-prefetch-scripts
+      nixfmt
       nixpkgs-fmt
     ] ++ lib.optionals stdenv.isDarwin [
       gnupg # NixOS configuration includes gnupg
