@@ -1,7 +1,7 @@
 self: super:
 {
-  userEnv = with self; super.buildEnv {
-    name = "userEnv";
+  commonEnv = with self; super.buildEnv {
+    name = "commonEnv";
     paths = [
       aspellWithDicts
       bashInteractive
