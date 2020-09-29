@@ -42,6 +42,7 @@ self: super:
       gnuplot
       hydra
       magit
+      nixpkgs-fmt
       # notmuch # FTB: Invalid version syntax: `0.31.-1.1'
       nov
       package-lint
