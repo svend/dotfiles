@@ -40,9 +40,6 @@ self: super:
       mercurial
       mr
       multi-x509
-      # netcat # use nmap/ncat
-      # netcat-gnu # use nmap/ncat
-      nix-prefetch-scripts
       # notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
       pandoc
       parallel
@@ -58,7 +55,6 @@ self: super:
       sops
       stow
       time
-
       tokei # count lines of code
       tree
       unzip # required for Emacs nov.el package
@@ -68,7 +64,9 @@ self: super:
       zookeeper
       haskellPackages.ShellCheck
 
-      # network tools
+      # Network tools
+      # netcat # use nmap/ncat
+      # netcat-gnu # use nmap/ncat
       curl
       bind
       fping
@@ -96,6 +94,10 @@ self: super:
       go-font
       oxygenfonts
       source-code-pro
+
+      # Nix
+      nix-prefetch-scripts
+      nixpkgs-fmt
     ] ++ lib.optionals stdenv.isDarwin [
       gnupg # NixOS configuration includes gnupg
       passff-host # included with Firefox config on NixOS
@@ -108,7 +110,6 @@ self: super:
       # librecad # TODO: https://github.com/NixOS/nixpkgs/pull/96248
       notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
       smartmontools
-      # xcape # Replaced with interception-tools/dual-function-keys
       xlibs.xmodmap # Need to disable malfunctioning key on Thinkpad
     ];
   };

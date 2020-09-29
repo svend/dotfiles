@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, rustPlatform, makeWrapper, Security  }:
+{ stdenv, fetchFromGitHub, rustPlatform, makeWrapper, Security }:
 
 with rustPlatform;
 
