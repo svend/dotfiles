@@ -1,28 +1,35 @@
 self: super:
 {
+  # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/emacs
   emacsHead = (super.emacs.override {
+    # Not building from source tarball
     srcRepo = true;
-  }).overrideAttrs (old: rec {
-    # name = "emacs-${version}${versionModifier}";
-    # version = "27.1";
-    # versionModifier = "-git-${builtins.substring 0 7 srcRev}";
+  }).overrideAttrs (oldAttrs:
+    let
+      # nix-prefetch-git git://git.sv.gnu.org/emacs.git
+      # nix-prefetch-git --rev refs/heads/emacs-27 git://git.sv.gnu.org/emacs.git
+      version = "master";
+      url = git://git.sv.gnu.org/emacs.git;
+      rev = "5b0d8d0f288fd505ca90bd30df709a5e7ab540d6";
+      sha256 = "17i0rwy9qgykbm65bm5i6pizfx6ph7asdi2ddaxfs0sfcl5kcn79";
+    in
+    rec {
+      name = "emacs-${version}${versionModifier}";
+      versionModifier = "-git-${builtins.substring 0 7 rev}";
 
-    # # nix-prefetch-git --rev refs/heads/emacs-27 git://git.sv.gnu.org/emacs.git
-    # srcRev = "emacs-27.1";
-    # srcSha = "1i50ksf96fxa3ymdb1irpc82vi67861sr4xlcmh9f64qw9imm3ks";
+      # tramp-detect-wrapped-gvfsd.patch fails to apply
+      patches = builtins.filter (p: baseNameOf p != "tramp-detect-wrapped-gvfsd.patch") oldAttrs.patches;
 
-    # src = super.fetchgit {
-    #   url = "git://git.sv.gnu.org/emacs.git";
-    #   rev = srcRev;
-    #   sha256 = srcSha;
-    # };
-  });
+      src = super.fetchgit {
+        inherit url rev sha256;
+      };
+    });
 
   # https://github.com/NixOS/nixpkgs/blob/76dbece8e8240a911fcc5722f813a8453f90406f/pkgs/build-support/emacs/wrapper.nix
   emacs = with self; let customEmacsPackages =
     emacsPackagesNg.overrideScope' (self: super: {
       # use a custom version of emacs
-      emacs = emacsHead;
+      # emacs = emacsHead;
     });
   in
   customEmacsPackages.emacsWithPackages (epkgs:
