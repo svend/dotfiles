@@ -110,8 +110,6 @@ self: super:
       isync # mbsync
       # librecad # TODO: https://github.com/NixOS/nixpkgs/pull/96248
       notmuch # FTB on darwin: gpg: can't connect to the agent: File name too long
-      smartmontools
-      xlibs.xmodmap # Need to disable malfunctioning key on Thinkpad
     ];
   };
 }

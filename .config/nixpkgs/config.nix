@@ -4,5 +4,5 @@
   allowUnfree = true;
 
   # Enable Nix Flakes: https://nixos.wiki/wiki/Flakes
-  experimental-features = nix-command flakes;
+  # experimental-features = nix-command flakes;
 }
