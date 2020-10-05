@@ -6,12 +6,13 @@
 export GPG_TTY
 GPG_TTY=$(tty)
 
-# Launch gpg-agent so ssh can access it immediately (see gpg-conf man page)
+# Launch gpg-agent so ssh can access it immediately (see gpgconf man page)
 gpgconf --launch gpg-agent
 
 # Set SSH_AUTH_SOCK if ssh-support is enabled
-if [ "$(gpgconf --list-options gpg-agent | grep '^enable-ssh-support:' | cut -d : -f 10)" = "1" ]; then
+if [ "$(gpgconf --list-options gpg-agent | awk -F: '$1 == "enable-ssh-support" { print $10 }')" = "1" ]; then
   if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    export SSH_AUTH_SOCK
+    SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
   fi
 fi
