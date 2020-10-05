@@ -32,7 +32,6 @@ self: super:
       imagemagick
       jq
       jsonnet
-      keychain
       github-cli
       gnuplot
       ledger
