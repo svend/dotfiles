@@ -1,9 +1,0 @@
-# -*- mode: sh; -*-
-command -v keychain >/dev/null 2>&1 || return
-
-# Do not start keychain if gpg is configured with ssh-support
-if [ "$(gpgconf --list-options gpg-agent | awk -F: '$1 == "enable-ssh-support" { print $10 }')" = "1" ]; then
-  return
-fi
-
-eval $(keychain --eval --agents ssh --quiet)
