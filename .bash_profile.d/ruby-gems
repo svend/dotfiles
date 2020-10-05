@@ -1,6 +1,0 @@
-# -*- mode: sh; -*-
-command -v ruby >/dev/null 2>&1 || return
-command -v gem >/dev/null 2>&1 || return
-
-PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-export PATH
