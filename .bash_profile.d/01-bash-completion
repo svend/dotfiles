@@ -3,7 +3,4 @@
 # Enable bash-completion
 if [ -f "$HOME/.nix-profile/etc/profile.d/bash_completion.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/bash_completion.sh"
-  for m in "$HOME/.nix-profile/etc/bash_completion.d/"*; do
-    . "$m"
-  done
 fi

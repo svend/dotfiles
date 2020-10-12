@@ -1,7 +1,9 @@
 # -*- mode: sh; -*-
-# ~/.bash_completion: This file is sourced by bash_completion
 
-# put local completions in ~/.local/share/bash-completion/completions/
+# bash_completion:
+#
+# * eagerly loads ~/.bash_completion
+# * loads ~/.local/share/bash-completion/* on-demand when a completion is called
 #
 # See https://github.com/scop/bash-completion#faq (Q. Where should I install my
 # own local completions?)
@@ -9,6 +11,13 @@
 # Homebrew (https://docs.brew.sh/Shell-Completion)
 if type brew &>/dev/null; then
   for COMPLETION in "$(brew --prefix)"/etc/bash_completion.d/*; do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+fi
+
+# Nix
+if [ -d "$HOME"/.nix-profile/etc/bash_completion.d ]; then
+  for COMPLETION in "$HOME"/.nix-profile/etc/bash_completion.d/*; do
     [[ -f $COMPLETION ]] && source "$COMPLETION"
   done
 fi

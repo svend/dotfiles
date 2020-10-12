@@ -2,6 +2,7 @@
 
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
 fi
 
 # Copy of $HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt with additional local
