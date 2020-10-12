@@ -1,6 +1,3 @@
 [.dotfiles/dotfiles]
 checkout = git clone https://github.com/svend/dotfiles.git
 post_update = cd .. && stow -R dotfiles
-
-[.local/bin]
-checkout = git clone https://github.com/svend/home-bin.git bin
