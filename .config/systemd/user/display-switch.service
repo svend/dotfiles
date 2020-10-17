@@ -1,0 +1,8 @@
+[Unit]
+Description=USB-triggered display switch
+
+[Service]
+ExecStart=%h/.nix-profile/bin/display_switch
+
+[Install]
+WantedBy=default.target
