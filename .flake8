@@ -1,0 +1,4 @@
+# -*- mode: conf; -*-
+[flake8]
+# Black formatter's default line length is 88
+max-line-length = 88
