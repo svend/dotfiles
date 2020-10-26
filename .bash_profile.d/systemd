@@ -1,0 +1,4 @@
+# -*- mode: sh; -*-
+
+# Disable system pager
+export SYSTEMD_PAGER=
