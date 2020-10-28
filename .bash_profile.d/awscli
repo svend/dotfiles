@@ -1,4 +1,8 @@
 # -*- mode: sh; -*-
+
+# Enable awscli completion, aws_completer is part of awscli
+# https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html
+
 command -v aws_completer >/dev/null 2>&1 || return
 
 complete -C "$(command -v aws_completer)" aws

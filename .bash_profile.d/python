@@ -1,5 +1,4 @@
 # -*- mode: sh; -*-
-command -v python >/dev/null 2>&1 || return
 
 # Add python startup file
 export PYTHONSTARTUP=$HOME/.python-startup.py
