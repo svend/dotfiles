@@ -3,5 +3,5 @@ Description=mbsync service
 
 [Service]
 Type=oneshot
-ExecStart=%h/.nix-profile/bin/mbsync --all --verbose
+ExecStart=%h/.nix-profile/bin/mbsync-with-config --all --verbose
 ExecStartPost=%h/.nix-profile/bin/notmuch new
