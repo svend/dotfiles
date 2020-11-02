@@ -1,4 +1,4 @@
 # -*- mode: sh; -*-
 
 # Add python startup file
-export PYTHONSTARTUP=$HOME/.python-startup.py
+export PYTHONSTARTUP=$HOME/.config/python-startup.py
