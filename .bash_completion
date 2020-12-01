@@ -3,12 +3,14 @@
 # bash_completion:
 #
 # * eagerly loads ~/.bash_completion
-# * loads ~/.local/share/bash-completion/* on-demand when a completion is called
+# * loads ~/.local/share/bash-completion/completions/* on-demand when a completion is called
 #
 # See https://github.com/scop/bash-completion#faq (Q. Where should I install my
 # own local completions?)
 
 # Homebrew (https://docs.brew.sh/Shell-Completion)
+# Homebrew's etc/bash_completion.d/* must be eagerly loaded. See
+# __load_completion definition for how on-demand loading occurs.
 if type brew &>/dev/null; then
   for COMPLETION in "$(brew --prefix)"/etc/bash_completion.d/*; do
     [[ -f $COMPLETION ]] && source "$COMPLETION"
