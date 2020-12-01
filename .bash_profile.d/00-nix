@@ -16,6 +16,7 @@ if [ -f "$HOME/.nix-profile/etc/profile.d/bash_completion.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/bash_completion.sh"
 fi
 
+# Load git prompt
 # See https://github.com/NixOS/nixpkgs/pull/68366#discussion_r325497774
 if [ -f "$HOME/.nix-profile/share/git/contrib/completion/git-prompt.sh" ]; then
   . "$HOME/.nix-profile/share/git/contrib/completion/git-prompt.sh"
