@@ -14,10 +14,3 @@ if type brew &>/dev/null; then
     [[ -f $COMPLETION ]] && source "$COMPLETION"
   done
 fi
-
-# Nix
-if [ -d "$HOME"/.nix-profile/etc/bash_completion.d ]; then
-  for COMPLETION in "$HOME"/.nix-profile/etc/bash_completion.d/*; do
-    [[ -f $COMPLETION ]] && source "$COMPLETION"
-  done
-fi

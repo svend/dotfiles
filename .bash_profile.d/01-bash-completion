@@ -1,6 +1,0 @@
-# -*- mode: sh; -*-
-
-# Enable bash-completion
-if [ -f "$HOME/.nix-profile/etc/profile.d/bash_completion.sh" ]; then
-  . "$HOME/.nix-profile/etc/profile.d/bash_completion.sh"
-fi
