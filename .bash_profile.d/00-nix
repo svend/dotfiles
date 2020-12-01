@@ -2,18 +2,12 @@
 
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-  export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
 fi
 
 if [ -e "$HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt" ]; then
   export NIX_SSL_CERT_FILE="$HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt"
   # TODO: Remove if this setting is unnecessary
   # export REQUESTS_CA_BUNDLE="$NIX_SSL_CERT_FILE"
-fi
-
-# Enable bash-completion
-if [ -f "$HOME/.nix-profile/etc/profile.d/bash_completion.sh" ]; then
-  . "$HOME/.nix-profile/etc/profile.d/bash_completion.sh"
 fi
 
 # Load git prompt

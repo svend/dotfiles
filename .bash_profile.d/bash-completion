@@ -1,0 +1,10 @@
+# -*- mode: sh; -*-
+
+if [ -d "$HOME/.nix-profile/share" ]; then
+  XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+fi
+
+# Enable bash-completion
+if [ -f "$HOME/.nix-profile/etc/profile.d/bash_completion.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/bash_completion.sh"
+fi
