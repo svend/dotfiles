@@ -1,8 +1,8 @@
 # -*- mode: sh; -*-
 
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-export HISTCONTROL=ignorespace
+HISTSIZE=10000
+HISTFILESIZE=10000
+HISTCONTROL=ignorespace
 
 # Never truncate history file (This isn't working.)
 #unset HISTFILESIZE
