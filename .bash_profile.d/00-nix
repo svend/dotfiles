@@ -6,8 +6,8 @@ fi
 
 if [ -e "$HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt" ]; then
   export NIX_SSL_CERT_FILE="$HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt"
-  # TODO: Remove if this setting is unnecessary
-  # export REQUESTS_CA_BUNDLE="$NIX_SSL_CERT_FILE"
+  # Required by Python
+  export REQUESTS_CA_BUNDLE="$NIX_SSL_CERT_FILE"
 fi
 
 # Load git prompt

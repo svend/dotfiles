@@ -15,4 +15,4 @@ if _python3():
 
     sys.displayhook = mypprint
 else:
-    sys.displayhook = lambda x: pprint.pprint(x)
+    sys.displayhook = pprint.pprint
