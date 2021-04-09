@@ -20,7 +20,12 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "pointing_button": "button1"
+                                    "pointing_button": "button1",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -41,7 +46,12 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "pointing_button": "button2"
+                                    "pointing_button": "button2",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -62,7 +72,12 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "pointing_button": "button3"
+                                    "pointing_button": "button3",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
