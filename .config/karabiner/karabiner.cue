@@ -30,6 +30,19 @@ profiles: [{
 			"mouse_motion_to_scroll.speed":                 100
 		}
 		rules: [{
+			description: "Command+Option+L to Lock Screen (macOS 10.13+)"
+			manipulators: [{
+				from: {
+					key_code: "l"
+					modifiers: mandatory: ["command", "option"]
+				}
+				to: [{
+					key_code: "q"
+					modifiers: ["left_control", "left_command"]
+				}]
+				type: "basic"
+			}]
+		}, {
 			description: "Home row modifier keys"
 			manipulators: [
 				#homeMod & {_key: "a", _mod:         "left_command"},
@@ -72,19 +85,6 @@ profiles: [{
 				to: [{
 					key_code: "up_arrow"
 					modifiers: []
-				}]
-				type: "basic"
-			}]
-		}, {
-			description: "Command+Option+L to Lock Screen (macOS 10.13+)"
-			manipulators: [{
-				from: {
-					key_code: "l"
-					modifiers: mandatory: ["command", "option"]
-				}
-				to: [{
-					key_code: "q"
-					modifiers: ["left_control", "left_command"]
 				}]
 				type: "basic"
 			}]
