@@ -125,17 +125,7 @@ profiles: [{
 		}
 		ignore:                   false
 		manipulate_caps_lock_led: false
-		simple_modifications: [{
-			from: key_code: "left_control"
-			to: [{
-				key_code: "left_command"
-			}]
-		}, {
-			from: key_code: "right_control"
-			to: [{
-				key_code: "right_command"
-			}]
-		}]
+		simple_modifications: []
 	}, {
 		disable_built_in_keyboard_if_exists: false
 		fn_function_keys: []
@@ -147,27 +137,7 @@ profiles: [{
 		}
 		ignore:                   false
 		manipulate_caps_lock_led: true
-		simple_modifications: [{
-			from: key_code: "left_command"
-			to: [{
-				key_code: "left_option"
-			}]
-		}, {
-			from: key_code: "left_option"
-			to: [{
-				key_code: "left_command"
-			}]
-		}, {
-			from: key_code: "right_command"
-			to: [{
-				key_code: "right_option"
-			}]
-		}, {
-			from: key_code: "right_option"
-			to: [{
-				key_code: "right_command"
-			}]
-		}]
+		simple_modifications: []
 	}, {
 		disable_built_in_keyboard_if_exists: false
 		fn_function_keys: []
@@ -179,17 +149,7 @@ profiles: [{
 		}
 		ignore:                   false
 		manipulate_caps_lock_led: false
-		simple_modifications: [{
-			from: key_code: "left_control"
-			to: [{
-				key_code: "left_command"
-			}]
-		}, {
-			from: key_code: "right_control"
-			to: [{
-				key_code: "right_command"
-			}]
-		}]
+		simple_modifications: []
 	}, {
 		disable_built_in_keyboard_if_exists: false
 		fn_function_keys: []
